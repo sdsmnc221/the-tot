@@ -2218,18 +2218,12 @@
       </g>
     </svg>
     <div class="content" ref="content">
-      <p>
-        <span>The Train of Thoughts</span> is welcoming all passengers,
-        especially <span>that special person</span>.
-      </p>
-      <p>
-        Feel free to take <span>one ticket</span>, and please patiently wait on
-        the platform until the train comes.
-      </p>
+      <p v-html="$t('intro.content.p1')" />
+      <p v-html="$t('intro.content.p2')" />
     </div>
     <button class="enter" ref="enter">
       <div class="enter__bg" ref="enterBackground"></div>
-      <span class="enter__text">Ride</span>
+      <span class="enter__text">{{ $t("intro.enter") }}</span>
     </button>
   </div>
 </template>
@@ -2258,7 +2252,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .pre-release {
   $btn-enter-size: 90px;
   $dim: 186vmin;
@@ -2351,18 +2345,18 @@ export default {
     opacity: 0;
     background-color: $dark-purple;
 
-    span {
-      color: $majestic-magenta;
-    }
-
     p {
       font-size: 2rem;
       font-size: clamp(1.25rem, 6vw, 2.15rem);
       line-height: 1.25;
       max-width: 900px;
-      margin: 0;
+      margin-bottom: 1rem;
       pointer-events: none;
       will-change: transform;
+
+      span {
+        color: $majestic-magenta;
+      }
     }
   }
 

@@ -7,5 +7,12 @@
   "lang": {
     "en": "Use English.",
     "vn": "Dùng Tiếng Việt."
+  },
+  "intro": {
+    "enter": "Ride",
+    "content": {
+      "p1": "<span>The Train of Thoughts</span> is welcoming all passengers, especially <span>that special person</span>.",
+      "p2": "Feel free to take <span>one ticket</span>, and please patiently wait on the platform until the train comes."
+    }
   }
 }
