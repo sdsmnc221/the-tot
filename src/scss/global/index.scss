@@ -11,11 +11,6 @@ html {
   *::after,
   *::before {
     box-sizing: border-box;
-    transition: all ease 0.4s;
-  }
-
-  :root {
-    font-size: 16px;
   }
 
   body {
@@ -25,8 +20,10 @@ html {
     min-height: 100vh;
     min-height: -webkit-fill-available;
     background-color: $dark-purple;
-    font-family: $font-silkscreen;
+    color: $peach-cloud;
+    font-family: $font-vt;
     font-weight: $font-weight-regular;
+    font-size: $font-size-root;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

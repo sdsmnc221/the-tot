@@ -10,21 +10,25 @@
       content ? `${content}` : `AUTHOR`
     }}</template>
   </metainfo>
-  <div id="view">
-    <!-- <router-view /> -->
-    <!-- <WebGl /> -->
-    <pre-release />
-  </div>
+
+  <!-- <router-view /> -->
+  <!-- <WebGl /> -->
+  <main>
+    <lang-selector />
+    <pre-release v-if="$store.state.langSelected" />
+  </main>
 </template>
 
 <script>
 // import WebGl from "@/components/WebGl";
 import PreRelease from "@/views/PreRelease.vue";
+import LangSelector from "@/views/LangSelector.vue";
 
 export default {
   name: "App",
   components: {
     PreRelease,
+    LangSelector,
   },
   metaInfo() {
     return {
@@ -42,11 +46,20 @@ export default {
 
 <style lang="scss">
 #app {
-  background-color: $white-beige;
-  color: $purple;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: $ft-w-regular;
-  line-height: 1.5;
+  width: 100%;
+  height: 100%;
+
+  main {
+    width: 100%;
+    height: 100%;
+
+    > div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 </style>

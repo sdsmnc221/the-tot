@@ -1,5 +1,5 @@
 <template>
-  <main class="pre-release">
+  <div class="pre-release">
     <svg
       class="circles"
       width="100%"
@@ -2231,7 +2231,7 @@
       <div class="enter__bg" ref="enterBackground"></div>
       <span class="enter__text">Ride</span>
     </button>
-  </main>
+  </div>
 </template>
 
 <script>
@@ -2350,6 +2350,7 @@ export default {
     align-items: center;
     text-align: left;
     opacity: 0;
+    background-color: $dark-purple;
 
     span {
       color: $majestic-magenta;
@@ -2373,10 +2374,6 @@ export default {
     height: $dim;
     top: calc(50% - $dim / 2);
     left: calc(50% - $dim / 2);
-
-    * {
-      transition: none;
-    }
   }
 
   .circles__text {

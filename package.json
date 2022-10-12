@@ -41,7 +41,8 @@
     "vue-i18n": "^9.2.2",
     "vue-meta": "^3.0.0-alpha.10",
     "vue-router": "^4.0.14",
-    "vue-ts-loader": "^0.0.3"
+    "vue-ts-loader": "^0.0.3",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -56,6 +57,7 @@
     "eslint-plugin-vue": "^8.0.3",
     "glslify-loader": "^2.0.0",
     "husky": "^7.0.4",
+    "pixel-borders": "^1.1.4",
     "raw-loader": "^4.0.2",
     "sass": "^1.51.0",
     "sass-loader": "^12.6.0",
