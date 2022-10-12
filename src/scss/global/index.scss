@@ -1,0 +1,31 @@
+@import "reset";
+@import "normalize";
+@import "fonts";
+@import "transitions";
+
+html {
+  height: -webkit-fill-available;
+  touch-action: manipulation;
+
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+    transition: all ease 0.4s;
+  }
+
+  :root {
+    font-size: 16px;
+  }
+
+  body {
+    overflow: hidden;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    background-color: $dark-purple;
+    font-family: $font-silkscreen;
+    font-weight: $font-weight-regular;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
