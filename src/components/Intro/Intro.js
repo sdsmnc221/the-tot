@@ -33,12 +33,12 @@ export default class Intro {
       gsap.killTweensOf([this.DOM.enterBackground, this.DOM.circles]);
 
       gsap.to(this.DOM.enterBackground, {
-        duration: 1,
+        duration: 1.2,
         ease: "expo",
         scale: 1.4,
       });
       gsap.to(this.DOM.circles, {
-        duration: 1,
+        duration: 1.2,
         ease: "expo",
         scale: 1.15,
         rotation: (i) => (i % 2 ? "-=90" : "+=90"),
@@ -50,7 +50,7 @@ export default class Intro {
     this.enterMouseLeaveEv = () => {
       // gsap.killTweensOf([DOM.enterBackground,this.DOM.circles]);
       gsap.to(this.DOM.enterBackground, {
-        duration: 1,
+        duration: 1.2,
         ease: "expo",
         scale: 1,
       });
@@ -76,10 +76,15 @@ export default class Intro {
       .timeline({ onComplete: this.standby.bind(this) })
       .addLabel("start", 0)
       // rotation for all texts
+      .to(this.DOM.enter, {
+        duration: 2.4,
+        ease: "expo.inOut",
+        opacity: 1,
+      })
       .to(
         this.DOM.circles,
         {
-          duration: 3,
+          duration: 3.2,
           ease: "expo.inOut",
           rotation: (i) => (i % 2 ? 90 : -90),
           stagger: {
@@ -92,7 +97,7 @@ export default class Intro {
       .to(
         [this.DOM.circles, this.DOM.enterCtrl],
         {
-          duration: 3,
+          duration: 3.2,
           ease: "expo.inOut",
           startAt: { opacity: 0, scale: 0.8 },
           scale: 1,
@@ -172,7 +177,7 @@ export default class Intro {
         {
           opacity: 1,
         },
-        "start+1"
+        "start+=0.4"
       )
       .to(
         this.DOM.content.children,
@@ -186,7 +191,7 @@ export default class Intro {
             amount: 0.3,
           },
         },
-        "start+=1.3"
+        "start+=0.8"
       );
   }
 }

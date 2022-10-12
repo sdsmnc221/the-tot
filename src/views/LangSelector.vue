@@ -24,8 +24,6 @@ export default {
 
 <style lang="scss" scoped>
 .lang-selector {
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;

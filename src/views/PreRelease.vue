@@ -2263,8 +2263,6 @@ export default {
   $btn-enter-size: 90px;
   $dim: 186vmin;
 
-  width: 100%;
-  height: 100%;
   color: $peach-cloud;
   background-color: $dark-purple;
 
@@ -2315,6 +2313,7 @@ export default {
     background: none;
     color: $dark-purple;
     padding: 0;
+    opacity: 0;
   }
 
   .enter:focus,
