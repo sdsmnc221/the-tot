@@ -1,4 +1,15 @@
 <template>
+  <metainfo>
+    <template v-slot:title="{ content }">{{
+      content ? `${content}` : `SITE_NAME`
+    }}</template>
+    <template v-slot:description="{ content }">{{
+      content ? `${content}` : `DESCRIPTION`
+    }}</template>
+    <template v-slot:author="{ content }">{{
+      content ? `${content}` : `AUTHOR`
+    }}</template>
+  </metainfo>
   <div id="view">
     <!-- <router-view /> -->
     <!-- <WebGl /> -->
@@ -8,7 +19,7 @@
 
 <script>
 // import WebGl from "@/components/WebGl";
-import PreRelease from "./views/PreRelease.vue";
+import PreRelease from "@/views/PreRelease.vue";
 
 export default {
   name: "App",
@@ -19,9 +30,11 @@ export default {
     return {
       title: this.$t("meta.title"),
       description: this.$t("meta.description"),
+      author: this.$t("meta.author"),
       htmlAttrs: {
         lang: this.$i18n.locale,
       },
+      link: [{ rel: "icon", href: "/favicon.ico" }],
     };
   },
 };
