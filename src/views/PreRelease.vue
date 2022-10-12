@@ -7,7 +7,7 @@
       viewBox="0 0 1400 1400"
       ref="circles"
     >
-      <def>
+      <defs>
         <path
           id="circle-1"
           d="M250,700.5A450.5,450.5 0 1 11151,700.5A450.5,450.5 0 1 1250,700.5"
@@ -24,8 +24,7 @@
           id="circle-4"
           d="M567.5,700.5A133,133 0 1 1833.5,700.5A133,133 0 1 1567.5,700.5"
         />
-      </def>
-      <defs></defs>
+      </defs>
       <text class="circles__text circles__text--1">
         <textPath
           class="circles__text-path j"
@@ -2156,6 +2155,8 @@ export default {
   $btn-enter-size: 90px;
   $dim: 186vmin;
 
+  width: 100%;
+  height: 100%;
   color: $peach-cloud;
   background-color: $dark-purple;
 
@@ -2264,6 +2265,10 @@ export default {
     height: $dim;
     top: calc(50% - $dim / 2);
     left: calc(50% - $dim / 2);
+
+    * {
+      transition: none;
+    }
   }
 
   .circles__text {
