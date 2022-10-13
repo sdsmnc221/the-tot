@@ -892,9 +892,13 @@ export default {
                 duration: 0.8,
                 ease: "expo",
                 onComplete: () =>
-                  this.$store.commit("showPrompt", {
-                    path: "scenes-ticketMachine-instruction",
-                  }),
+                  setTimeout(
+                    () =>
+                      this.$store.commit("showPrompt", {
+                        path: "scenes-ticketMachine-instruction",
+                      }),
+                    1200
+                  ),
               });
             });
           },
