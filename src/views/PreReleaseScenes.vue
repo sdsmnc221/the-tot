@@ -4,7 +4,7 @@
     <Transition name="fade">
       <pop-up
         v-if="$store.state['scenes-ticketMachine-instruction']"
-        prompt="Click on the blinking hotspot to claim your free ticket!"
+        :prompt="$t('scenes.prompts.instruction')"
         :valid="
           () =>
             $store.commit('hidePrompt', {
@@ -16,7 +16,7 @@
     <Transition name="fade">
       <pop-up
         v-if="$store.state['scenes-ticketMachine-love']"
-        prompt="Do you wanna claim your ticket with your <span>abundance</span> of <span>love</span>?"
+        :prompt="$t('scenes.prompts.love')"
         :valid="
           () =>
             $store.commit('hidePrompt', {
@@ -28,7 +28,7 @@
     <Transition name="fade">
       <pop-up
         v-if="$store.state['scenes-ticketMachine-trust']"
-        prompt="Do you wanna claim your ticket with your <span>abundance</span> of <span>trust</span>?"
+        :prompt="$t('scenes.prompts.trust')"
         :valid="
           () =>
             $store.commit('hidePrompt', {
@@ -40,7 +40,7 @@
     <Transition name="fade">
       <pop-up
         v-if="$store.state['scenes-ticketMachine-specialCode']"
-        prompt="<p>Are you that special person that the <span>Train of Thoughts</span> is meant for?</p><p>Enter your <span>special code</span> to confirm!</p>"
+        :prompt="$t('scenes.prompts.specialCode')"
         with-code-input
         :valid="
           () =>

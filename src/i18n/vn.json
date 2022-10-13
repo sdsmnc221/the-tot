@@ -15,7 +15,8 @@
     "circleText": "Đoàn tàu Tâm Tưởng đang tiến vào",
     "content": {
       "p1": "<span>Đoàn tàu Tâm tưởng</span> chào mừng các vị hành khách, xin đặc biệt chào mừng <span>người khách đặc biệt</span>.",
-      "p2": "Xin mời các vị lấy <span>một vé</span> và vui lòng kiên nhẫn đợi trên sân ga cho tới khi tàu đến."
+      "p2": "Xin mời các vị lấy <span>một vé</span> và vui lòng kiên nhẫn đợi trên sân ga cho tới khi tàu đến.",
+      "cta": "Ticket? What ticket?"
     }
   },
   "scenes": {
@@ -27,6 +28,12 @@
     "turnstile": {
       "announce": "Xin hãy chú ý!<br /> <span>Đoàn tàu Tâm tưởng</span> sẽ vào ga trong vòng...",
       "counter": "{d} ngày, {m} phút, {s} giây"
+    },
+    "prompts": {
+      "instruction": "Click on the <span class=\"blink\">blinking hotspot</span> to claim your <span>free ticket</span>!",
+      "love": "Do you wanna claim your ticket with your <span>abundance</span> of <span>love</span>?",
+      "trust": "Do you wanna claim your ticket with your <span>abundance</span> of <span>trust</span>?",
+      "specialCode": "<p>Are you that special person that the <span>Train of Thoughts</span> is meant for?</p><p>Enter your <span>special code</span> to confirm!</p>"
     }
   }
 }

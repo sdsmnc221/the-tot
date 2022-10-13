@@ -55,6 +55,18 @@ export default {
 
     span {
       color: $majestic-magenta;
+
+      &.blink {
+        display: inline-block;
+        animation: highlight-animation 1s steps(5, start) infinite,
+          blink-animation 3.2s linear infinite;
+        border: 2px dotted $peach-cloud;
+        border-radius: 32px;
+        box-shadow: 0 0 32px 16px $majestic-magenta;
+        padding: 0.25rem 0.5rem;
+        font-size: $font-size-s;
+        line-height: $font-size-l;
+      }
     }
   }
 
