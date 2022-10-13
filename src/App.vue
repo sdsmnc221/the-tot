@@ -13,14 +13,16 @@
   <!-- <router-view /> -->
   <!-- <WebGl /> -->
   <main>
-    <Transition>
+    <Transition name="fade">
       <lang-selector v-if="!$store.state.langSelected" />
     </Transition>
-    <Transition>
-      <block-desktop v-if="$store.state.langSelected && !$store.isMobile" />
+    <Transition name="fade">
+      <block-desktop
+        v-if="$store.state.langSelected && !$store.state.isMobile"
+      />
     </Transition>
     <Transition name="fade">
-      <pre-release v-if="$store.state.langSelected && $store.isMobile" />
+      <pre-release v-if="$store.state.langSelected && $store.state.isMobile" />
     </Transition>
   </main>
 </template>
@@ -48,6 +50,16 @@ export default {
       },
       link: [{ rel: "icon", href: "/favicon.ico" }],
     };
+  },
+  mounted() {
+    window.addEventListener("resize", () => {
+      this.$store.commit("resize", {
+        isMobile:
+          /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent
+          ),
+      });
+    });
   },
 };
 </script>

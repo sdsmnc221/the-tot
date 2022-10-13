@@ -30,6 +30,9 @@ const globalStore = createStore({
     setLocale(state) {
       state.langSelected = true;
     },
+    resize(state, payload) {
+      state.isMobile = payload.isMobile;
+    },
   },
 });
 
