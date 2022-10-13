@@ -2299,8 +2299,9 @@ export default {
     width: $btn-enter-size;
     height: $btn-enter-size;
     position: absolute;
-    left: calc(50% - $btn-enter-size / 2);
-    top: calc(50% - $btn-enter-size / 2);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font: inherit;
     font-size: 1.2rem;
     cursor: pointer;
@@ -2336,9 +2337,9 @@ export default {
   .content {
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
     padding: 3.2rem;
-    height: 100vh;
+    height: 100%;
     position: relative;
     justify-content: center;
     align-items: center;
