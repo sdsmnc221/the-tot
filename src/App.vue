@@ -10,15 +10,17 @@
       content ? `${content}` : `AUTHOR`
     }}</template>
   </metainfo>
-
   <!-- <router-view /> -->
   <!-- <WebGl /> -->
   <main>
     <Transition>
       <lang-selector v-if="!$store.state.langSelected" />
     </Transition>
+    <Transition>
+      <block-desktop v-if="$store.state.langSelected && !$store.isMobile" />
+    </Transition>
     <Transition name="fade">
-      <pre-release v-if="$store.state.langSelected" />
+      <pre-release v-if="$store.state.langSelected && $store.isMobile" />
     </Transition>
   </main>
 </template>
@@ -27,12 +29,14 @@
 // import WebGl from "@/components/WebGl";
 import PreRelease from "@/views/PreRelease.vue";
 import LangSelector from "@/views/LangSelector.vue";
+import BlockDesktop from "./views/BlockDesktop.vue";
 
 export default {
   name: "App",
   components: {
     PreRelease,
     LangSelector,
+    BlockDesktop,
   },
   metaInfo() {
     return {

@@ -4,6 +4,7 @@
     "description": "Một trải nghiệm nhập vai đầy hấp dẫn dưới hình thức một câu chuyện kể, dành cho một người đặc biệt.",
     "author": "Thi Van An TRUONG"
   },
+  "noDesktop": "Scan <span>mã code QR</span> dưới đây bằng thiết bị di động của bạn, để bắt đầu chuyến du hành đặc biệt của <span>Đoàn tàu Tâm Tưởng</span>.",
   "lang": {
     "en": "Use English.",
     "vn": "Dùng Tiếng Việt.",

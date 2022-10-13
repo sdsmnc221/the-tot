@@ -78,6 +78,7 @@ export default {
   }
 
   button {
+    cursor: pointer;
     background: none;
     border: none;
     outline: none;
@@ -131,6 +132,22 @@ export default {
     width: 1.2rem;
     height: 1.2rem;
     animation: blink-animation 1s steps(5, start) infinite;
+  }
+
+  @media #{$mq-medium} {
+    font-size: $font-size-m;
+    button {
+      &.select {
+        display: inline-block;
+        text-align: center;
+        width: 280px;
+        padding: 1rem;
+      }
+      span {
+        width: 320px;
+        padding: 1rem;
+      }
+    }
   }
 }
 </style>

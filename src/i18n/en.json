@@ -4,6 +4,7 @@
     "description": "An experimental, immersive story for a special person.",
     "author": "Thi Van An TRUONG"
   },
+  "noDesktop": "Scan the <span>QR Code</span> below with your mobile devices to embark this special journey of the <span>Train of Thoughts</span>.",
   "lang": {
     "en": "Use English.",
     "vn": "Dùng Tiếng Việt.",
