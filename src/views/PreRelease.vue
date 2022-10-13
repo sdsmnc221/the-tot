@@ -2262,7 +2262,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .pre-release {
   $btn-enter-size: 90px;
   $dim: 186vmin;
@@ -2434,20 +2434,21 @@ export default {
     font-size: 9.5vmin;
     font-size: clamp(85px, 9.5vmin, 94px);
   }
-}
-.h {
-  fill: #f8a486;
-}
-.i {
-  fill: #f48eb0;
-}
-.j {
-  fill: #fce2db;
-}
-.k {
-  fill: #b370a2;
-}
-.l {
-  fill: #7b4595;
+
+  .h {
+    fill: #f8a486;
+  }
+  .i {
+    fill: #f48eb0;
+  }
+  .j {
+    fill: #fce2db;
+  }
+  .k {
+    fill: #b370a2;
+  }
+  .l {
+    fill: #7b4595;
+  }
 }
 </style>
