@@ -25,8 +25,10 @@ const globalStore = createStore({
   mutations: {
     selectLang(state, payload) {
       state.lang = payload.lang;
-      state.langSelected = true;
       i18n.global.locale = state.lang;
+    },
+    setLocale(state) {
+      state.langSelected = true;
     },
   },
 });

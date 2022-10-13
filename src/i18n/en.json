@@ -6,7 +6,8 @@
   },
   "lang": {
     "en": "Use English.",
-    "vn": "Dùng Tiếng Việt."
+    "vn": "Dùng Tiếng Việt.",
+    "select": "Confirm your choice?"
   },
   "intro": {
     "enter": "Ride",
