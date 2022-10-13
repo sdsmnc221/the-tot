@@ -10,7 +10,8 @@
     "select": "Confirm your choice?"
   },
   "intro": {
-    "enter": "Ride",
+    "enter": "Embark",
+    "circleText": "The Train of Thoughts is coming",
     "content": {
       "p1": "<span>The Train of Thoughts</span> is welcoming all passengers, especially <span>that special person</span>.",
       "p2": "Feel free to take <span>one ticket</span>, and please patiently wait on the platform until the train comes."
@@ -18,7 +19,7 @@
   },
   "scenes": {
     "ticket-machine": {
-      "cta": "Claim your ticket",
+      "cta": "Claim your free ticket",
       "slotA": "Love",
       "slotB": "Trust"
     },

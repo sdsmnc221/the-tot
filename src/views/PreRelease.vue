@@ -32,7 +32,7 @@
           aria-label=""
           textLength="2830"
         >
-          The Train of Thoughts is coming
+          {{ $t("intro.circleText") }}
         </textPath>
       </text>
       <!-- <text class="circles__text circles__text--2">
@@ -2308,6 +2308,7 @@ export default {
     color: $dark-purple;
     padding: 0;
     opacity: 0;
+    text-transform: uppercase;
   }
 
   .enter:focus,
@@ -2336,7 +2337,7 @@ export default {
     display: flex;
     flex-direction: column;
     width: 100vw;
-    padding: 2rem;
+    padding: 3.2rem;
     height: 100vh;
     position: relative;
     justify-content: center;
