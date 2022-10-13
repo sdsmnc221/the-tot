@@ -2220,6 +2220,11 @@
     <div class="content" ref="content">
       <p v-html="$t('intro.content.p1')" />
       <p v-html="$t('intro.content.p2')" />
+      <p class="next">
+        <img alt="" :src="`${$store.state.publicPath}images/left-arrow.svg`" />
+        <button @click="enterXP">Ticket? What Ticket?</button>
+        <img alt="" :src="`${$store.state.publicPath}images/right-arrow.svg`" />
+      </p>
     </div>
     <button class="enter" ref="enter">
       <div class="enter__bg" ref="enterBackground"></div>
@@ -2249,10 +2254,15 @@ export default {
 
     this.intro.start();
   },
+  methods: {
+    enterXP() {
+      this.$store.commit("enterExperience");
+    },
+  },
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .pre-release {
   $btn-enter-size: 90px;
   $dim: 186vmin;
@@ -2358,6 +2368,35 @@ export default {
 
       span {
         color: $majestic-magenta;
+      }
+    }
+
+    .next {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      pointer-events: all;
+
+      button {
+        background-color: $peach-cloud;
+        color: $majestic-magenta;
+        font-size: $font-size-root;
+        margin-top: 1rem;
+        opacity: 1;
+        padding: 0.5rem;
+        margin: 2rem;
+
+        @include pixel-borders(
+          $corner-size: 2,
+          $border-size: 4px,
+          $border-color: $medium-pink
+        );
+      }
+
+      img {
+        width: 2rem;
+        height: 2rem;
+        animation: blink-animation 1s steps(5, start) infinite;
       }
     }
   }

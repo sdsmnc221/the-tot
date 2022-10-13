@@ -20,6 +20,11 @@ const globalStore = createStore({
       lang: navigator.language,
       langSelected: false,
       publicPath: process.env.BASE_URL,
+      enterXP: false,
+      "scenes-ticketMachine-instruction": false,
+      "scenes-ticketMachine-love": false,
+      "scenes-ticketMachine-trust": false,
+      "scenes-ticketMachine-specialCode": false,
     };
   },
   mutations: {
@@ -32,6 +37,15 @@ const globalStore = createStore({
     },
     resize(state, payload) {
       state.isMobile = payload.isMobile;
+    },
+    enterExperience(state) {
+      state.enterXP = true;
+    },
+    showPrompt(state, payload) {
+      state[payload.path] = true;
+    },
+    hidePrompt(state, payload) {
+      state[payload.path] = false;
     },
   },
 });

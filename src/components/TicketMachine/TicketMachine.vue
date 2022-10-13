@@ -1,0 +1,1535 @@
+<template>
+  <div class="ticket-machine" ref="container">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 0 788.75 1135.41"
+      ref="ticketMachine"
+    >
+      <defs>
+        <radialGradient
+          id="e"
+          cx="279.18"
+          cy="302.9"
+          fx="279.18"
+          fy="302.9"
+          r="579.59"
+          gradientTransform="matrix(1, 0, 0, 1, 0, 0)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stop-color="#e5d9e3" />
+          <stop offset="1" stop-color="#a78eac" />
+        </radialGradient>
+        <linearGradient
+          id="f"
+          x1="647.76"
+          y1="1135.41"
+          x2="647.76"
+          y2="0"
+          gradientTransform="matrix(1, 0, 0, 1, 0, 0)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stop-color="#6e5f85" />
+          <stop offset="1" stop-color="#3f1f49" />
+        </linearGradient>
+        <radialGradient
+          id="g"
+          cx="223.21"
+          cy="571.94"
+          fx="223.21"
+          fy="571.94"
+          r="302.22"
+          gradientTransform="matrix(1, 0, 0, 1, 0, 0)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stop-color="#8b8dc2" />
+          <stop offset="1" stop-color="#8a6991" />
+        </radialGradient>
+        <linearGradient
+          id="h"
+          x1="288.05"
+          y1="235.77"
+          x2="288.05"
+          y2="99.32"
+          gradientTransform="matrix(1, 0, 0, 1, 0, 0)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stop-color="#a498c9" />
+          <stop offset="1" stop-color="#541d37" />
+        </linearGradient>
+        <linearGradient
+          id="i"
+          x1="345.04"
+          y1="595.57"
+          x2="345.04"
+          y2="229.65"
+          gradientTransform="matrix(1, 0, 0, 1, 0, 0)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stop-color="#bdbde3" />
+          <stop offset="1" stop-color="#a78eac" />
+        </linearGradient>
+        <radialGradient
+          id="j"
+          cx="277.14"
+          cy="483.12"
+          fx="277.14"
+          fy="483.12"
+          r="204.52"
+          xlink:href="#e"
+        />
+        <radialGradient
+          id="k"
+          cx="290.32"
+          cy="478.41"
+          fx="290.32"
+          fy="478.41"
+          r="191.39"
+          gradientTransform="matrix(1, 0, 0, 1, 0, 0)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset=".02" stop-color="#402743" />
+          <stop offset=".99" stop-color="#2a1032" />
+        </radialGradient>
+        <radialGradient
+          id="l"
+          cx="256.9"
+          cy="743.08"
+          fx="256.9"
+          fy="743.08"
+          r="98.78"
+          gradientTransform="matrix(1, 0, 0, 1, 0, 0)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stop-color="#e5d9e3" />
+          <stop offset="1" stop-color="#b7a2bb" />
+        </radialGradient>
+        <radialGradient
+          id="m"
+          cx="252.52"
+          cy="740.69"
+          fx="252.52"
+          fy="740.69"
+          r="86.04"
+          xlink:href="#g"
+        />
+        <linearGradient
+          id="n"
+          x1="138.85"
+          y1="736.1"
+          x2="366.65"
+          y2="736.1"
+          xlink:href="#h"
+        />
+        <radialGradient
+          id="o"
+          cx="254.59"
+          cy="731.04"
+          fx="254.59"
+          fy="731.04"
+          r="82.51"
+          xlink:href="#g"
+        />
+        <radialGradient
+          id="p"
+          cx="386.01"
+          cy="743.08"
+          fx="386.01"
+          fy="743.08"
+          r="37.26"
+          xlink:href="#g"
+        />
+        <linearGradient
+          id="q"
+          x1="147.14"
+          y1="749.34"
+          x2="404.88"
+          y2="749.34"
+          gradientTransform="matrix(1, 0, 0, 1, 0, 0)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stop-color="#a498c9" />
+          <stop offset="1" stop-color="#541d66" />
+        </linearGradient>
+        <linearGradient
+          id="r"
+          x1=".98"
+          y1="1033.2"
+          x2="512.3"
+          y2="1033.2"
+          gradientTransform="matrix(1, 0, 0, 1, 0, 0)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stop-color="#3f1f49" />
+          <stop offset="1" stop-color="#6e5f85" />
+        </linearGradient>
+        <linearGradient
+          id="s"
+          x1="243.8"
+          y1="1110.36"
+          x2="243.8"
+          y2="1095.94"
+          xlink:href="#f"
+        />
+        <linearGradient
+          id="t"
+          x1="684.03"
+          y1="1135.41"
+          x2="684.03"
+          y2="458.57"
+          gradientTransform="matrix(1, 0, 0, 1, 0, 0)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stop-color="#7b3452" />
+          <stop offset="1" stop-color="#000" />
+        </linearGradient>
+        <linearGradient
+          id="u"
+          x1="619.1"
+          y1="773.69"
+          x2="619.1"
+          y2="0"
+          gradientTransform="matrix(1, 0, 0, 1, 0, 0)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stop-color="#ffc9c7" />
+          <stop offset="1" stop-color="#600041" />
+        </linearGradient>
+        <linearGradient
+          id="v"
+          x1="124.15"
+          y1="1297.3"
+          x2="208.33"
+          y2="1297.3"
+          gradientTransform="translate(0 -2657.71) scale(1 2.4)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stop-color="#ee4887" />
+          <stop offset="1" stop-color="#f48eb0" />
+        </linearGradient>
+        <radialGradient
+          id="w"
+          cx="226.13"
+          cy="374.84"
+          fx="226.13"
+          fy="374.84"
+          r="25.87"
+          gradientTransform="translate(22.63 73.13) scale(.94 .96)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stop-color="#ff884f" />
+          <stop offset="1" stop-color="#ff2745" />
+        </radialGradient>
+        <radialGradient
+          id="x"
+          cx="207.31"
+          cy="429.12"
+          fx="207.31"
+          fy="429.12"
+          r="26.28"
+          gradientTransform="translate(22.63 73.13) scale(.94 .96)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stop-color="#ffa6ff" />
+          <stop offset="1" stop-color="#ec63f9" />
+        </radialGradient>
+        <radialGradient
+          id="y"
+          cx="287.7"
+          cy="374.15"
+          fx="287.7"
+          fy="374.15"
+          r="25.54"
+          gradientTransform="translate(22.63 73.13) scale(.94 .96)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stop-color="#e5d9e3" />
+          <stop offset="1" stop-color="#c1afc4" />
+        </radialGradient>
+        <radialGradient
+          id="a`"
+          cx="268.15"
+          cy="507.03"
+          fx="268.15"
+          fy="507.03"
+          r="47.78"
+          gradientTransform="translate(-266.74 -163.38) scale(2.03 1.45)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stop-color="#f8a486" />
+          <stop offset="1" stop-color="#ee4887" />
+        </radialGradient>
+        <radialGradient
+          id="aa"
+          cx="270.78"
+          cy="428.95"
+          fx="270.78"
+          fy="428.95"
+          r="25.95"
+          xlink:href="#y"
+        />
+        <radialGradient
+          id="ab"
+          cx="351.01"
+          cy="373.43"
+          fx="351.01"
+          fy="373.43"
+          r="26.29"
+          xlink:href="#y"
+        />
+        <radialGradient
+          id="ac"
+          cx="335.22"
+          cy="428.77"
+          fx="335.22"
+          fy="428.77"
+          r="26.21"
+          xlink:href="#y"
+        />
+        <radialGradient
+          id="ad"
+          cx="414.1"
+          fx="414.1"
+          r="25.54"
+          xlink:href="#y"
+        />
+        <radialGradient
+          id="ae"
+          cx="397.19"
+          cy="428.95"
+          fx="397.19"
+          fy="428.95"
+          r="25.95"
+          xlink:href="#y"
+        />
+        <radialGradient
+          id="af"
+          cx="475.67"
+          cy="373.45"
+          fx="475.67"
+          fy="373.45"
+          r="25.22"
+          xlink:href="#y"
+        />
+        <radialGradient
+          id="ag"
+          cx="460.66"
+          cy="428.77"
+          fx="460.66"
+          fy="428.77"
+          r="25.62"
+          xlink:href="#y"
+        />
+        <linearGradient
+          id="ah"
+          x1="57.5"
+          y1="567.77"
+          x2="511.3"
+          y2="567.77"
+          gradientTransform="matrix(1, 0, 0, 1, 0, 0)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stop-color="#2b2b3f" />
+          <stop offset=".97" stop-color="#274472" />
+          <stop offset="1" stop-color="#3d4057" />
+        </linearGradient>
+        <radialGradient
+          id="ai"
+          cx="262.25"
+          cy="963.75"
+          fx="262.25"
+          fy="963.75"
+          r="171.62"
+          gradientTransform="matrix(1, 0, 0, 1, 0, 0)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stop-color="#fff2e3" />
+          <stop offset="1" stop-color="#ecc5c4" />
+        </radialGradient>
+        <linearGradient
+          id="aj"
+          x1="98.69"
+          y1="1028.87"
+          x2="98.69"
+          y2="902.85"
+          gradientTransform="matrix(1, 0, 0, 1, 0, 0)"
+          xlink:href="#v"
+        />
+        <linearGradient
+          id="ak"
+          x1="295.15"
+          y1="1031.14"
+          x2="295.15"
+          y2="982.54"
+          gradientTransform="matrix(1, 0, 0, 1, 0, 0)"
+          xlink:href="#v"
+        />
+        <linearGradient
+          id="al"
+          x1="370.82"
+          y1="1029.9"
+          x2="370.82"
+          y2="981.11"
+          gradientTransform="matrix(1, 0, 0, 1, 0, 0)"
+          xlink:href="#v"
+        />
+        <linearGradient
+          id="am"
+          x1="439.32"
+          y1="1028.07"
+          x2="439.32"
+          y2="981.11"
+          gradientTransform="matrix(1, 0, 0, 1, 0, 0)"
+          xlink:href="#v"
+        />
+        <radialGradient
+          id="an"
+          cx="287.55"
+          cy="55.49"
+          fx="287.55"
+          fy="55.49"
+          r="183.94"
+          xlink:href="#k"
+        />
+        <radialGradient
+          id="ao"
+          cx="432.8"
+          cy="285.54"
+          fx="432.8"
+          fy="285.54"
+          r="57.74"
+          xlink:href="#k"
+        />
+        <radialGradient
+          id="ap"
+          cx="249.61"
+          cy="288.74"
+          fx="249.61"
+          fy="288.74"
+          r="58.43"
+          xlink:href="#k"
+        />
+        <radialGradient
+          id="aq"
+          cx="249.62"
+          cy="311.99"
+          fx="249.62"
+          fy="311.99"
+          r="53.18"
+          xlink:href="#l"
+        />
+        <linearGradient
+          id="ar"
+          x1="193.62"
+          y1="311.91"
+          x2="304.03"
+          y2="311.91"
+          xlink:href="#f"
+        />
+        <radialGradient
+          id="as"
+          cx="420.54"
+          cy="310.75"
+          fx="420.54"
+          fy="310.75"
+          r="61.6"
+          xlink:href="#l"
+        />
+        <linearGradient
+          id="at"
+          x1="376.8"
+          y1="311.91"
+          x2="487.21"
+          y2="311.91"
+          xlink:href="#f"
+        />
+        <radialGradient
+          id="au"
+          cx="358.83"
+          cy="276.96"
+          fx="358.83"
+          fy="276.96"
+          r="24.79"
+          xlink:href="#k"
+        />
+        <radialGradient
+          id="av"
+          cx="345.73"
+          cy="261.96"
+          fx="345.73"
+          fy="261.96"
+          r="4.9"
+          gradientTransform="matrix(1, 0, 0, 1, 0, 0)"
+          xlink:href="#y"
+        />
+        <radialGradient
+          id="aw"
+          cx="359.24"
+          cy="261.96"
+          fx="359.24"
+          fy="261.96"
+          r="4.9"
+          gradientTransform="matrix(1, 0, 0, 1, 0, 0)"
+          xlink:href="#y"
+        />
+        <radialGradient
+          id="ax"
+          cx="371.93"
+          cy="261.96"
+          fx="371.93"
+          fy="261.96"
+          r="4.9"
+          gradientTransform="matrix(1, 0, 0, 1, 0, 0)"
+          xlink:href="#y"
+        />
+        <radialGradient
+          id="ay"
+          cx="345.73"
+          cy="276.96"
+          fx="345.73"
+          fy="276.96"
+          r="4.9"
+          gradientTransform="matrix(1, 0, 0, 1, 0, 0)"
+          xlink:href="#y"
+        />
+        <radialGradient
+          id="b`"
+          cx="359.24"
+          cy="276.96"
+          fx="359.24"
+          fy="276.96"
+          r="4.9"
+          gradientTransform="matrix(1, 0, 0, 1, 0, 0)"
+          xlink:href="#y"
+        />
+        <radialGradient
+          id="ba"
+          cx="371.93"
+          cy="276.96"
+          fx="371.93"
+          fy="276.96"
+          r="4.9"
+          gradientTransform="matrix(1, 0, 0, 1, 0, 0)"
+          xlink:href="#y"
+        />
+        <radialGradient
+          id="bb"
+          cx="345.73"
+          cy="291.95"
+          fx="345.73"
+          fy="291.95"
+          r="4.9"
+          gradientTransform="matrix(1, 0, 0, 1, 0, 0)"
+          xlink:href="#y"
+        />
+        <radialGradient
+          id="bc"
+          cx="359.24"
+          cy="291.95"
+          fx="359.24"
+          fy="291.95"
+          r="4.9"
+          gradientTransform="matrix(1, 0, 0, 1, 0, 0)"
+          xlink:href="#y"
+        />
+        <radialGradient
+          id="bd"
+          cx="371.93"
+          cy="291.95"
+          fx="371.93"
+          fy="291.95"
+          r="4.9"
+          gradientTransform="matrix(1, 0, 0, 1, 0, 0)"
+          xlink:href="#y"
+        />
+        <linearGradient
+          id="be"
+          x1="40.29"
+          y1="240.81"
+          x2="535.8"
+          y2="240.81"
+          gradientTransform="matrix(1, 0, 0, 1, 0, 0)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stop-color="#541d5e" />
+          <stop offset="1" stop-color="#8e83c9" />
+        </linearGradient>
+        <radialGradient
+          id="bf"
+          cx="256.62"
+          cy="-796.98"
+          fx="256.62"
+          fy="-796.98"
+          r="83.91"
+          gradientTransform="translate(-44.19 956.71) scale(1.24 .5)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset=".02" stop-color="#ff6100" />
+          <stop offset=".08" stop-color="#e45700" />
+          <stop offset=".22" stop-color="#a84000" />
+          <stop offset=".37" stop-color="#752c00" />
+          <stop offset=".51" stop-color="#4b1c00" />
+          <stop offset=".64" stop-color="#2a1000" />
+          <stop offset=".77" stop-color="#120700" />
+          <stop offset=".89" stop-color="#040100" />
+          <stop offset=".99" stop-color="#000" />
+        </radialGradient>
+        <radialGradient
+          id="bg"
+          cx="269.74"
+          cy="-1046.57"
+          fx="269.74"
+          fy="-1046.57"
+          r="83.91"
+          gradientTransform="translate(-44.19 956.71) scale(1.24 .5)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset=".02" stop-color="#5c464e" />
+          <stop offset=".13" stop-color="#4a383f" />
+          <stop offset=".37" stop-color="#2a2023" />
+          <stop offset=".6" stop-color="#120e10" />
+          <stop offset=".81" stop-color="#040304" />
+          <stop offset=".99" stop-color="#000" />
+        </radialGradient>
+        <radialGradient
+          id="bh"
+          cx="169.68"
+          cy="59.25"
+          fx="169.68"
+          fy="59.25"
+          r="83.91"
+          gradientTransform="translate(-44.19 411.19) scale(1.24 .8)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset=".02" stop-color="#5c464e" />
+          <stop offset=".05" stop-color="#ee4887" />
+          <stop offset=".07" stop-color="#e44581" />
+          <stop offset=".21" stop-color="#a8335f" />
+          <stop offset=".36" stop-color="#752342" />
+          <stop offset=".5" stop-color="#4b162a" />
+          <stop offset=".64" stop-color="#2a0c18" />
+          <stop offset=".77" stop-color="#12050a" />
+          <stop offset=".89" stop-color="#040102" />
+          <stop offset=".99" stop-color="#000" />
+        </radialGradient>
+        <radialGradient
+          id="bi"
+          cx="640.04"
+          cy="583.2"
+          fx="640.04"
+          fy="583.2"
+          r="196.48"
+          gradientTransform="matrix(1, 0, 0, 1, 0, 0)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stop-color="#c599ba" />
+          <stop offset="1" stop-color="#8966a9" />
+        </radialGradient>
+        <linearGradient
+          id="bj"
+          x1="30.14"
+          y1="836.54"
+          x2="32.12"
+          y2="836.54"
+          xlink:href="#f"
+        />
+        <linearGradient
+          id="bk"
+          x1="485"
+          y1="831.63"
+          x2="507.76"
+          y2="831.63"
+          xlink:href="#f"
+        />
+      </defs>
+      <g class="dx">
+        <g id="a" />
+        <g id="b">
+          <g id="c">
+            <g id="d">
+              <g>
+                <polygon
+                  class="by"
+                  points="0 1135.41 11.32 17.23 563.91 0 506.77 1135.41 0 1135.41"
+                />
+                <polygon
+                  class="ca"
+                  points="563.91 0 788.75 27.47 716.93 1135.41 506.77 1135.41 563.91 0"
+                />
+                <polygon
+                  class="c"
+                  points="31.13 635.23 506.77 630.77 535.8 99.32 40.29 113.17 31.13 635.23"
+                />
+                <polygon
+                  class="do"
+                  points="40.29 113.17 161.39 235.77 528.68 229.65 535.8 99.32 40.29 113.17"
+                />
+                <polygon
+                  class="cd"
+                  points="161.39 235.77 164.11 595.57 508.69 595.57 528.68 229.65 161.39 235.77"
+                />
+                <polygon
+                  class="ce"
+                  points="156.7 340.37 31.13 635.23 506.77 630.77 523.15 331.02 156.7 340.37"
+                />
+                <polygon
+                  class="cf"
+                  points="57.5 616.44 497.49 613.14 509.36 577.22 523.15 340.37 162.24 348.02 57.5 616.44"
+                />
+                <polygon
+                  class="cb"
+                  points="127.37 795.41 127.37 690.75 386.42 690.75 379.83 795.41 127.37 795.41"
+                />
+                <polygon
+                  class="cc"
+                  points="142.53 701.14 138.39 782.88 361.04 782.88 366.65 698.51 142.53 701.14"
+                />
+                <polygon
+                  class="dp"
+                  points="138.85 773.69 361.65 773.69 366.65 698.51 142.53 701.14 138.85 773.69"
+                />
+                <polygon
+                  class="cg"
+                  points="142.53 701.14 152.42 763.57 362.33 763.57 366.65 698.51 142.53 701.14"
+                />
+                <polygon
+                  class="bx"
+                  points="386.42 690.75 392.19 690.75 389.31 795.41 379.83 795.41 386.42 690.75"
+                />
+                <polygon
+                  class="dn"
+                  points="147.14 795.41 161.39 807.93 398.95 807.93 404.88 698.51 392.19 690.75 389.31 795.41 147.14 795.41"
+                />
+                <polygon
+                  class="ci"
+                  points=".98 1038.63 512.3 1025.45 511.97 1032.04 .98 1040.95 .98 1038.63"
+                />
+                <polygon
+                  class="ch"
+                  points="142.53 1110.36 141.54 1098.99 346.05 1095.94 341.76 1110.36 142.53 1110.36"
+                />
+                <polygon
+                  class="dq"
+                  points="607.24 1135.41 668.55 483.12 760.81 458.57 716.93 1135.41 607.24 1135.41"
+                />
+                <polygon
+                  class="dm"
+                  points="563.91 0 709.52 17.79 636.71 719.83 528.68 773.69 563.91 0"
+                />
+                <g>
+                  <polygon
+                    class="bw"
+                    points="176.96 503.05 124.15 503.05 158.14 417.32 208.33 416.59 176.96 503.05"
+                  />
+                  <polygon
+                    class="cl"
+                    points="254.53 450.68 206.18 451.09 218.52 416.45 265.88 415.76 254.53 450.68"
+                  />
+                  <polygon
+                    class="ck"
+                    points="237.51 503.05 187.68 503.05 200.01 468.41 248.86 468.14 237.51 503.05"
+                  />
+                  <polygon
+                    class="cj"
+                    points="313.23 450.17 264.88 450.59 276.02 415.61 323.38 414.92 313.23 450.17"
+                  />
+                  <polygon
+                    class="cn"
+                    points="387.41 588.25 142.95 589.07 148.34 551.45 412.16 553.09 387.41 588.25"
+                  />
+                  <g class="text-special-code" ref="textSpecialCode">
+                    <path
+                      d="M164.47,581.6l.04-3.77,11.32,.11-.04,3.77-11.32-.11Zm11.36-3.67l.04-3.77-7.55-.07,.04-3.77-3.77-.04,.04-3.77,3.77,.04-.04,3.77,7.55,.07-.04,3.77,3.77,.04-.04,3.77-3.77-.04Zm-7.44-11.4l.04-3.77,11.32,.11-.04,3.77-11.32-.11Z"
+                    />
+                    <path
+                      d="M184.87,581.79l.18-18.87,11.32,.11-.04,3.77,3.77,.04-.04,3.77-3.77-.04-.04,3.77-7.55-.07-.07,7.55-3.77-.04Zm3.88-11.29l7.4,.07,.04-3.77-7.4-.07-.04,3.77Z"
+                    />
+                    <path
+                      d="M205.26,581.98l.18-18.87,11.32,.11-.04,3.77-7.55-.07-.04,3.77,7.55,.07-.04,3.77-7.55-.07-.04,3.77,7.55,.07-.04,3.77-11.32-.11Z"
+                    />
+                    <path
+                      d="M225.63,582.17l.04-3.77-3.77-.04,.11-11.32,3.77,.04-.11,11.32,7.55,.07-.04,3.77-7.55-.07Zm7.66-11.25l.04-3.77-7.55-.07,.04-3.77,7.55,.07-.04,3.77,3.77,.04-.04,3.77-3.77-.04Zm-.07,7.55l.04-3.77,3.77,.04-.04,3.77-3.77-.04Z"
+                    />
+                    <path
+                      d="M242.24,582.33l.18-18.87,3.77,.04-.18,18.87-3.77-.04Z"
+                    />
+                    <path
+                      d="M251.32,582.42l.14-15.1,3.77,.04,.04-3.77,7.55,.07-.04,3.77,3.77,.04-.14,15.1-3.77-.04,.07-7.55-7.55-.07-.07,7.55-3.77-.04Zm3.88-11.29l7.55,.07,.03-3.62-7.55-.07-.03,3.62Z"
+                    />
+                    <path
+                      d="M271.7,582.61l.18-18.87,3.77,.04-.14,15.1,7.55,.07-.04,3.77-11.32-.11Z"
+                    />
+                    <path
+                      d="M304.91,582.92l.04-3.77-3.77-.04,.11-11.32,3.77,.04-.11,11.32,7.55,.07-.04,3.77-7.55-.07Zm7.66-11.25l.04-3.77-7.55-.07,.04-3.77,7.55,.07-.04,3.77,3.78,.04-.04,3.77-3.77-.04Zm-.07,7.55l.04-3.77,3.77,.04-.04,3.77-3.78-.04Z"
+                    />
+                    <path
+                      d="M325.3,583.11l.04-3.77-3.77-.04,.11-11.32,3.77,.04,.04-3.77,7.55,.07-.04,3.77,3.78,.04-.11,11.32-3.78-.04-.04,3.77-7.55-.07Zm.04-3.93l7.55,.07,.1-11.02-7.55-.07-.1,11.02Z"
+                    />
+                    <path
+                      d="M341.92,583.27l.18-18.87,11.33,.11-.04,3.77,3.78,.04-.11,11.32-3.78-.04-.04,3.77-11.33-.11Zm3.81-3.74l7.4,.07,.11-11.32-7.4-.07-.11,11.32Z"
+                    />
+                    <path
+                      d="M362.3,583.46l.18-18.87,11.33,.11-.04,3.77-7.55-.07-.04,3.77,7.55,.07-.04,3.77-7.55-.07-.04,3.77,7.55,.07-.04,3.77-11.33-.11Z"
+                    />
+                  </g>
+                  <polygon
+                    class="db"
+                    points="298.01 503.05 248.18 503.05 259.31 468.08 308.16 467.8 298.01 503.05"
+                  />
+                  <polygon
+                    class="dh"
+                    points="371.94 449.67 323.58 450.09 333.52 414.77 384.17 414.04 371.94 449.67"
+                  />
+                  <polygon
+                    class="cp"
+                    points="358.52 503.05 308.68 503.05 318.62 467.74 369.28 467.46 358.52 503.05"
+                  />
+                  <polygon
+                    class="cx"
+                    points="432.52 450.17 384.17 450.59 395.3 415.61 442.67 414.92 432.52 450.17"
+                  />
+                  <polygon
+                    class="df"
+                    points="417.3 503.05 367.46 503.05 378.6 468.08 427.45 467.8 417.3 503.05"
+                  />
+                  <polygon
+                    class="de"
+                    points="491.22 449.67 442.87 450.09 452.81 414.77 500.17 414.09 491.22 449.67"
+                  />
+                  <polygon
+                    class="dg"
+                    points="477.8 503.05 427.96 503.05 437.9 467.74 486.75 467.47 477.8 503.05"
+                  />
+                </g>
+                <polygon
+                  class="dl"
+                  points="95.48 519.09 511.3 543.77 509.36 577.22 497.49 613.14 57.5 616.44 95.48 519.09"
+                />
+                <g>
+                  <polygon
+                    class="cw"
+                    points="31.13 895.6 493.38 889.66 485.99 1026.13 31.13 1037.85 31.13 895.6"
+                  />
+                  <polygon
+                    class="d"
+                    points="39.56 904.37 157.81 902.85 157.81 1025.82 39.56 1028.87 39.56 904.37"
+                  />
+                  <polygon
+                    class="dj"
+                    points="199.88 918.67 434.41 916.28 433.72 904 199.88 904.5 199.88 918.67"
+                  />
+                  <polygon
+                    class="dd"
+                    points="266.53 1031.14 266.53 984.19 323.76 982.54 321.58 1029.72 266.53 1031.14"
+                  />
+                  <polygon
+                    class="cs"
+                    points="341.6 1029.9 341.6 982.94 400.04 981.11 397.3 1028.46 341.6 1029.9"
+                  />
+                  <polygon
+                    class="cu"
+                    points="410.15 1028.07 410.15 981.11 468.49 981.11 465.2 1026.65 410.15 1028.07"
+                  />
+                  <rect
+                    class="ds"
+                    x="199.88"
+                    y="935.64"
+                    width="35.1"
+                    height="9.89"
+                  />
+                  <rect
+                    class="ds"
+                    x="199.88"
+                    y="965.97"
+                    width="53.23"
+                    height="9.89"
+                  />
+                  <rect
+                    class="ds"
+                    x="199.88"
+                    y="950.8"
+                    width="94.76"
+                    height="9.89"
+                  />
+                </g>
+                <polygon
+                  class="cq"
+                  points="31.13 22.73 31.13 99.32 535.34 87.15 543.96 11.65 31.13 22.73"
+                />
+                <polygon
+                  class="cy"
+                  points="358.84 318.66 358.84 252.41 506.76 250.93 506.58 320.14 358.84 318.66"
+                />
+                <g>
+                  <polygon
+                    class="da"
+                    points="175.65 325.58 175.65 252.41 323.57 251.89 323.4 320.14 175.65 325.58"
+                  />
+                  <g class="text-love" ref="textLove">
+                    <path
+                      class="dt"
+                      d="M204.71,287.82v-18.75h3.75v15h7.5v3.75h-11.25Z"
+                    />
+                    <path
+                      class="dt"
+                      d="M227.21,287.82v-3.75h-3.75v-11.25h3.75v-3.75h7.5v3.75h3.75v11.25h-3.75v3.75h-7.5Zm0-3.9h7.5v-10.95h-7.5v10.95Z"
+                    />
+                    <path
+                      class="dt"
+                      d="M253.46,287.82v-3.75h-3.75v-7.5h-3.75v-7.5h3.75v7.5h3.75v7.5h3.75v3.75h-3.75Zm3.75-3.75v-7.5h3.75v7.5h-3.75Zm3.75-7.5v-7.5h3.75v7.5h-3.75Z"
+                    />
+                    <path
+                      class="dt"
+                      d="M272.21,287.82v-18.75h11.25v3.75h-7.5v3.75h7.5v3.75h-7.5v3.75h7.5v3.75h-11.25Z"
+                    />
+                  </g>
+                  <polygon
+                    class="cr"
+                    points="175.65 325.58 175.65 302.68 323.58 298.39 323.37 323.12 175.65 325.58"
+                  />
+                  <polygon
+                    class="ct"
+                    points="193.62 309.76 193.62 316.19 304.03 313.39 304.03 307.62 193.62 309.76"
+                  />
+                </g>
+                <g>
+                  <g class="text-trust" ref="textTrust">
+                    <path
+                      class="dt"
+                      d="M402.58,286.82v-15h-3.75v-3.75h11.25v3.75h-3.75v15h-3.75Z"
+                    />
+                    <path
+                      class="dt"
+                      d="M416.83,286.82v-18.75h11.25v3.75h3.75v3.75h-3.75v7.5h3.75v3.75h-3.75v-3.75h-3.75v-3.75h-3.75v7.5h-3.75Zm3.75-11.25h7.35v-3.75h-7.35v3.75Z"
+                    />
+                    <path
+                      class="dt"
+                      d="M442.33,286.82v-3.75h-3.75v-15h3.75v15h7.5v3.75h-7.5Zm7.5-3.75v-15h3.75v15h-3.75Z"
+                    />
+                    <path
+                      class="dt"
+                      d="M471.58,283.07v-3.75h-7.5v-3.75h-3.75v-3.75h3.75v3.75h7.5v3.75h3.75v3.75h-3.75Zm-11.25,3.75v-3.75h11.25v3.75h-11.25Zm3.75-15v-3.75h11.25v3.75h-11.25Z"
+                    />
+                    <path
+                      class="dt"
+                      d="M485.83,286.82v-15h-3.75v-3.75h11.25v3.75h-3.75v15h-3.75Z"
+                    />
+                  </g>
+                  <polygon
+                    class="cv"
+                    points="334.31 321.36 334.65 302.02 506.77 298.39 506.56 323.12 334.31 321.36"
+                  />
+                  <polygon
+                    class="co"
+                    points="376.8 309.76 376.8 316.19 487.21 315.04 487.21 307.62 376.8 309.76"
+                  />
+                  <polygon
+                    class="dc"
+                    points="334.65 302.02 334.31 251.89 383.35 252.17 381.45 301.04 334.65 302.02"
+                  />
+                  <g class="dr">
+                    <rect
+                      class="bo"
+                      x="340.83"
+                      y="257.06"
+                      width="9.81"
+                      height="9.81"
+                    />
+                    <rect
+                      class="bm"
+                      x="354.34"
+                      y="257.06"
+                      width="9.81"
+                      height="9.81"
+                    />
+                    <rect
+                      class="bl"
+                      x="367.03"
+                      y="257.06"
+                      width="9.81"
+                      height="9.81"
+                    />
+                    <rect
+                      class="bn"
+                      x="340.83"
+                      y="272.05"
+                      width="9.81"
+                      height="9.81"
+                    />
+                    <rect
+                      class="bt"
+                      x="354.34"
+                      y="272.05"
+                      width="9.81"
+                      height="9.81"
+                    />
+                    <rect
+                      class="bq"
+                      x="367.03"
+                      y="272.05"
+                      width="9.81"
+                      height="9.81"
+                    />
+                    <rect
+                      class="bs"
+                      x="340.83"
+                      y="287.05"
+                      width="9.81"
+                      height="9.81"
+                    />
+                    <rect
+                      class="br"
+                      x="354.34"
+                      y="287.05"
+                      width="9.81"
+                      height="9.81"
+                    />
+                    <rect
+                      class="bp"
+                      x="367.03"
+                      y="287.05"
+                      width="9.81"
+                      height="9.81"
+                    />
+                  </g>
+                </g>
+                <polygon
+                  class="di"
+                  points="40.29 113.17 138.85 382.29 520.5 379.4 535.8 99.32 40.29 113.17"
+                />
+                <ellipse
+                  class="du"
+                  cx="274.05"
+                  cy="558.22"
+                  rx="104.06"
+                  ry="41.96"
+                />
+                <ellipse
+                  class="dv"
+                  cx="290.32"
+                  cy="433.42"
+                  rx="104.06"
+                  ry="41.96"
+                />
+                <ellipse
+                  class="dw"
+                  cx="166.24"
+                  cy="458.57"
+                  rx="104.06"
+                  ry="67.1"
+                />
+                <polygon
+                  class="cm"
+                  points="592.65 316.19 716.93 325.58 684.03 850.22 563.15 850.22 592.65 316.19"
+                />
+                <polygon
+                  class="dk"
+                  points="607.24 341.57 591.77 595.57 689.98 596.24 709.52 348.69 607.24 341.57"
+                />
+                <polygon
+                  class="dk"
+                  points="579.24 836.54 583.86 807.93 676.14 807.93 676.14 836.54 579.24 836.54"
+                />
+                <rect
+                  class="bv"
+                  x="30.14"
+                  y="635.23"
+                  width="1.98"
+                  height="402.62"
+                />
+                <polygon
+                  class="bu"
+                  points="486.98 1032.55 485 1032.44 505.78 630.72 507.76 630.83 486.98 1032.55"
+                />
+                <g class="text-claim-ticket" ref="textClaimTicket">
+                  <path
+                    class="dt"
+                    d="M75.9,71.71l-.06-3.75-3.75,.06-.17-11.25,3.75-.06,.17,11.25,7.5-.12,.06,3.75-7.5,.12Zm7.33-11.36l-.06-3.75-7.5,.12-.06-3.75,7.5-.12,.06,3.75,3.75-.06,.06,3.75-3.75,.06Zm.12,7.5l-.06-3.75,3.75-.06,.06,3.75-3.75,.06Z"
+                  />
+                  <path
+                    class="dt"
+                    d="M94.65,71.42l-.29-18.75,3.75-.06,.23,15,7.5-.12,.06,3.75-11.25,.17Z"
+                  />
+                  <path
+                    class="dt"
+                    d="M113.41,71.13l-.23-15,3.75-.06-.06-3.75,7.5-.12,.06,3.75,3.75-.06,.23,15-3.75,.06-.12-7.5-7.5,.12,.12,7.5-3.75,.06Zm3.58-11.31l7.5-.12-.06-3.6-7.5,.12,.06,3.6Z"
+                  />
+                  <path
+                    class="dt"
+                    d="M135.89,70.79l-.29-18.75,3.75-.06,.29,18.75-3.75,.06Z"
+                  />
+                  <path
+                    class="dt"
+                    d="M147.15,70.61l-.29-18.75,3.75-.06,.06,3.75,3.75-.06,.06,3.75,3.75-.06,.06,3.75-3.75,.06-.06-3.75-3.75,.06,.17,11.25-3.75,.06Zm15-.23l-.17-11.25-3.75,.06-.06-3.75,3.75-.06-.06-3.75,3.75-.06,.29,18.75-3.75,.06Z"
+                  />
+                  <path
+                    class="dt"
+                    d="M195.9,69.86l-.17-11.25-3.75,.06-.06-3.75-3.75,.06-.06-3.75,3.75-.06,.06,3.75,3.75-.06,.06,3.75,3.75-.06,.17,11.25-3.75,.06Zm3.58-11.31l-.06-3.75,3.75-.06,.06,3.75-3.75,.06Zm3.69-3.81l-.06-3.75,3.75-.06,.06,3.75-3.75,.06Z"
+                  />
+                  <path
+                    class="dt"
+                    d="M218.4,69.51l-.06-3.75-3.75,.06-.17-11.25,3.75-.06-.06-3.75,7.5-.12,.06,3.75,3.75-.06,.17,11.25-3.75,.06,.06,3.75-7.5,.12Zm-.06-3.9l7.5-.12-.17-10.95-7.5,.12,.17,10.95Z"
+                  />
+                  <path
+                    class="dt"
+                    d="M240.91,69.17l-.06-3.75-3.75,.06-.23-15,3.75-.06,.23,15,7.5-.12,.06,3.75-7.5,.12Zm7.44-3.87l-.23-15,3.75-.06,.23,15-3.75,.06Z"
+                  />
+                  <path
+                    class="dt"
+                    d="M259.67,68.88l-.29-18.75,11.25-.17,.06,3.75,3.75-.06,.06,3.75-3.75,.06,.12,7.5,3.75-.06,.06,3.75-3.75,.06-.06-3.75-3.75,.06-.06-3.75-3.75,.06,.12,7.5-3.75,.06Zm3.58-11.31l7.35-.11-.06-3.75-7.35,.11,.06,3.75Z"
+                  />
+                  <path
+                    class="dt"
+                    d="M297.16,68.3l-.29-18.75,11.25-.17,.06,3.75-7.5,.12,.06,3.75,7.5-.12,.06,3.75-7.5,.12,.12,7.5-3.75,.06Z"
+                  />
+                  <path
+                    class="dt"
+                    d="M315.91,68.01l-.29-18.75,11.25-.17,.06,3.75,3.75-.06,.06,3.75-3.75,.06,.12,7.5,3.75-.06,.06,3.75-3.75,.06-.06-3.75-3.75,.06-.06-3.75-3.75,.06,.12,7.5-3.75,.06Zm3.58-11.31l7.35-.11-.06-3.75-7.35,.11,.06,3.75Z"
+                  />
+                  <path
+                    class="dt"
+                    d="M338.42,67.66l-.29-18.75,11.25-.17,.06,3.75-7.5,.12,.06,3.75,7.5-.12,.06,3.75-7.5,.12,.06,3.75,7.5-.12,.06,3.75-11.25,.17Z"
+                  />
+                  <path
+                    class="dt"
+                    d="M357.15,67.38l-.29-18.75,11.25-.17,.06,3.75-7.5,.12,.06,3.75,7.5-.12,.06,3.75-7.5,.12,.06,3.75,7.5-.12,.06,3.75-11.25,.17Z"
+                  />
+                  <path
+                    class="dt"
+                    d="M394.66,66.8l-.23-15-3.75,.06-.06-3.75,11.25-.17,.06,3.75-3.75,.06,.23,15-3.75,.06Z"
+                  />
+                  <path
+                    class="dt"
+                    d="M409.67,66.57l-.29-18.75,3.75-.06,.29,18.75-3.75,.06Z"
+                  />
+                  <path
+                    class="dt"
+                    d="M424.67,66.33l-.06-3.75-3.75,.06-.17-11.25,3.75-.06,.17,11.25,7.5-.12,.06,3.75-7.5,.12Zm7.33-11.36l-.06-3.75-7.5,.12-.06-3.75,7.5-.12,.06,3.75,3.75-.06,.06,3.75-3.75,.06Zm.12,7.5l-.06-3.75,3.75-.06,.06,3.75-3.75,.06Z"
+                  />
+                  <path
+                    class="dt"
+                    d="M443.43,66.04l-.29-18.75,3.75-.06,.12,7.5,3.75-.06,.06,3.75,3.75-.06,.06,3.75,3.75-.06,.06,3.75-3.75,.06-.06-3.75-3.75,.06-.06-3.75-3.75,.06,.12,7.5-3.75,.06Zm7.33-11.36l-.06-3.75,3.75-.06,.06,3.75-3.75,.06Zm3.69-3.81l-.06-3.75,3.75-.06,.06,3.75-3.75,.06Z"
+                  />
+                  <path
+                    class="dt"
+                    d="M465.91,65.7l-.29-18.75,11.25-.17,.06,3.75-7.5,.12,.06,3.75,7.5-.12,.06,3.75-7.5,.12,.06,3.75,7.5-.12,.06,3.75-11.25,.17Z"
+                  />
+                  <path
+                    class="dt"
+                    d="M488.41,65.35l-.23-15-3.75,.06-.06-3.75,11.25-.17,.06,3.75-3.75,.06,.23,15-3.75,.06Z"
+                  />
+                  <path
+                    class="dt"
+                    d="M503.3,57.62l-.17-11.25,3.75-.06,.17,11.25-3.75,.06Zm.12,7.5l-.06-3.75,3.75-.06,.06,3.75-3.75,.06Z"
+                  />
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </svg>
+    <hot-spot ref="hotspotLove" @click="showPromptLove" />
+    <hot-spot ref="hotspotTrust" @click="showPromptTrust" />
+    <hot-spot ref="hotspotSpecialCode" @click="showPromptSpecialCode" />
+  </div>
+</template>
+
+<script>
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import HotSpot from "@/components/HotSpot/HotSpot.vue";
+
+gsap.registerPlugin(ScrollTrigger);
+
+export default {
+  name: "TicketMachine",
+  components: { HotSpot },
+  data() {
+    return {
+      DOM: {},
+    };
+  },
+  computed: {
+    interactiveTexts() {
+      return ["Love", "Trust", "SpecialCode"];
+    },
+  },
+  mounted() {
+    this.setup();
+  },
+  methods: {
+    setup() {
+      this.DOM = {
+        container: this.$refs.container,
+        ticketMachine: this.$refs.ticketMachine,
+        textClaimTicket: this.$refs.textClaimTicket,
+        textLove: this.$refs.textLove,
+        textTrust: this.$refs.textTrust,
+        textSpecialCode: this.$refs.textSpecialCode,
+        hpLove: this.$refs.hotspotLove.$el,
+        hpTrust: this.$refs.hotspotTrust.$el,
+        hpSpecialCode: this.$refs.hotspotSpecialCode.$el,
+      };
+
+      gsap.set(this.DOM.ticketMachine, {
+        transformOrigin: "50% 50%",
+        scale: 1.2,
+        bottom: "-32vh",
+        x: "100vw",
+        opacity: 0,
+      });
+
+      gsap.to(this.DOM.ticketMachine, {
+        x: "18vw",
+        opacity: 1,
+        bottom: 0,
+        duration: 3.2,
+        ease: "expo.inOut",
+        onComplete: () => {
+          this.interactiveTexts.forEach((text) => {
+            const { top, left, width } =
+              this.DOM[`text${text}`].getBoundingClientRect();
+
+            gsap.to(this.DOM[`hp${text}`], {
+              x: left + width * 0.16 + "px",
+              y: top - 4 + "px",
+              opacity: 0.64,
+              duration: 0.8,
+              ease: "expo",
+              onComplete: () =>
+                this.$store.commit("showPrompt", {
+                  path: "scenes-ticketMachine-instruction",
+                }),
+            });
+          });
+        },
+      });
+    },
+    showPromptLove() {
+      this.$store.commit("showPrompt", {
+        path: "scenes-ticketMachine-love",
+      });
+    },
+    showPromptTrust() {
+      this.$store.commit("showPrompt", {
+        path: "scenes-ticketMachine-trust",
+      });
+    },
+    showPromptSpecialCode() {
+      this.$store.commit("showPrompt", {
+        path: "scenes-ticketMachine-specialCode",
+      });
+    },
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+.ticket-machine {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-image: url("../../assets/images/pre-release-scenes-bg.png");
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  svg {
+    position: absolute;
+    width: 100%;
+    height: 72%;
+
+    .text-claim-ticket {
+      animation: blink-animation 1s steps(5, start) infinite;
+    }
+
+    .text-love,
+    .text-trust,
+    .text-special-code {
+      animation: highlight-animation 1.2s steps(5, start) infinite;
+    }
+  }
+}
+
+.bl {
+  fill: url(#ax);
+}
+.bm {
+  fill: url(#aw);
+}
+.bn {
+  fill: url(#ay);
+}
+.bo {
+  fill: url(#av);
+}
+.bp {
+  fill: url(#bd);
+}
+.bq {
+  fill: url(#ba);
+}
+.br {
+  fill: url(#bc);
+}
+.bs {
+  fill: url(#bb);
+}
+.bt {
+  fill: url(#b`);
+}
+.bu {
+  fill: url(#bk);
+}
+.bv {
+  fill: url(#bj);
+}
+.bw {
+  fill: url(#v);
+}
+.bw,
+.bx,
+.by,
+.c,
+.ca,
+.cb,
+.cc,
+.cd,
+.ce,
+.cf,
+.cg,
+.ch,
+.ci,
+.cj,
+.ck,
+.cl,
+.cm,
+.cn,
+.co,
+.cp,
+.cq,
+.cr,
+.cs,
+.ct,
+.cu,
+.cv,
+.cw,
+.cx,
+.cy,
+.d,
+.da,
+.db,
+.dc,
+.dd,
+.de,
+.df,
+.dg,
+.dh,
+.di,
+.dj,
+.dk,
+.dl,
+.dm,
+.dn,
+.do,
+.dp,
+.dq {
+  fill-rule: evenodd;
+}
+.bx {
+  fill: url(#p);
+}
+.by {
+  fill: url(#e);
+}
+.c {
+  fill: url(#g);
+}
+.ca {
+  fill: url(#f);
+}
+.cb {
+  fill: url(#l);
+}
+.cc {
+  fill: url(#m);
+}
+.cd {
+  fill: url(#i);
+}
+.ce {
+  fill: url(#j);
+}
+.cf {
+  fill: url(#k);
+}
+.cg {
+  fill: url(#o);
+}
+.ch {
+  fill: url(#s);
+}
+.ci {
+  fill: url(#r);
+}
+.cj {
+  fill: url(#y);
+}
+.ck {
+  fill: url(#x);
+}
+.cl {
+  fill: url(#w);
+}
+.cm {
+  fill: url(#bi);
+}
+.cn {
+  fill: url(#a`);
+}
+.co {
+  fill: url(#at);
+}
+.cp {
+  fill: url(#ac);
+}
+.cq {
+  fill: url(#an);
+}
+.cr {
+  fill: url(#aq);
+}
+.cs {
+  fill: url(#al);
+}
+.ct {
+  fill: url(#ar);
+}
+.cu {
+  fill: url(#am);
+}
+.cv {
+  fill: url(#as);
+}
+.cw {
+  fill: url(#ai);
+}
+.cx {
+  fill: url(#ad);
+}
+.cy {
+  fill: url(#ao);
+}
+.d {
+  fill: url(#aj);
+}
+.da {
+  fill: url(#ap);
+}
+.db {
+  fill: url(#aa);
+}
+.dc {
+  fill: url(#au);
+}
+.dd {
+  fill: url(#ak);
+}
+.de {
+  fill: url(#af);
+}
+.de,
+.df,
+.dg,
+.dh,
+.dr {
+  mix-blend-mode: soft-light;
+}
+.df {
+  fill: url(#ae);
+}
+.dg {
+  fill: url(#ag);
+}
+.dh {
+  fill: url(#ab);
+}
+.di {
+  fill: url(#be);
+  opacity: 0.8;
+}
+.di,
+.dj,
+.dk,
+.ds,
+.dm,
+.dn,
+.do,
+.dp {
+  mix-blend-mode: multiply;
+}
+.dt {
+  fill: #ee4887;
+}
+.dj,
+.dk,
+.ds,
+.dp {
+  opacity: 0.99;
+}
+.dj,
+.ds {
+  fill: #ecbdc4;
+}
+.dk {
+  fill: #bdbdde;
+}
+.dl {
+  fill: url(#ah);
+  opacity: 0.71;
+}
+.dl,
+.dq,
+.du,
+.dv,
+.dw {
+  mix-blend-mode: screen;
+}
+.dm {
+  fill: url(#u);
+}
+.dm,
+.dq {
+  opacity: 0.2;
+}
+.dn {
+  fill: url(#q);
+}
+.dn,
+.do {
+  opacity: 0.5;
+}
+.do {
+  fill: url(#h);
+}
+.dp {
+  fill: url(#n);
+}
+.dq {
+  fill: url(#t);
+}
+.du {
+  fill: url(#bf);
+}
+.dv {
+  fill: url(#bg);
+}
+.dw {
+  fill: url(#bh);
+}
+.dx {
+  isolation: isolate;
+}
+</style>

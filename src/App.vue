@@ -24,6 +24,9 @@
     <Transition name="fade">
       <pre-release v-if="$store.state.langSelected && $store.state.isMobile" />
     </Transition>
+    <Transition name="fade">
+      <pre-release-scenes v-if="$store.state.enterXP" />
+    </Transition>
   </main>
 </template>
 
@@ -32,6 +35,7 @@
 import PreRelease from "@/views/PreRelease.vue";
 import LangSelector from "@/views/LangSelector.vue";
 import BlockDesktop from "./views/BlockDesktop.vue";
+import PreReleaseScenes from "./views/PreReleaseScenes.vue";
 
 export default {
   name: "App",
@@ -39,6 +43,7 @@ export default {
     PreRelease,
     LangSelector,
     BlockDesktop,
+    PreReleaseScenes,
   },
   metaInfo() {
     return {

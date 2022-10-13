@@ -12,3 +12,12 @@
     visibility: hidden;
   }
 }
+
+@keyframes highlight-animation {
+  from {
+    filter: blur(1.6px) hue-rotate(0);
+  }
+  to {
+    filter: blur(0) hue-rotate(90deg);
+  }
+}
