@@ -14,5 +14,16 @@
       "p1": "<span>The Train of Thoughts</span> is welcoming all passengers, especially <span>that special person</span>.",
       "p2": "Feel free to take <span>one ticket</span>, and please patiently wait on the platform until the train comes."
     }
+  },
+  "scenes": {
+    "ticket-machine": {
+      "cta": "Claim your ticket",
+      "slotA": "Love",
+      "slotB": "Trust"
+    },
+    "turnstile": {
+      "announce": "Attention please! <br /> <span>The Train of Thoughts</span> will arrive in...",
+      "counter": "{d} day.s, {m} minute.s, {s} second.s"
+    }
   }
 }

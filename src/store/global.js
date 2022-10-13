@@ -1,5 +1,6 @@
 import { stringToBoolean } from "@/utils";
 import { createStore } from "vuex";
+import { i18n } from "../main";
 
 // Create a new store instance.
 const globalStore = createStore({
@@ -25,6 +26,7 @@ const globalStore = createStore({
     selectLang(state, payload) {
       state.lang = payload.lang;
       state.langSelected = true;
+      i18n.global.locale = state.lang;
     },
   },
 });
