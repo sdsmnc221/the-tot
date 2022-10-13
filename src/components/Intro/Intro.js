@@ -76,15 +76,19 @@ export default class Intro {
       .timeline({ onComplete: this.standby.bind(this) })
       .addLabel("start", 0)
       // rotation for all texts
-      .to(this.DOM.enter, {
-        duration: 2.4,
-        ease: "expo.inOut",
-        opacity: 1,
-      })
+      .to(
+        this.DOM.enter,
+        {
+          duration: 0.8,
+          ease: "expo.inOut",
+          opacity: 1,
+        },
+        "start"
+      )
       .to(
         this.DOM.circles,
         {
-          duration: 3.2,
+          duration: 2.4,
           ease: "expo.inOut",
           rotation: (i) => (i % 2 ? 90 : -90),
           stagger: {

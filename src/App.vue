@@ -14,8 +14,12 @@
   <!-- <router-view /> -->
   <!-- <WebGl /> -->
   <main>
-    <lang-selector />
-    <pre-release v-if="$store.state.langSelected" />
+    <Transition>
+      <lang-selector v-if="!$store.state.langSelected" />
+    </Transition>
+    <Transition name="fade">
+      <pre-release v-if="$store.state.langSelected" />
+    </Transition>
   </main>
 </template>
 
