@@ -5,7 +5,7 @@
       <pop-up
         v-if="$store.state['scenes-ticketMachine-instruction']"
         :prompt="$t('scenes.prompts.instruction')"
-        :valid="
+        :confirm="
           () =>
             $store.commit('hidePrompt', {
               path: 'scenes-ticketMachine-instruction',
@@ -17,7 +17,13 @@
       <pop-up
         v-if="$store.state['scenes-ticketMachine-love']"
         :prompt="$t('scenes.prompts.love')"
-        :valid="
+        :confirm="
+          () =>
+            $store.commit('hidePrompt', {
+              path: 'scenes-ticketMachine-love',
+            })
+        "
+        :refuse="
           () =>
             $store.commit('hidePrompt', {
               path: 'scenes-ticketMachine-love',
@@ -29,7 +35,13 @@
       <pop-up
         v-if="$store.state['scenes-ticketMachine-trust']"
         :prompt="$t('scenes.prompts.trust')"
-        :valid="
+        :confirm="
+          () =>
+            $store.commit('hidePrompt', {
+              path: 'scenes-ticketMachine-trust',
+            })
+        "
+        :refuse="
           () =>
             $store.commit('hidePrompt', {
               path: 'scenes-ticketMachine-trust',
@@ -42,7 +54,13 @@
         v-if="$store.state['scenes-ticketMachine-specialCode']"
         :prompt="$t('scenes.prompts.specialCode')"
         with-code-input
-        :valid="
+        :confirm="
+          () =>
+            $store.commit('hidePrompt', {
+              path: 'scenes-ticketMachine-specialCode',
+            })
+        "
+        :refuse="
           () =>
             $store.commit('hidePrompt', {
               path: 'scenes-ticketMachine-specialCode',
