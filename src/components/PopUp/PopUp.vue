@@ -1,9 +1,14 @@
 <template>
   <div class="popup">
-    <p v-html="prompt"></p>
-    <p class="button">
+    <div v-html="prompt"></div>
+    <p class="button" v-if="confirm">
       <img alt="" :src="`${$store.state.publicPath}images/left-arrow.svg`" />
-      <button class="select" @click="valid">OK</button>
+      <button class="select" @click="confirm">OK</button>
+      <img alt="" :src="`${$store.state.publicPath}images/right-arrow.svg`" />
+    </p>
+    <p class="button" v-if="refuse">
+      <img alt="" :src="`${$store.state.publicPath}images/left-arrow.svg`" />
+      <button class="select" @click="refuse">KO</button>
       <img alt="" :src="`${$store.state.publicPath}images/right-arrow.svg`" />
     </p>
   </div>
@@ -17,9 +22,13 @@ export default {
       type: String,
       required: false,
     },
-    valid: {
+    confirm: {
       type: Function,
-      default: () => {},
+      default: null,
+    },
+    refuse: {
+      type: Function,
+      default: null,
     },
   },
 };
@@ -38,23 +47,38 @@ export default {
   align-items: center;
   padding: 0 3.2rem;
 
+  div {
+    color: $peach-cloud;
+    text-align: left;
+    font-size: $font-size-m;
+    margin-bottom: 2rem;
+
+    span {
+      color: $majestic-magenta;
+
+      &.blink {
+        display: inline-block;
+        animation: highlight-animation 1s steps(5, start) infinite,
+          blink-animation 3.2s linear infinite;
+        border: 2px dotted $peach-cloud;
+        border-radius: 32px;
+        box-shadow: 0 0 32px 16px $majestic-magenta;
+        padding: 0.25rem 0.5rem;
+        font-size: $font-size-s;
+        line-height: $font-size-l;
+      }
+    }
+  }
+
   p {
     color: $peach-cloud;
     text-align: left;
     font-size: $font-size-m;
 
-    &:not(:first-child) {
-      margin-top: 1rem;
-    }
-
     .button {
       display: flex;
       justify-content: center;
       align-items: center;
-    }
-
-    span {
-      color: $majestic-magenta;
     }
   }
 
@@ -66,7 +90,7 @@ export default {
     margin-top: 1rem;
     opacity: 1;
     padding: 0.5rem;
-    margin: 2rem;
+    margin: 1rem;
     width: 32vw;
 
     @include pixel-borders(

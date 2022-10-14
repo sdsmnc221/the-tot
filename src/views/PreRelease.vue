@@ -2222,7 +2222,7 @@
       <p v-html="$t('intro.content.p2')" />
       <p class="next">
         <img alt="" :src="`${$store.state.publicPath}images/left-arrow.svg`" />
-        <button @click="enterXP">Ticket? What Ticket?</button>
+        <button @click="enterXP">{{ $t("intro.content.cta") }}</button>
         <img alt="" :src="`${$store.state.publicPath}images/right-arrow.svg`" />
       </p>
     </div>

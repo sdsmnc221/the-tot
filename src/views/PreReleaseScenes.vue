@@ -4,8 +4,8 @@
     <Transition name="fade">
       <pop-up
         v-if="$store.state['scenes-ticketMachine-instruction']"
-        prompt="Click on the blinking hotspot to claim your free ticket!"
-        :valid="
+        :prompt="$t('scenes.prompts.instruction')"
+        :confirm="
           () =>
             $store.commit('hidePrompt', {
               path: 'scenes-ticketMachine-instruction',
@@ -16,8 +16,14 @@
     <Transition name="fade">
       <pop-up
         v-if="$store.state['scenes-ticketMachine-love']"
-        prompt="Do you wanna claim your ticket with your <span>abundance</span> of <span>love</span>?"
-        :valid="
+        :prompt="$t('scenes.prompts.love')"
+        :confirm="
+          () =>
+            $store.commit('hidePrompt', {
+              path: 'scenes-ticketMachine-love',
+            })
+        "
+        :refuse="
           () =>
             $store.commit('hidePrompt', {
               path: 'scenes-ticketMachine-love',
@@ -28,8 +34,14 @@
     <Transition name="fade">
       <pop-up
         v-if="$store.state['scenes-ticketMachine-trust']"
-        prompt="Do you wanna claim your ticket with your <span>abundance</span> of <span>trust</span>?"
-        :valid="
+        :prompt="$t('scenes.prompts.trust')"
+        :confirm="
+          () =>
+            $store.commit('hidePrompt', {
+              path: 'scenes-ticketMachine-trust',
+            })
+        "
+        :refuse="
           () =>
             $store.commit('hidePrompt', {
               path: 'scenes-ticketMachine-trust',
@@ -40,9 +52,15 @@
     <Transition name="fade">
       <pop-up
         v-if="$store.state['scenes-ticketMachine-specialCode']"
-        prompt="<p>Are you that special person that the <span>Train of Thoughts</span> is meant for?</p><p>Enter your <span>special code</span> to confirm!</p>"
+        :prompt="$t('scenes.prompts.specialCode')"
         with-code-input
-        :valid="
+        :confirm="
+          () =>
+            $store.commit('hidePrompt', {
+              path: 'scenes-ticketMachine-specialCode',
+            })
+        "
+        :refuse="
           () =>
             $store.commit('hidePrompt', {
               path: 'scenes-ticketMachine-specialCode',
