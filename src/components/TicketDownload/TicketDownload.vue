@@ -292,7 +292,6 @@ export default {
       const defs = document.createElement("defs");
       const styles = document.createElement("style");
       styles.innerHTML = `
-      }
       .d {
         fill: #f48eb0;
       }
@@ -309,8 +308,8 @@ export default {
         fill: #7b4595;
       }
       .g {
-        font-family: VT323-Regular, VT323, sans-serif;
-        font-size: 65.83px;
+        font-family: VT323-Regular, VT323, Arial, sans-serif;
+        font-size: 44px;
         letter-spacing: 0.08em;
       }
       .h,
@@ -374,13 +373,14 @@ export default {
       const ctx = canvas.getContext("2d");
       canvas.width = width;
       canvas.height = height;
+      canvas.fillStyle = "white";
       ctx.fillRect(0, 0, width, height); // fill the color on the canvas
 
       const image = new Image();
       image.onload = () => {
         ctx.drawImage(image, 0, 0, width, height);
 
-        this.triggerDownload(canvas, "the-tot-ticket.png"); // download the image when the image has been loaded onto the canvas
+        this.triggerDownload(canvas, `the-tot-ticket-[${this.ticketID}].png`); // download the image when the image has been loaded onto the canvas
       };
       image.src = b64Start + svg64;
     },

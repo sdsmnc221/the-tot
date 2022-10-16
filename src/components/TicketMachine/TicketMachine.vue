@@ -1756,7 +1756,7 @@ export default {
             y: "-16vh",
             scale: 2,
             bottom: 0,
-            duration: 4.8,
+            duration: 3.6,
             ease: "expo.inOut",
           },
           "start+=0.8"
@@ -1765,7 +1765,7 @@ export default {
           this.DOM.ticketMachine,
           {
             scale: 2.4,
-            duration: 4.8,
+            duration: 3.6,
             x: "44vw",
             y: "-23vh",
             ease: "expo.inOut",
@@ -1782,16 +1782,8 @@ export default {
             bottom: 0,
             duration: 0.8,
             ease: "expo",
-            onComplete: () =>
-              setTimeout(
-                () =>
-                  this.$store.commit("showPrompt", {
-                    path: "scenes-ticketMachine-instruction",
-                  }),
-                1200
-              ),
           },
-          "start+=4.8"
+          "start+=3.6"
         )
         .play();
     },
@@ -1813,7 +1805,7 @@ export default {
     showSceneTicket() {
       setTimeout(() => {
         this.$store.commit("showPrompt", { path: "scenes-ticketDownload" });
-      }, 1600);
+      }, 1200);
     },
   },
 };
