@@ -81,7 +81,11 @@ export default {
     };
   },
   mounted() {
-    window.addEventListener("resize", () => {
+    this.resize();
+    window.addEventListener("resize", this.resize.bind(this));
+  },
+  methods: {
+    resize() {
       this.$store.commit("resize", {
         isMobile:
           /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
@@ -89,7 +93,7 @@ export default {
           ),
         isLandscape: window.innerWidth > window.innerHeight,
       });
-    });
+    },
   },
 };
 </script>

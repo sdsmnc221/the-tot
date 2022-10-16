@@ -12,7 +12,7 @@ const globalStore = createStore({
           navigator.userAgent
         ),
       isFullscreen: false,
-      isLandscape: true,
+      isLandscape: false,
       lang: navigator.language,
       langSelected: false,
       publicPath: process.env.BASE_URL,

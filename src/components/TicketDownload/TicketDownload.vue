@@ -292,6 +292,7 @@ export default {
       const defs = document.createElement("defs");
       const styles = document.createElement("style");
       styles.innerHTML = `
+      }
       .d {
         fill: #f48eb0;
       }
@@ -308,7 +309,7 @@ export default {
         fill: #7b4595;
       }
       .g {
-        font-family: VT323-Regular, VT323;
+        font-family: VT323-Regular, VT323, sans-serif;
         font-size: 65.83px;
         letter-spacing: 0.08em;
       }
