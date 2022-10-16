@@ -1778,7 +1778,7 @@ export default {
             opacity: 0.64,
             scale: 3.2,
             x: "45vw",
-            y: "-34vh",
+            y: "-30vh",
             bottom: 0,
             duration: 0.8,
             ease: "expo",
@@ -1810,7 +1810,11 @@ export default {
         path: "scenes-ticketMachine-specialCode",
       });
     },
-    showSceneTicket() {},
+    showSceneTicket() {
+      setTimeout(() => {
+        this.$store.commit("showPrompt", { path: "scenes-ticketDownload" });
+      }, 1600);
+    },
   },
 };
 </script>

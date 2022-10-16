@@ -72,15 +72,19 @@
         "
       />
     </Transition>
+    <Transition name="fade">
+      <ticket-download v-if="$store.state['scenes-ticketDownload']" />
+    </Transition>
   </div>
 </template>
 
 <script>
 import TicketMachine from "@/components/TicketMachine/TicketMachine.vue";
+import TicketDownload from "@/components/TicketDownload/TicketDownload.vue";
 import PopUp from "@/components/PopUp/PopUp.vue";
 export default {
   name: "PreReleaseScenes",
-  components: { TicketMachine, PopUp },
+  components: { TicketMachine, TicketDownload, PopUp },
 };
 </script>
 
@@ -91,5 +95,11 @@ export default {
   justify-content: center;
   align-items: center;
   background-color: $dark-purple;
+
+  > * {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
 }
 </style>
