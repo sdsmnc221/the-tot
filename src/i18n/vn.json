@@ -19,6 +19,7 @@
       "cta": "Ticket? What ticket?"
     }
   },
+  "hotspot": "Click here!",
   "scenes": {
     "ticket-machine": {
       "cta": "Xin mời lựa chọn tấm vé miễn phí",

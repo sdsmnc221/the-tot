@@ -1631,7 +1631,7 @@
     <hot-spot ref="hotspotLove" @click="showPromptLove" />
     <hot-spot ref="hotspotTrust" @click="showPromptTrust" />
     <hot-spot ref="hotspotSpecialCode" @click="showPromptSpecialCode" />
-    <hot-spot ref="hotspotTicket" @click="showSceneTicket" />
+    <hot-spot ref="hotspotTicket" @click="showSceneTicket" display-text />
   </div>
 </template>
 
@@ -1779,7 +1779,6 @@ export default {
             scale: 3.2,
             x: "45vw",
             y: "63vh",
-            borderWidth: 1,
             duration: 0.8,
             ease: "expo",
             onComplete: () =>

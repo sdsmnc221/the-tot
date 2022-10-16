@@ -1,10 +1,18 @@
 <template>
-  <div class="hotspot"></div>
+  <div class="hotspot">
+    <p v-if="displayText">Click here</p>
+  </div>
 </template>
 
 <script>
 export default {
   name: "HotSpot",
+  props: {
+    displayText: {
+      type: Boolean,
+      default: false,
+    },
+  },
 };
 </script>
 
@@ -21,5 +29,10 @@ export default {
   border-radius: 48px;
   position: fixed;
   mix-blend-mode: hard-light;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: $font-size-s/2;
+  color: $peach-cloud;
 }
 </style>
