@@ -373,7 +373,7 @@ export default {
       const ctx = canvas.getContext("2d");
       canvas.width = width;
       canvas.height = height;
-      canvas.fillStyle = "white";
+      ctx.fillStyle = "#270F28";
       ctx.fillRect(0, 0, width, height); // fill the color on the canvas
 
       const image = new Image();
