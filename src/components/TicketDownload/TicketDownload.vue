@@ -428,7 +428,7 @@ export default {
     button {
       background-color: $peach-cloud;
       color: $majestic-magenta;
-      font-size: $font-size-l;
+      font-size: $font-size-m;
       text-transform: uppercase;
       margin-top: 1rem;
       opacity: 1;
