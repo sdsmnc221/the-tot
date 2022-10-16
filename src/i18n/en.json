@@ -10,9 +10,10 @@
     "vn": "Dùng Tiếng Việt.",
     "select": "Confirm your choice?"
   },
+  "hotspot": "Click here!",
   "intro": {
     "enter": "Embark",
-    "circleText": "The Train of Thoughts is coming",
+    "circleText": "The Train of Thoughts is coming ",
     "content": {
       "p1": "<span>The Train of Thoughts</span> is welcoming all passengers, especially <span>that special person</span>.",
       "p2": "Feel free to take <span>one ticket</span>, and please patiently wait on the platform until the train comes.",
@@ -21,7 +22,7 @@
   },
   "scenes": {
     "ticket-machine": {
-      "cta": "Claim your free ticket",
+      "cta": "Claim your free ticket!",
       "slotA": "Love",
       "slotB": "Trust"
     },
@@ -31,9 +32,13 @@
     },
     "prompts": {
       "instruction": "Click on the <span class=\"blink\">blinking hotspot</span> to claim your <span>free ticket</span>!",
-      "love": "Do you wanna claim your ticket with your <span>abundance</span> of <span>love</span>?",
-      "trust": "Do you wanna claim your ticket with your <span>abundance</span> of <span>trust</span>?",
-      "specialCode": "<p>Are you that special person that the <span>Train of Thoughts</span> is meant for?</p><p>Enter your <span>special code</span> to confirm!</p>"
-    }
+      "love": "Do you wanna claim your ticket by <span>giving away</span> an <span>abundance</span> of <span>your love</span>?",
+      "trust": "Do you wanna claim your ticket by <span>giving away</span> ab <span>abundance</span> of <span>your trust</span>?",
+      "specialCode": "<p>Are you <span>that special passenger</span> that the <span>Train of Thoughts</span> is meant for?</p><p>Enter your <span>special code</span> to confirm!</p>",
+      "ok": "OK",
+      "confirm": "Yes",
+      "refuse": "No"
+    },
+    "ticket-download": "Save the ticket!"
   }
 }

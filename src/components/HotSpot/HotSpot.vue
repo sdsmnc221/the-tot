@@ -1,6 +1,6 @@
 <template>
   <div class="hotspot">
-    <p v-if="displayText">Click here</p>
+    <p v-if="displayText">{{ $t("hotspot") }}</p>
   </div>
 </template>
 

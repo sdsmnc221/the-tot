@@ -3,12 +3,16 @@
     <div v-html="prompt"></div>
     <p class="button" v-if="confirm">
       <img alt="" :src="`${$store.state.publicPath}images/left-arrow.svg`" />
-      <button class="select" @click="confirm">OK</button>
+      <button class="select" @click="confirm">
+        {{ !!refuse ? $t("scenes.prompts.confirm") : $t("scenes.prompts.ok") }}
+      </button>
       <img alt="" :src="`${$store.state.publicPath}images/right-arrow.svg`" />
     </p>
     <p class="button" v-if="refuse">
       <img alt="" :src="`${$store.state.publicPath}images/left-arrow.svg`" />
-      <button class="select" @click="refuse">KO</button>
+      <button class="select" @click="refuse">
+        {{ $t("scenes.prompts.refuse") }}
+      </button>
       <img alt="" :src="`${$store.state.publicPath}images/right-arrow.svg`" />
     </p>
   </div>

@@ -10,19 +10,19 @@
     "vn": "Dùng Tiếng Việt.",
     "select": "OK với lựa chọn này?"
   },
+  "hotspot": "Click vô đây!",
   "intro": {
     "enter": "Khởi Hành",
     "circleText": "Đoàn tàu Tâm Tưởng đang tiến vào ga ",
     "content": {
       "p1": "<span>Đoàn tàu Tâm tưởng</span> chào mừng các vị hành khách, xin đặc biệt chào mừng <span>người khách đặc biệt</span>.",
       "p2": "Xin mời các vị lấy <span>một vé</span> và vui lòng kiên nhẫn đợi trên sân ga cho tới khi tàu đến.",
-      "cta": "Ticket? What ticket?"
+      "cta": "Hở? Vé gì cơ?"
     }
   },
-  "hotspot": "Click here!",
   "scenes": {
     "ticket-machine": {
-      "cta": "Xin mời lựa chọn tấm vé miễn phí",
+      "cta": "Lấy vé miễn phí!",
       "slotA": "Tình yêu",
       "slotB": "Niềm tin"
     },
@@ -31,10 +31,14 @@
       "counter": "{d} ngày, {m} phút, {s} giây"
     },
     "prompts": {
-      "instruction": "Click on the <span class=\"blink\">blinking hotspot</span> to claim your <span>free ticket</span>!",
-      "love": "Do you wanna claim your ticket with your <span>abundance</span> of <span>love</span>?",
-      "trust": "Do you wanna claim your ticket with your <span>abundance</span> of <span>trust</span>?",
-      "specialCode": "<p>Are you that special person that the <span>Train of Thoughts</span> is meant for?</p><p>Enter your <span>special code</span> to confirm!</p>"
-    }
+      "instruction": "Click vào <span class=\"blink\">một điểm nhấp nháy</span> để nhận <span>vé miễn phí</span>!",
+      "love": "Bạn có muốn nhận lấy một tấm vé bằng cách <span>cho đi</span> thật nhiều <span>tình yêu thương</span> không?",
+      "trust": "Bạn có muốn nhận lấy một tấm vé bằng cách <span>cho đi</span> thật nhiều <span>niềm tin yêu</span> không?",
+      "specialCode": "<p>Liệu bạn có phải là <span>vị hành khách đặc biệt</span> mà <span>Đoàn tàu Tâm Tưởng</span> đang chờ đợi không?</p><p>Hãy nhập <span>mã OTP đặc biệt</span> nếu bạn đúng là người ấy!</p>",
+      "ok": "OK",
+      "confirm": "Có",
+      "refuse": "Không"
+    },
+    "ticket-download": "Tải vé về!"
   }
 }

@@ -249,7 +249,7 @@
 
     <p class="button" ref="saveBtn">
       <img alt="" :src="`${$store.state.publicPath}images/left-arrow.svg`" />
-      <button @click="save">Save the ticket</button>
+      <button @click="save">{{ $t("scenes.ticket-download") }}</button>
       <img alt="" :src="`${$store.state.publicPath}images/right-arrow.svg`" />
     </p>
     <canvas ref="canvas" />
@@ -428,7 +428,7 @@ export default {
     button {
       background-color: $peach-cloud;
       color: $majestic-magenta;
-      font-size: $font-size-m;
+      font-size: $font-size-l;
       text-transform: uppercase;
       margin-top: 1rem;
       opacity: 1;
