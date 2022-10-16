@@ -1631,15 +1631,13 @@
     <hot-spot ref="hotspotLove" @click="showPromptLove" />
     <hot-spot ref="hotspotTrust" @click="showPromptTrust" />
     <hot-spot ref="hotspotSpecialCode" @click="showPromptSpecialCode" />
+    <hot-spot ref="hotspotTicket" @click="showSceneTicket" />
   </div>
 </template>
 
 <script>
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HotSpot from "@/components/HotSpot/HotSpot.vue";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default {
   name: "TicketMachine",
@@ -1670,6 +1668,7 @@ export default {
         hpLove: this.$refs.hotspotLove.$el,
         hpTrust: this.$refs.hotspotTrust.$el,
         hpSpecialCode: this.$refs.hotspotSpecialCode.$el,
+        hpTicket: this.$refs.hotspotTicket.$el,
       };
 
       gsap.set(this.DOM.ticketMachine, {
@@ -1740,6 +1739,62 @@ export default {
         )
         .play();
     },
+    zoomIn() {
+      gsap
+        .timeline({})
+        .addLabel("start", 0)
+        .to([this.DOM.hpLove, this.DOM.hpTrust, this.DOM.hpSpecialCode], {
+          opacity: 0,
+          visibility: "hidden",
+          ease: "expo.inOut",
+          duration: 1.6,
+        })
+        .to(
+          this.DOM.imgTicketMachine,
+          {
+            x: "32vw",
+            y: "-16vh",
+            scale: 2,
+            bottom: 0,
+            duration: 4.8,
+            ease: "expo.inOut",
+          },
+          "start+=0.8"
+        )
+        .to(
+          this.DOM.ticketMachine,
+          {
+            scale: 2.4,
+            duration: 4.8,
+            x: "44vw",
+            y: "-23vh",
+            ease: "expo.inOut",
+          },
+          "start+=0.8"
+        )
+        .to(
+          this.DOM.hpTicket,
+          {
+            opacity: 0.64,
+            scale: 3.2,
+            x: "45vw",
+            y: "63vh",
+            borderWidth: 1,
+            duration: 0.8,
+            ease: "expo",
+            onComplete: () =>
+              setTimeout(
+                () =>
+                  this.$store.commit("showPrompt", {
+                    path: "scenes-ticketMachine-instruction",
+                  }),
+                1200
+              ),
+          },
+          "start+=4.8"
+        )
+        .play();
+    },
     showPromptLove() {
       this.$store.commit("showPrompt", {
         path: "scenes-ticketMachine-love",
@@ -1755,6 +1810,7 @@ export default {
         path: "scenes-ticketMachine-specialCode",
       });
     },
+    showSceneTicket() {},
   },
 };
 </script>

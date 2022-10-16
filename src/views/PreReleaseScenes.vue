@@ -1,6 +1,6 @@
 <template>
   <div class="pre-release-scenes">
-    <ticket-machine />
+    <ticket-machine ref="tm" />
     <Transition name="fade">
       <pop-up
         v-if="$store.state['scenes-ticketMachine-instruction']"
@@ -18,10 +18,12 @@
         v-if="$store.state['scenes-ticketMachine-love']"
         :prompt="$t('scenes.prompts.love')"
         :confirm="
-          () =>
+          () => {
             $store.commit('hidePrompt', {
               path: 'scenes-ticketMachine-love',
-            })
+            });
+            $refs.tm.zoomIn();
+          }
         "
         :refuse="
           () =>
@@ -36,10 +38,12 @@
         v-if="$store.state['scenes-ticketMachine-trust']"
         :prompt="$t('scenes.prompts.trust')"
         :confirm="
-          () =>
+          () => {
             $store.commit('hidePrompt', {
               path: 'scenes-ticketMachine-trust',
-            })
+            });
+            $refs.tm.zoomIn();
+          }
         "
         :refuse="
           () =>

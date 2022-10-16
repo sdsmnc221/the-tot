@@ -46,6 +46,7 @@ export default {
   justify-content: center;
   align-items: center;
   padding: 0 3.2rem;
+  z-index: 99;
 
   div {
     color: $peach-cloud;
