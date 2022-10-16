@@ -1778,7 +1778,8 @@ export default {
             opacity: 0.64,
             scale: 3.2,
             x: "45vw",
-            y: "63vh",
+            y: "-34vh",
+            bottom: 0,
             duration: 0.8,
             ease: "expo",
             onComplete: () =>
