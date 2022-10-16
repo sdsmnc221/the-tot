@@ -2226,7 +2226,7 @@
         <img alt="" :src="`${$store.state.publicPath}images/right-arrow.svg`" />
       </p>
     </div>
-    <button class="enter" ref="enter">
+    <button class="enter" ref="enter" @click="embark">
       <div class="enter__bg" ref="enterBackground"></div>
       <span class="enter__text">{{ $t("intro.enter") }}</span>
     </button>
@@ -2253,10 +2253,17 @@ export default {
     );
 
     this.intro.start();
+
+    this.$store.commit("playSound", { soundName: "train" });
   },
   methods: {
     enterXP() {
+      this.$store.commit("playSound", { soundName: "click" });
       this.$store.commit("enterExperience");
+    },
+    embark() {
+      this.$store.commit("stopSound", { soundName: "train" });
+      this.$store.commit("playSound", { soundName: "trainHorn" });
     },
   },
 };

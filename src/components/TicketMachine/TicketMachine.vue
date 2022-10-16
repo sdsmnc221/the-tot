@@ -1654,6 +1654,7 @@ export default {
   },
   mounted() {
     this.setup();
+    this.$store.commit("playSound", { soundName: "tmEnter" });
   },
   methods: {
     setup() {
@@ -1741,7 +1742,13 @@ export default {
     },
     zoomIn() {
       gsap
-        .timeline({})
+        .timeline({
+          onStart: () =>
+            setTimeout(
+              () => this.$store.commit("playSound", { soundName: "tmZoomIn" }),
+              2400
+            ),
+        })
         .addLabel("start", 0)
         .to([this.DOM.hpLove, this.DOM.hpTrust, this.DOM.hpSpecialCode], {
           opacity: 0,
@@ -1769,6 +1776,8 @@ export default {
             x: "44vw",
             y: "-23vh",
             ease: "expo.inOut",
+            onComplete: () =>
+              this.$store.commit("playSound", { soundName: "tmTicket" }),
           },
           "start+=0.8"
         )

@@ -22,6 +22,7 @@ const globalStore = createStore({
       "scenes-ticketMachine-trust": false,
       "scenes-ticketMachine-specialCode": false,
       "scenes-ticketDownload": false,
+      sounds: {},
     };
   },
   mutations: {
@@ -44,6 +45,15 @@ const globalStore = createStore({
     },
     hidePrompt(state, payload) {
       state[payload.path] = false;
+    },
+    soundsLoaded(state, payload) {
+      state.sounds = payload.sounds;
+    },
+    playSound(state, payload) {
+      state.sounds[payload.soundName].play();
+    },
+    stopSound(state, payload) {
+      state.sounds[payload.soundName].stop();
     },
   },
 });

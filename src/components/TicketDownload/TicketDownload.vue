@@ -348,6 +348,14 @@ export default {
             opacity: 1,
             duration: 3.2,
             ease: "expo.inOut",
+            onStart: () =>
+              setTimeout(
+                () =>
+                  this.$store.commit("playSound", {
+                    soundName: "tmShowTicket",
+                  }),
+                1200
+              ),
           },
           "start"
         )
@@ -358,12 +366,22 @@ export default {
             opacity: 1,
             duration: 1.6,
             ease: "expo.inOut",
+            onStart: () =>
+              setTimeout(
+                () =>
+                  this.$store.commit("playSound", {
+                    soundName: "tmDownloadPop",
+                  }),
+                640
+              ),
           },
           ">"
         )
         .play();
     },
     save() {
+      this.$store.commit("playSound", { soundName: "click" });
+
       const xml = new XMLSerializer().serializeToString(this.DOM.ticket);
       const svg64 = btoa(xml);
       const b64Start = "data:image/svg+xml;base64,";

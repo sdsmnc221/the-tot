@@ -59,6 +59,8 @@ import LangSelector from "@/views/LangSelector.vue";
 import BlockDesktop from "@/views/BlockDesktop.vue";
 import BlockLandscape from "@/views/BlockLandscape.vue";
 import PreReleaseScenes from "@/views/PreReleaseScenes.vue";
+import Resources from "./webgl/Utils/Resources";
+import sources from "@/webgl/sources";
 
 export default {
   name: "App",
@@ -80,9 +82,17 @@ export default {
       link: [{ rel: "icon", href: "/favicon.ico" }],
     };
   },
+  data() {
+    return {
+      resources: new Resources(sources),
+    };
+  },
   mounted() {
     this.resize();
     window.addEventListener("resize", this.resize.bind(this));
+    window.addEventListener("resourcesIsReady", () =>
+      this.$store.commit("soundsLoaded", { sounds: this.resources.audios })
+    );
   },
   methods: {
     resize() {

@@ -3,14 +3,14 @@
     <div v-html="prompt"></div>
     <p class="button" v-if="confirm">
       <img alt="" :src="`${$store.state.publicPath}images/left-arrow.svg`" />
-      <button class="select" @click="confirm">
+      <button class="select" @click="_confirm">
         {{ !!refuse ? $t("scenes.prompts.confirm") : $t("scenes.prompts.ok") }}
       </button>
       <img alt="" :src="`${$store.state.publicPath}images/right-arrow.svg`" />
     </p>
     <p class="button" v-if="refuse">
       <img alt="" :src="`${$store.state.publicPath}images/left-arrow.svg`" />
-      <button class="select" @click="refuse">
+      <button class="select" @click="_refuse">
         {{ $t("scenes.prompts.refuse") }}
       </button>
       <img alt="" :src="`${$store.state.publicPath}images/right-arrow.svg`" />
@@ -33,6 +33,16 @@ export default {
     refuse: {
       type: Function,
       default: null,
+    },
+  },
+  methods: {
+    _confirm() {
+      this.confirm();
+      this.$store.commit("playSound", { soundName: "click" });
+    },
+    _refuse() {
+      this.refuse();
+      this.$store.commit("playSound", { soundName: "click" });
     },
   },
 };

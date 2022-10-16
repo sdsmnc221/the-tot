@@ -1,5 +1,8 @@
 <template>
-  <div class="hotspot">
+  <div
+    class="hotspot"
+    @click="$store.commit('playSound', { soundName: 'click' })"
+  >
     <p v-if="displayText">{{ $t("hotspot") }}</p>
   </div>
 </template>

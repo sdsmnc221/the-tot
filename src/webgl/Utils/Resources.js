@@ -4,6 +4,8 @@ import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import bidello from "bidello";
 import { Howl } from "howler";
 
+const resourcesIsReady = new CustomEvent("resourcesIsReady");
+
 export default class Resources {
   constructor(sources) {
     this.sources = sources;
@@ -68,6 +70,7 @@ export default class Resources {
 
     if (this.loaded === this.toLoad) {
       bidello.trigger({ name: "resourcesIsReady" });
+      window.dispatchEvent(resourcesIsReady);
     }
   }
 
