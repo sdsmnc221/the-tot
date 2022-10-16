@@ -8,13 +8,9 @@ const globalStore = createStore({
     return {
       isDebug: stringToBoolean(process.env.VUE_APP_DEBUG),
       isMobile:
-        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
           navigator.userAgent
         ),
-      showFullscreenBtn: !(
-        /iPhone|iPad|iPod/i.test(navigator.userAgent) ||
-        /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
-      ),
       isFullscreen: false,
       isLandscape: true,
       lang: navigator.language,
@@ -25,6 +21,7 @@ const globalStore = createStore({
       "scenes-ticketMachine-love": false,
       "scenes-ticketMachine-trust": false,
       "scenes-ticketMachine-specialCode": false,
+      "scenes-ticketDownload": false,
     };
   },
   mutations: {
@@ -37,6 +34,7 @@ const globalStore = createStore({
     },
     resize(state, payload) {
       state.isMobile = payload.isMobile;
+      state.isLandscape = payload.isLandscape;
     },
     enterExperience(state) {
       state.enterXP = true;

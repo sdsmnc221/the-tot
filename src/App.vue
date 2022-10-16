@@ -22,10 +22,32 @@
       />
     </Transition>
     <Transition name="fade">
-      <pre-release v-if="$store.state.langSelected && $store.state.isMobile" />
+      <pre-release
+        v-if="
+          $store.state.langSelected &&
+          $store.state.isMobile &&
+          !$store.state.isLandscape
+        "
+      />
     </Transition>
     <Transition name="fade">
-      <pre-release-scenes v-if="$store.state.enterXP" />
+      <pre-release-scenes
+        v-if="
+          $store.state.langSelected &&
+          $store.state.isMobile &&
+          !$store.state.isLandscape &&
+          $store.state.enterXP
+        "
+      />
+    </Transition>
+    <Transition name="fade">
+      <block-landscape
+        v-if="
+          $store.state.langSelected &&
+          $store.state.isMobile &&
+          $store.state.isLandscape
+        "
+      />
     </Transition>
   </main>
 </template>
@@ -34,8 +56,9 @@
 // import WebGl from "@/components/WebGl";
 import PreRelease from "@/views/PreRelease.vue";
 import LangSelector from "@/views/LangSelector.vue";
-import BlockDesktop from "./views/BlockDesktop.vue";
-import PreReleaseScenes from "./views/PreReleaseScenes.vue";
+import BlockDesktop from "@/views/BlockDesktop.vue";
+import BlockLandscape from "@/views/BlockLandscape.vue";
+import PreReleaseScenes from "@/views/PreReleaseScenes.vue";
 
 export default {
   name: "App",
@@ -43,6 +66,7 @@ export default {
     PreRelease,
     LangSelector,
     BlockDesktop,
+    BlockLandscape,
     PreReleaseScenes,
   },
   metaInfo() {
@@ -60,9 +84,10 @@ export default {
     window.addEventListener("resize", () => {
       this.$store.commit("resize", {
         isMobile:
-          /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
             navigator.userAgent
           ),
+        isLandscape: window.innerWidth > window.innerHeight,
       });
     });
   },

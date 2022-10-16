@@ -1,23 +1,23 @@
 <template>
-  <div class="block-desktop">
-    <p v-html="$t('noDesktop')" />
+  <div class="block-landscape">
+    <p v-html="$t('noLandscape')" />
   </div>
 </template>
 
 <script>
 export default {
-  name: "BlockDesktop",
+  name: "BlockLandscape",
 };
 </script>
 
 <style lang="scss">
-.block-desktop {
+.block-landscape {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: $dark-purple;
-  padding: 16rem;
+  padding: 3.2rem;
   z-index: 999;
 
   p {
