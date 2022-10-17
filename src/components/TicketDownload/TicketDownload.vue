@@ -264,13 +264,7 @@ export default {
   data() {
     return {
       ticketID: this.makeid(),
-      DOM: {
-        container: this.$refs.container,
-        ticket: this.$refs.ticket,
-        button: this.$refs.saveBtn,
-        download: this.$refs.download,
-        canvas: this.$refs.canvas,
-      },
+      DOM: {},
     };
   },
   mounted() {
@@ -328,6 +322,7 @@ export default {
         ticket: this.$refs.ticket,
         canvas: this.$refs.canvas,
         button: this.$refs.saveBtn,
+        download: this.$refs.download,
       };
 
       this.prepareSVG();
@@ -401,6 +396,10 @@ export default {
         this.triggerDownload(canvas, `the-tot-ticket-[${this.ticketID}].png`); // download the image when the image has been loaded onto the canvas
       };
       image.src = b64Start + svg64;
+
+      setTimeout(() => {
+        this.$store.commit("showPrompt", { path: "scenes-turnstiles" });
+      }, 3600);
     },
     triggerDownload(canvas, imageName) {
       canvas.toBlob((blob) => {

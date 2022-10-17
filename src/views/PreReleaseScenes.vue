@@ -75,16 +75,20 @@
     <Transition name="fade">
       <ticket-download v-if="$store.state['scenes-ticketDownload']" />
     </Transition>
+    <Transition name="fade">
+      <turnstiles-announcement v-if="$store.state['scenes-turnstiles']" />
+    </Transition>
   </div>
 </template>
 
 <script>
 import TicketMachine from "@/components/TicketMachine/TicketMachine.vue";
 import TicketDownload from "@/components/TicketDownload/TicketDownload.vue";
+import TurnstilesAnnouncement from "@/components/TurnstilesAnnouncement/TurnstilesAnnouncement.vue";
 import PopUp from "@/components/PopUp/PopUp.vue";
 export default {
   name: "PreReleaseScenes",
-  components: { TicketMachine, TicketDownload, PopUp },
+  components: { TicketMachine, TicketDownload, TurnstilesAnnouncement, PopUp },
 };
 </script>
 
