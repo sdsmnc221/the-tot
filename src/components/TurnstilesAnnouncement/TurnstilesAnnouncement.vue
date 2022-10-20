@@ -882,7 +882,7 @@ export default {
           {
             opacity: 0.64,
             scale: 1.8,
-            x: "19vw",
+            x: "16vw",
             y: "-33vh",
             bottom: 0,
             duration: 0.8,

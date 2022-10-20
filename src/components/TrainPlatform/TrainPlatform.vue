@@ -160,7 +160,7 @@ export default {
     display: block;
     position: absolute;
     bottom: 0;
-    width: auto;
+    width: 100%;
     height: 100%;
   }
 

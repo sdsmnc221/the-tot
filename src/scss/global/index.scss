@@ -16,7 +16,7 @@ html {
   body {
     overflow: hidden;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     min-height: 100vh;
     min-height: -webkit-fill-available;
     background-color: $dark-purple;
@@ -26,5 +26,16 @@ html {
     font-size: $font-size-root;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    &::after {
+      position: absolute;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+      z-index: -1; // hide images
+      content: url("../../assets/images/pre-release-scenes-bg.png")
+        url("../../assets/images/grain.jpeg")
+        url("../../assets/images/ticket-machine-en.svg"); // load images
+    }
   }
 }

@@ -12,49 +12,47 @@
   </metainfo>
   <!-- <router-view /> -->
   <!-- <WebGl /> -->
-  <Transition name="fade">
-    <main v-if="!$store.state.loading">
-      <Transition name="fade">
-        <lang-selector v-if="!$store.state.langSelected" />
-      </Transition>
-      <Transition name="fade">
-        <block-desktop
-          v-if="$store.state.langSelected && !$store.state.isMobile"
-        />
-      </Transition>
-      <Transition name="fade">
-        <pre-release
-          v-if="
-            $store.state.langSelected &&
-            $store.state.isMobile &&
-            !$store.state.isLandscape
-          "
-        />
-      </Transition>
-      <Transition name="fade">
-        <pre-release-scenes
-          v-if="
-            $store.state.langSelected &&
-            $store.state.isMobile &&
-            !$store.state.isLandscape &&
-            $store.state.enterXP
-          "
-        />
-      </Transition>
-      <Transition name="fade">
-        <block-landscape
-          v-if="
-            $store.state.langSelected &&
-            $store.state.isMobile &&
-            $store.state.isLandscape
-          "
-        />
-      </Transition>
-    </main>
-    <main v-else>
-      <pre-load />
-    </main>
-  </Transition>
+  <main>
+    <Transition name="fade">
+      <lang-selector v-if="!$store.state.langSelected" />
+    </Transition>
+    <Transition name="fade">
+      <block-desktop
+        v-if="$store.state.langSelected && !$store.state.isMobile"
+      />
+    </Transition>
+    <Transition name="fade">
+      <pre-release
+        v-if="
+          $store.state.langSelected &&
+          $store.state.isMobile &&
+          !$store.state.isLandscape
+        "
+      />
+    </Transition>
+    <Transition name="fade">
+      <pre-release-scenes
+        v-if="
+          $store.state.langSelected &&
+          $store.state.isMobile &&
+          !$store.state.isLandscape &&
+          $store.state.enterXP
+        "
+      />
+    </Transition>
+    <Transition name="fade">
+      <block-landscape
+        v-if="
+          $store.state.langSelected &&
+          $store.state.isMobile &&
+          $store.state.isLandscape
+        "
+      />
+    </Transition>
+    <Transition name="fade">
+      <pre-load v-if="$store.state.loading" />
+    </Transition>
+  </main>
 </template>
 
 <script>
@@ -123,6 +121,9 @@ export default {
   main {
     width: 100%;
     height: 100%;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    position: relative;
 
     > div {
       position: absolute;
@@ -130,6 +131,23 @@ export default {
       left: 0;
       width: 100%;
       height: 100%;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(('./assets/images/grain.jpeg'));
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: 99;
+      pointer-events: none;
+      mix-blend-mode: multiply;
     }
   }
 }
