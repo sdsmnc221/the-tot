@@ -839,7 +839,7 @@ export default {
                   this.$store.commit("playSound", {
                     soundName: `attentionPlease${this.$i18n.locale}`,
                   }),
-                2000
+                3200
               ),
           },
           "start"

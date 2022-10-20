@@ -80,7 +80,7 @@ export default [
     type: "audio",
     path: "sounds/platform-crowd.mp3",
     options: {
-      volume: 0.6,
+      volume: 0.8,
       loop: true,
     },
   },
