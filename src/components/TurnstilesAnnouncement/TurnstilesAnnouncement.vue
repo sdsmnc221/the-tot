@@ -14,10 +14,29 @@
       :src="`${$store.state.publicPath}images/turnstiles-${$i18n.locale}.png`"
       rel="preload"
     />
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 750 1337.07"
+      class="svg-ticketslot"
+    >
+      <defs>
+        <clipPath id="a">
+          <path style="fill: none" d="M0 0h750v1334H0z" />
+        </clipPath>
+      </defs>
+      <g style="clip-path: url(#a)" ref="ticketSlot">
+        <path
+          style="fill: #bbb8e3; fill-rule: evenodd"
+          d="m481.49 814.22 1.74 34.49h85.67l2.92-34.49h-90.33z"
+        />
+      </g>
+    </svg>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
       viewBox="0 0 1167.03 1337.07"
+      class="svg"
     >
       <defs>
         <linearGradient
@@ -808,13 +827,25 @@ export default {
         turnstiles: this.$refs.turnstiles,
         announcement: this.$refs.announcement,
         crowd: this.$refs.crowd,
+        ticketSlot: this.$refs.ticketSlot,
         hpTicket: this.$refs.hotspotTicket.$el,
       };
 
-      gsap.set([this.DOM.turnstiles, this.DOM.crowd, this.DOM.announcement], {
-        transformOrigin: "50% 50%",
-        opacity: 0,
-      });
+      gsap.set(
+        [
+          this.DOM.turnstiles,
+          this.DOM.crowd,
+          this.DOM.announcement,
+          this.DOM.ticketSlot,
+        ],
+        {
+          transformOrigin: "50% 50%",
+          opacity: 0,
+        }
+      );
+
+      const { width, height, left, top } =
+        this.DOM.ticketSlot.getBoundingClientRect();
 
       gsap
         .timeline()
@@ -881,10 +912,13 @@ export default {
           this.DOM.hpTicket,
           {
             opacity: 0.64,
-            scale: 1.8,
-            x: "16vw",
-            y: "-33vh",
-            bottom: 0,
+            scale: 2,
+            width: width + "px",
+            height: height + "px",
+            x: left + "px",
+            y: top + "px",
+            left: 0,
+            top: 0,
             duration: 0.8,
             ease: "expo",
           },
@@ -898,7 +932,7 @@ export default {
           soundName: `platformCrowd`,
         });
         this.$store.commit("showPrompt", { path: "scenes-platform" });
-      }, 1200);
+      }, 3600);
     },
   },
 };
@@ -942,13 +976,24 @@ export default {
     animation: blink-animation 1s steps(5, start) infinite;
   }
 
-  svg {
+  .svg {
     display: block;
     width: 160vw;
     height: auto;
     left: -20vw;
     top: 0;
     position: absolute;
+  }
+
+  .svg-ticketslot {
+    display: block;
+    width: 100%;
+    height: 100%;
+    left: -6px;
+    top: 50px;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
   }
 
   .bo {
