@@ -41,7 +41,26 @@
       "specialCode": "<p>Are you <span>that special passenger</span> that the <span>Train of Thoughts</span> is meant for?</p><p>Enter your <span>special code</span> to confirm!</p>",
       "ok": "OK",
       "confirm": "Yes",
-      "refuse": "No"
+      "refuse": "No",
+      "talk": {
+        "introduction": "Hello, this old man here is the one and only Ticket Controller for this Train of Thoughts!",
+        "counter": "The Train will arrive soon enough, just patiently wait on the platform for a while.",
+        "ask-away": "If you have any question, ask away! This old man will help ease your thoughts!",
+        "qa": {
+          "q1": {
+            "question": "The <span>Train of Thoughts</span>?",
+            "answer": "___"
+          },
+          "q2": {
+            "question": "<span>Riding</span> the Train?",
+            "answer": "___"
+          },
+          "q3": {
+            "question": "<span>When</span> will the Train <span>arrive</span>?",
+            "answer": "___"
+          }
+        }
+      }
     },
     "ticket-download": "Save the ticket!",
     "platform": {

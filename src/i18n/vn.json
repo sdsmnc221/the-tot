@@ -41,7 +41,26 @@
       "specialCode": "<p>Liệu bạn có phải là <span>vị hành khách đặc biệt</span> mà <span>Đoàn tàu Tâm Tưởng</span> đang chờ đợi không?</p><p>Hãy nhập <span>mã OTP đặc biệt</span> nếu bạn đúng là người ấy!</p>",
       "ok": "OK",
       "confirm": "Có",
-      "refuse": "Không"
+      "refuse": "Không",
+      "talk": {
+        "introduction": "Hello, this old man here is the one and only Ticket Controller for this Train of Thoughts!",
+        "counter": "The Train will arrive soon enough, just patiently wait on the platform for a while.",
+        "ask-away": "If you have any question, ask away! This old man will help ease your thoughts!",
+        "qa": {
+          "q1": {
+            "question": "The <span>Train of Thoughts</span>?",
+            "answer": "___"
+          },
+          "q2": {
+            "question": "<span>Riding</span> the Train?",
+            "answer": "___"
+          },
+          "q3": {
+            "question": "<span>When</span> will the Train <span>arrive</span>?",
+            "answer": "___"
+          }
+        }
+      }
     },
     "ticket-download": "Tải vé về!",
     "platform": {

@@ -27,6 +27,7 @@ const globalStore = createStore({
       "scenes-ticketDownload": false,
       "scenes-turnstiles": false,
       "scenes-platform": false,
+      "scenes-qa": false,
       sounds: {},
     };
   },
