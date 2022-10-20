@@ -78,6 +78,9 @@
     <Transition name="fade">
       <turnstiles-announcement v-if="$store.state['scenes-turnstiles']" />
     </Transition>
+    <Transition name="fade">
+      <train-platform v-if="$store.state['scenes-platform']" />
+    </Transition>
   </div>
 </template>
 
@@ -86,9 +89,16 @@ import TicketMachine from "@/components/TicketMachine/TicketMachine.vue";
 import TicketDownload from "@/components/TicketDownload/TicketDownload.vue";
 import TurnstilesAnnouncement from "@/components/TurnstilesAnnouncement/TurnstilesAnnouncement.vue";
 import PopUp from "@/components/PopUp/PopUp.vue";
+import TrainPlatform from "@/components/TrainPlatform/TrainPlatform.vue";
 export default {
   name: "PreReleaseScenes",
-  components: { TicketMachine, TicketDownload, TurnstilesAnnouncement, PopUp },
+  components: {
+    TicketMachine,
+    TicketDownload,
+    TurnstilesAnnouncement,
+    TrainPlatform,
+    PopUp,
+  },
 };
 </script>
 

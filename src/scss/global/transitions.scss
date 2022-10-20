@@ -21,3 +21,11 @@
     filter: blur(0) hue-rotate(90deg);
   }
 }
+@keyframes hue-animation {
+  from {
+    filter: hue-rotate(0);
+  }
+  to {
+    filter: hue-rotate(180deg);
+  }
+}

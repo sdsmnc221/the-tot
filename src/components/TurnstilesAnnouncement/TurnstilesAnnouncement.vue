@@ -1,6 +1,12 @@
 <template>
   <div class="turnstiles-announcement" ref="container">
     <img
+      class="img-crowd"
+      ref="crowd"
+      alt=""
+      :src="`${$store.state.publicPath}images/crowd.png`"
+    />
+    <img
       class="img-tursntiles"
       ref="turnstiles"
       alt=""
@@ -773,14 +779,18 @@
         </g>
       </g>
     </svg>
+
+    <hot-spot ref="hotspotTicket" @click="showScenePlatform" display-text />
   </div>
 </template>
 
 <script>
 import { gsap } from "gsap";
+import HotSpot from "@/components/HotSpot/HotSpot.vue";
 
 export default {
   name: "TurnstilesAnnouncement",
+  components: { HotSpot },
   data() {
     return {
       DOM: {},
@@ -795,9 +805,11 @@ export default {
         container: this.$refs.container,
         turnstiles: this.$refs.turnstiles,
         announcement: this.$refs.announcement,
+        crowd: this.$refs.crowd,
+        hpTicket: this.$refs.hotspotTicket.$el,
       };
 
-      gsap.set([this.DOM.turnstiles, this.DOM.announcement], {
+      gsap.set([this.DOM.turnstiles, this.DOM.crowd, this.DOM.announcement], {
         transformOrigin: "50% 50%",
         opacity: 0,
       });
@@ -844,7 +856,47 @@ export default {
           },
           "start"
         )
+        .to(
+          this.DOM.crowd,
+          {
+            yPercent: -50,
+            opacity: 0.64,
+            duration: 2.8,
+            ease: "expo.inOut",
+            delay: 0.6,
+            onStart: () =>
+              setTimeout(
+                () =>
+                  this.$store.commit("playSound", {
+                    soundName: `attentionPlease${this.$i18n.locale}`,
+                  }),
+                3200
+              ),
+          },
+          "start"
+        )
+        .to(
+          this.DOM.hpTicket,
+          {
+            opacity: 0.64,
+            scale: 1.8,
+            x: "19vw",
+            y: "-33vh",
+            bottom: 0,
+            duration: 0.8,
+            ease: "expo",
+          },
+          "start+=4.8"
+        )
         .play();
+    },
+    showScenePlatform() {
+      setTimeout(() => {
+        this.$store.commit("stopSound", {
+          soundName: `platformCrowd`,
+        });
+        this.$store.commit("showPrompt", { path: "scenes-platform" });
+      }, 1200);
     },
   },
 };
@@ -871,6 +923,17 @@ export default {
     bottom: 0;
     left: -28vw;
     height: 56vh;
+  }
+
+  .img-crowd {
+    transform: translate(-50%, -200%);
+    width: 128vw;
+    top: 35%;
+    left: 55%;
+    position: absolute;
+    mix-blend-mode: multiply;
+    opacity: 0.64;
+    animation: hue-animation 3.2s linear both infinite;
   }
 
   .text-announcement {
