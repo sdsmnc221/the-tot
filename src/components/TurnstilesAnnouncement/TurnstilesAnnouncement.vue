@@ -17,19 +17,23 @@
 
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 750 1337.07"
-      class="svg-ticketslot"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 0 1167.03 824.49"
+      ref="ticketSlotContainer"
     >
-      <defs>
-        <clipPath id="a">
-          <path style="fill: none" d="M0 0h750v1334H0z" />
-        </clipPath>
-      </defs>
-      <g style="clip-path: url(#a)" ref="ticketSlot">
-        <path
-          style="fill: #bbb8e3; fill-rule: evenodd"
-          d="m481.49 814.22 1.74 34.49h85.67l2.92-34.49h-90.33z"
-        />
+      <g class="cf">
+        <g id="a" />
+        <g id="b">
+          <g id="c">
+            <g>
+              <polygon
+                ref="ticketSlot"
+                class="ca"
+                points="613.52 303.74 615.26 338.23 700.93 338.23 703.85 303.74 613.52 303.74"
+              />
+            </g>
+          </g>
+        </g>
       </g>
     </svg>
     <svg
@@ -801,7 +805,12 @@
       </g>
     </svg>
 
-    <hot-spot ref="hotspotTicket" @click="showScenePlatform" display-text />
+    <hot-spot
+      ref="hotspotTicket"
+      @click="showScenePlatform"
+      display-text
+      with-background
+    />
   </div>
 </template>
 
@@ -815,6 +824,7 @@ export default {
   data() {
     return {
       DOM: {},
+      hp: { x: 0, y: 0, w: 0, h: 0 },
     };
   },
   mounted() {
@@ -828,6 +838,7 @@ export default {
         announcement: this.$refs.announcement,
         crowd: this.$refs.crowd,
         ticketSlot: this.$refs.ticketSlot,
+        ticketSlotContainer: this.$refs.ticketSlotContainer,
         hpTicket: this.$refs.hotspotTicket.$el,
       };
 
@@ -844,8 +855,47 @@ export default {
         }
       );
 
-      const { width, height, left, top } =
-        this.DOM.ticketSlot.getBoundingClientRect();
+      const img = new Image();
+      img.src = this.DOM.turnstiles.src;
+      img.onload = () => {
+        const {
+          height: h,
+          left: l,
+          top: t,
+        } = this.DOM.turnstiles.getBoundingClientRect();
+        const ratioH = h / img.height;
+        const w = ratioH * img.width;
+
+        gsap.set(this.DOM.ticketSlotContainer, {
+          width: w + "px",
+          height: h + "px",
+          left: l + "px",
+          top: t + "px",
+          bottom: 0,
+          position: "absolute",
+          pointerEvents: "none",
+        });
+
+        const { width, height, left, top } =
+          this.DOM.ticketSlot.getBoundingClientRect();
+        this.w = width;
+        this.h = height;
+        this.x = left;
+        this.y = top;
+        gsap.to(this.DOM.hpTicket, {
+          opacity: 0.64,
+          scale: 2,
+          width: this.w + "px",
+          height: this.h + "px",
+          x: this.x + "px",
+          y: this.y + "px",
+          left: 0,
+          top: 0,
+          duration: 0.8,
+          delay: 4.8,
+          ease: "expo",
+        });
+      };
 
       gsap
         .timeline()
@@ -907,22 +957,6 @@ export default {
               ),
           },
           "start"
-        )
-        .to(
-          this.DOM.hpTicket,
-          {
-            opacity: 0.64,
-            scale: 2.8,
-            width: width + "px",
-            height: height + "px",
-            x: left - width / 2 + "px",
-            y: top - height / 2 + "px",
-            left: 0,
-            top: 0,
-            duration: 0.8,
-            ease: "expo",
-          },
-          "start+=4.8"
         )
         .play();
     },
@@ -1007,6 +1041,7 @@ export default {
     bottom: 0;
     left: -28vw;
     height: 56vh;
+    width: auto;
   }
 
   .img-crowd {
@@ -1031,17 +1066,6 @@ export default {
     left: -20vw;
     top: 0;
     position: absolute;
-  }
-
-  .svg-ticketslot {
-    display: block;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
   }
 
   .bo {

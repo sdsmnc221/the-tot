@@ -1,6 +1,7 @@
 <template>
   <div
     class="hotspot"
+    :class="{ '--with-bg': withBackground }"
     @click="$store.commit('playSound', { soundName: 'click' })"
   >
     <p v-if="displayText">{{ $t("hotspot") }}</p>
@@ -12,6 +13,10 @@ export default {
   name: "HotSpot",
   props: {
     displayText: {
+      type: Boolean,
+      default: false,
+    },
+    withBackground: {
       type: Boolean,
       default: false,
     },
@@ -37,5 +42,9 @@ export default {
   align-items: center;
   font-size: $font-size-s/2;
   color: $peach-cloud;
+
+  &.--with-bg {
+    background-color: transparentize($peach-cloud, 0.64);
+  }
 }
 </style>
