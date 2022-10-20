@@ -75,4 +75,22 @@ export default [
     type: "audio",
     path: "sounds/tm-download-pop.mp3",
   },
+  {
+    name: "platformCrowd",
+    type: "audio",
+    path: "sounds/platform-crowd.mp3",
+    options: {
+      volume: 0.6,
+    },
+  },
+  {
+    name: "attentionPleaseen",
+    type: "audio",
+    path: "sounds/attention-please-en.mp3",
+  },
+  {
+    name: "attentionPleasevn",
+    type: "audio",
+    path: "sounds/attention-please-vn.mp3",
+  },
 ];

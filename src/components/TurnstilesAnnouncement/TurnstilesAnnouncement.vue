@@ -2,15 +2,14 @@
   <div class="turnstiles-announcement" ref="container">
     <img
       class="img-tursntiles"
-      ref="imgTT"
+      ref="turnstiles"
       alt=""
-      :src="`${$store.state.publicPath}images/turnstiles.png`"
+      :src="`${$store.state.publicPath}images/turnstiles-${$i18n.locale}.png`"
     />
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
       viewBox="0 0 1167.03 1337.07"
-      refs="turnstiles"
     >
       <defs>
         <linearGradient
@@ -551,7 +550,7 @@
           xlink:href="#at"
         />
       </defs>
-      <g class="ek">
+      <g class="ek" ref="announcement">
         <g id="a" />
         <g id="b">
           <g id="c">
@@ -744,15 +743,26 @@
                   </g>
                 </g>
               </g>
-              <text class="ed" transform="translate(222.46 180.34)">
+              <text
+                :class="`${
+                  $i18n.locale === 'en' ? 'ed' : 'vn'
+                } text-announcement`"
+                transform="translate(222.46 180.34)"
+              >
                 <tspan class="el">
-                  <tspan x="0" y="0">Attention Please !</tspan>
+                  <tspan :x="$i18n.locale === 'en' ? 0 : 12" y="0">
+                    {{ $t("scenes.turnstiles.announcement.p1") }}
+                  </tspan>
+                </tspan>
+                <tspan class="ej middle">
+                  <tspan :x="$i18n.locale === 'en' ? 2.56 : 72" y="48">
+                    {{ $t("scenes.turnstiles.announcement.p2") }}
+                  </tspan>
                 </tspan>
                 <tspan class="ej">
-                  <tspan x="2.56" y="48">the train of thoughts</tspan>
-                </tspan>
-                <tspan class="ej">
-                  <tspan x="76.56" y="96">will arrive in...</tspan>
+                  <tspan x="76.56" y="96">
+                    {{ $t("scenes.turnstiles.announcement.p3") }}
+                  </tspan>
                 </tspan>
               </text>
             </g>
@@ -781,54 +791,57 @@ export default {
       this.DOM = {
         container: this.$refs.container,
         turnstiles: this.$refs.turnstiles,
+        announcement: this.$refs.announcement,
       };
 
-      gsap.set(this.turnstiles, {
-        // opacity: 0,
-        // scale: 0,
+      gsap.set([this.DOM.turnstiles, this.DOM.announcement], {
         transformOrigin: "50% 50%",
+        opacity: 0,
       });
 
-      // gsap
-      //   .timeline()
-      //   .addLabel("start", 0)
-      //   .to(
-      //     this.DOM.ticket,
-      //     {
-      //       scale: 1,
-      //       opacity: 1,
-      //       duration: 3.2,
-      //       ease: "expo.inOut",
-      //       onStart: () =>
-      //         setTimeout(
-      //           () =>
-      //             this.$store.commit("playSound", {
-      //               soundName: "tmShowTicket",
-      //             }),
-      //           1200
-      //         ),
-      //     },
-      //     "start"
-      //   )
-      //   .to(
-      //     this.DOM.button,
-      //     {
-      //       scale: 1,
-      //       opacity: 1,
-      //       duration: 1.6,
-      //       ease: "expo.inOut",
-      //       onStart: () =>
-      //         setTimeout(
-      //           () =>
-      //             this.$store.commit("playSound", {
-      //               soundName: "tmDownloadPop",
-      //             }),
-      //           640
-      //         ),
-      //     },
-      //     ">"
-      //   )
-      //   .play();
+      gsap
+        .timeline()
+        .addLabel("start", 0)
+        .to(
+          this.DOM.announcement,
+          {
+            y: 0,
+            opacity: 1,
+            startAt: { y: "-100vh", opacity: 0 },
+            duration: 3.2,
+            ease: "expo.inOut",
+            onStart: () =>
+              setTimeout(
+                () =>
+                  this.$store.commit("playSound", {
+                    soundName: "platformCrowd",
+                  }),
+                1200
+              ),
+          },
+          "start"
+        )
+        .to(
+          this.DOM.turnstiles,
+          {
+            y: 0,
+            opacity: 1,
+            duration: 3.2,
+            startAt: { y: "100vh", opacity: 1 },
+            ease: "expo.inOut",
+            delay: 0.6,
+            onStart: () =>
+              setTimeout(
+                () =>
+                  this.$store.commit("playSound", {
+                    soundName: `attentionPlease${this.$i18n.locale}`,
+                  }),
+                1600
+              ),
+          },
+          "start"
+        )
+        .play();
     },
   },
 };
@@ -855,6 +868,10 @@ export default {
     bottom: 0;
     left: -28vw;
     height: 56vh;
+  }
+
+  .text-announcement {
+    animation: blink-animation 1s steps(5, start) infinite;
   }
 
   svg {
@@ -1101,6 +1118,15 @@ export default {
   .ed {
     fill: #ee4887;
     font-family: Silkscreen-Regular, Silkscreen;
+  }
+  .vn {
+    fill: #ee4887;
+    font-family: $font-vt;
+    text-transform: uppercase;
+
+    .middle * {
+      font-size: 56px;
+    }
   }
   .dr {
     fill: url(#ac);

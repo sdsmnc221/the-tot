@@ -27,8 +27,12 @@
       "slotA": "Love",
       "slotB": "Trust"
     },
-    "turnstile": {
-      "announce": "Attention please! <br /> <span>The Train of Thoughts</span> will arrive in...",
+    "turnstiles": {
+      "announcement": {
+        "p1": "Attention Please!",
+        "p2": "the train of thoughts",
+        "p3": "will arrive in..."
+      },
       "counter": "{d} day.s, {m} minute.s, {s} second.s"
     },
     "prompts": {
