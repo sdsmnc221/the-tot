@@ -112,4 +112,28 @@ export default [
     type: "audio",
     path: "sounds/cough.mp3",
   },
+  {
+    name: "promptIntroductionen",
+    type: "audio",
+    path: "sounds/prompt-introduction-en.mp3",
+    options: {
+      volume: 0.8,
+    },
+  },
+  {
+    name: "promptCounteren",
+    type: "audio",
+    path: "sounds/prompt-counter-en.mp3",
+    options: {
+      volume: 0.8,
+    },
+  },
+  {
+    name: "promptAskAwayen",
+    type: "audio",
+    path: "sounds/prompt-ask-away-en.mp3",
+    options: {
+      volume: 0.8,
+    },
+  },
 ];

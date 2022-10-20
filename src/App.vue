@@ -52,7 +52,6 @@
     <Transition name="fade">
       <pre-load v-if="$store.state.loading" />
     </Transition>
-    <QA />
   </main>
 </template>
 
@@ -66,7 +65,6 @@ import BlockLandscape from "@/views/BlockLandscape.vue";
 import PreReleaseScenes from "@/views/PreReleaseScenes.vue";
 import Resources from "./webgl/Utils/Resources";
 import sources from "@/webgl/sources";
-import QA from "./components/QA/QA.vue";
 
 export default {
   name: "App",
@@ -77,7 +75,6 @@ export default {
     BlockLandscape,
     PreReleaseScenes,
     PreLoad,
-    QA,
   },
   metaInfo() {
     return {

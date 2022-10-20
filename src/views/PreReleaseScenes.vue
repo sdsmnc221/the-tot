@@ -81,7 +81,9 @@
     <Transition name="fade">
       <train-platform v-if="$store.state['scenes-platform']" />
     </Transition>
-    <q-a />
+    <Transition name="fade">
+      <q-a v-if="$store.state['scenes-qa']" />
+    </Transition>
   </div>
 </template>
 

@@ -7,6 +7,15 @@
   opacity: 0;
 }
 
+.longFade-enter-active,
+.longFade-leave-active {
+  transition: opacity 6.4s ease;
+}
+.longFade-enter-from,
+.longFade-leave-to {
+  opacity: 0;
+}
+
 @keyframes blink-animation {
   to {
     visibility: hidden;

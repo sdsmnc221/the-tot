@@ -48,7 +48,14 @@
       :src="`${$store.state.publicPath}images/bubble.png`"
       rel="preload"
     />
-    <hot-spot ref="hotspotBubble" />
+    <hot-spot
+      ref="hotspotBubble"
+      @click="
+        $store.commit('showPrompt', {
+          path: 'scenes-qa',
+        })
+      "
+    />
   </div>
 </template>
 

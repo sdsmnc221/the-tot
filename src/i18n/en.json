@@ -43,7 +43,7 @@
       "confirm": "Yes",
       "refuse": "No",
       "talk": {
-        "introduction": "Hello, this old man here is the one and only Ticket Controller for this Train of Thoughts!",
+        "introduction": "Hello, this old man here is the one and only Ticket Controller for the Train of Thoughts!",
         "counter": "The Train will arrive soon enough, just patiently wait on the platform for a while.",
         "ask-away": "If you have any question, ask away! This old man will help ease your thoughts!",
         "qa": {

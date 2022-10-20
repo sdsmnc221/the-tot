@@ -29,7 +29,8 @@
         </button>
       </Transition>
     </div>
-    <Transition name="fade">
+
+    <Transition name="longFade">
       <div class="questions" v-if="hasReachedEndPrompts">
         <p class="button" v-for="(a, i) in arr" :key="`button-question-${i}`">
           <img
@@ -66,6 +67,7 @@ export default {
         "scenes.prompts.talk.counter",
         "scenes.prompts.talk.ask-away",
       ],
+      audios: ["promptIntroductionen", "promptCounteren", "promptAskAwayen"],
       qIndexMax: 3,
       typewriter: null,
       speed: 0.16,
@@ -95,13 +97,16 @@ export default {
             .callFunction(this._toggleNextBtn.bind(this))
             .deleteAll(this.speed / 2)
             .start();
-        this._type();
+        setTimeout(() => this._type(), 3200);
       }
     },
     _toggleNextBtn() {
       this.showNextButton = !this.showNextButton;
     },
     _type() {
+      this.$store.commit("playSound", {
+        soundName: this.audios[this.index],
+      });
       this.typewriter
         .typeString(this.$t(this.prompts[this.index]))
         .pauseFor(1000)
