@@ -37,7 +37,7 @@
     "prompts": {
       "instruction": "Click on the <span class=\"blink\">blinking hotspot</span> to claim your <span>free ticket</span>!",
       "love": "Do you wanna claim your ticket by <span>giving away</span> an <span>abundance</span> of <span>your love</span>?",
-      "trust": "Do you wanna claim your ticket by <span>giving away</span> ab <span>abundance</span> of <span>your trust</span>?",
+      "trust": "Do you wanna claim your ticket by <span>giving away</span> an <span>abundance</span> of <span>your trust</span>?",
       "specialCode": "<p>Are you <span>that special passenger</span> that the <span>Train of Thoughts</span> is meant for?</p><p>Enter your <span>special code</span> to confirm!</p>",
       "ok": "OK",
       "confirm": "Yes",

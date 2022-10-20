@@ -147,8 +147,9 @@ export default {
     position: absolute;
     width: 50vw;
     height: auto;
-    bottom: -12vh;
+    bottom: -18vh;
     right: 12vw;
+    pointer-events: none;
   }
 
   .bubble-chat {
@@ -204,8 +205,8 @@ export default {
     z-index: 3;
 
     img {
-      width: 72%;
-      height: auto;
+      width: 16px;
+      height: 16px;
     }
   }
 
