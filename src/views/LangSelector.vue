@@ -5,6 +5,7 @@
         :class="{ '--invisible': lang === 'en' }"
         alt=""
         :src="`${$store.state.publicPath}images/left-arrow.svg`"
+        rel="preload"
       />
       <span>{{ $t("lang.en") }}</span>
     </button>
@@ -13,6 +14,7 @@
         :class="{ '--invisible': lang === 'vn' }"
         alt=""
         :src="`${$store.state.publicPath}images/left-arrow.svg`"
+        rel="preload"
       />
       <span>{{ $t("lang.vn") }}</span>
     </button>
@@ -21,6 +23,7 @@
         :class="{ '--invisible': !lang }"
         alt=""
         :src="`${$store.state.publicPath}images/left-arrow.svg`"
+        rel="preload"
       />
       <button class="select" @click="setLocale">
         {{ $t("lang.select") }}
@@ -29,6 +32,7 @@
         :class="{ '--invisible': !lang }"
         alt=""
         :src="`${$store.state.publicPath}images/right-arrow.svg`"
+        rel="preload"
       />
     </p>
   </div>

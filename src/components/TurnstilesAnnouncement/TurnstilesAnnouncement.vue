@@ -5,12 +5,14 @@
       ref="crowd"
       alt=""
       :src="`${$store.state.publicPath}images/crowd.png`"
+      rel="preload"
     />
     <img
       class="img-tursntiles"
       ref="turnstiles"
       alt=""
       :src="`${$store.state.publicPath}images/turnstiles-${$i18n.locale}.png`"
+      rel="preload"
     />
     <svg
       xmlns="http://www.w3.org/2000/svg"

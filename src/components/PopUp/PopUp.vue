@@ -2,18 +2,34 @@
   <div class="popup">
     <div v-html="prompt"></div>
     <p class="button" v-if="confirm">
-      <img alt="" :src="`${$store.state.publicPath}images/left-arrow.svg`" />
+      <img
+        alt=""
+        :src="`${$store.state.publicPath}images/left-arrow.svg`"
+        rel="preload"
+      />
       <button class="select" @click="_confirm">
         {{ !!refuse ? $t("scenes.prompts.confirm") : $t("scenes.prompts.ok") }}
       </button>
-      <img alt="" :src="`${$store.state.publicPath}images/right-arrow.svg`" />
+      <img
+        alt=""
+        :src="`${$store.state.publicPath}images/right-arrow.svg`"
+        rel="preload"
+      />
     </p>
     <p class="button" v-if="refuse">
-      <img alt="" :src="`${$store.state.publicPath}images/left-arrow.svg`" />
+      <img
+        alt=""
+        :src="`${$store.state.publicPath}images/left-arrow.svg`"
+        rel="preload"
+      />
       <button class="select" @click="_refuse">
         {{ $t("scenes.prompts.refuse") }}
       </button>
-      <img alt="" :src="`${$store.state.publicPath}images/right-arrow.svg`" />
+      <img
+        alt=""
+        :src="`${$store.state.publicPath}images/right-arrow.svg`"
+        rel="preload"
+      />
     </p>
   </div>
 </template>

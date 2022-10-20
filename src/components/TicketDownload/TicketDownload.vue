@@ -248,9 +248,17 @@
     </svg>
 
     <p class="button" ref="saveBtn">
-      <img alt="" :src="`${$store.state.publicPath}images/left-arrow.svg`" />
+      <img
+        alt=""
+        :src="`${$store.state.publicPath}images/left-arrow.svg`"
+        rel="preload"
+      />
       <button @click="save">{{ $t("scenes.ticket-download") }}</button>
-      <img alt="" :src="`${$store.state.publicPath}images/right-arrow.svg`" />
+      <img
+        alt=""
+        :src="`${$store.state.publicPath}images/right-arrow.svg`"
+        rel="preload"
+      />
     </p>
     <canvas ref="canvas" />
   </div>

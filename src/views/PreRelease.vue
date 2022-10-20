@@ -2221,9 +2221,17 @@
       <p v-html="$t('intro.content.p1')" />
       <p v-html="$t('intro.content.p2')" />
       <p class="next">
-        <img alt="" :src="`${$store.state.publicPath}images/left-arrow.svg`" />
+        <img
+          alt=""
+          :src="`${$store.state.publicPath}images/left-arrow.svg`"
+          rel="preload"
+        />
         <button @click="enterXP">{{ $t("intro.content.cta") }}</button>
-        <img alt="" :src="`${$store.state.publicPath}images/right-arrow.svg`" />
+        <img
+          alt=""
+          :src="`${$store.state.publicPath}images/right-arrow.svg`"
+          rel="preload"
+        />
       </p>
     </div>
     <button class="enter" ref="enter" @click="embark">
