@@ -14,6 +14,8 @@ const globalStore = createStore({
         ),
       isFullscreen: false,
       isLandscape: false,
+      loading: true,
+      percentLoaded: 0,
       lang: navigator.language,
       langSelected: false,
       publicPath: process.env.BASE_URL,
@@ -29,6 +31,12 @@ const globalStore = createStore({
     };
   },
   mutations: {
+    endLoading(state) {
+      state.loading = false;
+    },
+    percentLoaded(state, payload) {
+      state.percentLoaded = payload.percent;
+    },
     selectLang(state, payload) {
       state.lang = payload.lang;
       i18n.global.locale = state.lang;

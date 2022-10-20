@@ -12,48 +12,54 @@
   </metainfo>
   <!-- <router-view /> -->
   <!-- <WebGl /> -->
-  <main>
-    <Transition name="fade">
-      <lang-selector v-if="!$store.state.langSelected" />
-    </Transition>
-    <Transition name="fade">
-      <block-desktop
-        v-if="$store.state.langSelected && !$store.state.isMobile"
-      />
-    </Transition>
-    <Transition name="fade">
-      <pre-release
-        v-if="
-          $store.state.langSelected &&
-          $store.state.isMobile &&
-          !$store.state.isLandscape
-        "
-      />
-    </Transition>
-    <Transition name="fade">
-      <pre-release-scenes
-        v-if="
-          $store.state.langSelected &&
-          $store.state.isMobile &&
-          !$store.state.isLandscape &&
-          $store.state.enterXP
-        "
-      />
-    </Transition>
-    <Transition name="fade">
-      <block-landscape
-        v-if="
-          $store.state.langSelected &&
-          $store.state.isMobile &&
-          $store.state.isLandscape
-        "
-      />
-    </Transition>
-  </main>
+  <Transition name="fade">
+    <main v-if="!$store.state.loading">
+      <Transition name="fade">
+        <lang-selector v-if="!$store.state.langSelected" />
+      </Transition>
+      <Transition name="fade">
+        <block-desktop
+          v-if="$store.state.langSelected && !$store.state.isMobile"
+        />
+      </Transition>
+      <Transition name="fade">
+        <pre-release
+          v-if="
+            $store.state.langSelected &&
+            $store.state.isMobile &&
+            !$store.state.isLandscape
+          "
+        />
+      </Transition>
+      <Transition name="fade">
+        <pre-release-scenes
+          v-if="
+            $store.state.langSelected &&
+            $store.state.isMobile &&
+            !$store.state.isLandscape &&
+            $store.state.enterXP
+          "
+        />
+      </Transition>
+      <Transition name="fade">
+        <block-landscape
+          v-if="
+            $store.state.langSelected &&
+            $store.state.isMobile &&
+            $store.state.isLandscape
+          "
+        />
+      </Transition>
+    </main>
+    <main v-else>
+      <pre-load />
+    </main>
+  </Transition>
 </template>
 
 <script>
 // import WebGl from "@/components/WebGl";
+import PreLoad from "./views/PreLoad.vue";
 import PreRelease from "@/views/PreRelease.vue";
 import LangSelector from "@/views/LangSelector.vue";
 import BlockDesktop from "@/views/BlockDesktop.vue";
@@ -70,6 +76,7 @@ export default {
     BlockDesktop,
     BlockLandscape,
     PreReleaseScenes,
+    PreLoad,
   },
   metaInfo() {
     return {
@@ -84,15 +91,15 @@ export default {
   },
   data() {
     return {
-      resources: new Resources(sources),
+      resources: new Resources(sources, this.$store),
     };
   },
   mounted() {
     this.resize();
     window.addEventListener("resize", this.resize.bind(this));
-    window.addEventListener("resourcesIsReady", () =>
-      this.$store.commit("soundsLoaded", { sounds: this.resources.audios })
-    );
+    window.addEventListener("resourcesIsReady", () => {
+      this.$store.commit("soundsLoaded", { sounds: this.resources.audios });
+    });
   },
   methods: {
     resize() {

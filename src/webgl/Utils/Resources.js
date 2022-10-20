@@ -7,7 +7,8 @@ import { Howl } from "howler";
 const resourcesIsReady = new CustomEvent("resourcesIsReady");
 
 export default class Resources {
-  constructor(sources) {
+  constructor(sources, store) {
+    this.store = store;
     this.sources = sources;
 
     this.items = {};
@@ -68,9 +69,12 @@ export default class Resources {
 
     this.loaded++;
 
+    this.store.commit("percentLoaded", { percent: this.progressRatio });
+
     if (this.loaded === this.toLoad) {
       bidello.trigger({ name: "resourcesIsReady" });
       window.dispatchEvent(resourcesIsReady);
+      setTimeout(() => this.store.commit("endLoading"), 2400);
     }
   }
 
