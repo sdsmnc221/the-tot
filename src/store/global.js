@@ -6,6 +6,7 @@ import { i18n } from "../main";
 const globalStore = createStore({
   state() {
     return {
+      release: process.env.VUE_APP_RELEASE,
       isDebug: stringToBoolean(process.env.VUE_APP_DEBUG),
       isMobile:
         /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(

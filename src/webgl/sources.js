@@ -94,4 +94,17 @@ export default [
     type: "audio",
     path: "sounds/attention-please-vn.mp3",
   },
+  {
+    name: "quiet",
+    type: "audio",
+    path: "sounds/quiet.mp3",
+  },
+  {
+    name: "tick",
+    type: "audio",
+    path: "sounds/tick.mp3",
+    options: {
+      loop: true,
+    },
+  },
 ];

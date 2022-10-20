@@ -32,8 +32,7 @@
         "p1": "Attention Please!",
         "p2": "the train of thoughts",
         "p3": "will arrive in..."
-      },
-      "counter": "{d} day.s, {m} minute.s, {s} second.s"
+      }
     },
     "prompts": {
       "instruction": "Click on the <span class=\"blink\">blinking hotspot</span> to claim your <span>free ticket</span>!",
@@ -44,6 +43,9 @@
       "confirm": "Yes",
       "refuse": "No"
     },
-    "ticket-download": "Save the ticket!"
+    "ticket-download": "Save the ticket!",
+    "platform": {
+      "counter": "{d} day.s, {h} hour.s, {m} min.s."
+    }
   }
 }

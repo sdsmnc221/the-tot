@@ -1,9 +1,43 @@
 <template>
-  <div class="train-platform" ref="container"></div>
+  <div class="train-platform" ref="container">
+    <img
+      class="img-platform"
+      ref="platform"
+      alt=""
+      :src="`${$store.state.publicPath}images/train-platform.png`"
+    />
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="img-announcement"
+      ref="announcement"
+      viewBox="0 0 750 1334"
+    >
+      <defs>
+        <clipPath id="a">
+          <path style="fill: none" d="M0 0h750v1334H0z" />
+        </clipPath>
+      </defs>
+      <g style="clip-path: url(#a)">
+        <path
+          style="fill: #f48eb0"
+          d="M749.65 456.09 261.62 174.32V-.42l488.03 281.77v174.74z"
+        />
+        <text
+          class="text"
+          transform="rotate(32.3 -47.518 565.85)"
+          ref="counter"
+        >
+          <tspan x="0" y="12">
+            {{ $t("scenes.platform.counter", { d, h, m }) }}
+          </tspan>
+        </text>
+      </g>
+    </svg>
+  </div>
 </template>
 
 <script>
-// import { gsap } from "gsap";
+import { gsap } from "gsap";
 
 export default {
   name: "TrainPlatform",
@@ -11,78 +45,91 @@ export default {
   data() {
     return {
       DOM: {},
+      d: 0,
+      h: 0,
+      m: 0,
+      interval: null,
     };
+  },
+  beforeMount() {
+    this.counter();
   },
   mounted() {
     this.setup();
+    this.interval = setInterval(() => {
+      this.counter();
+    }, 1000 * 60);
   },
   methods: {
     setup() {
       this.DOM = {
         container: this.$refs.container,
+        platform: this.$refs.platform,
+        counter: this.$refs.counter,
+        announcement: this.$refs.announcement,
       };
 
-      // gsap.set([this.DOM.turnstiles, this.DOM.announcement], {
-      //   transformOrigin: "50% 50%",
-      //   opacity: 0,
-      // });
+      gsap.set([this.DOM.platform, this.DOM.counter], {
+        transformOrigin: "50% 50%",
+        opacity: 0,
+      });
 
-      // gsap
-      //   .timeline()
-      //   .addLabel("start", 0)
-      //   .to(
-      //     this.DOM.announcement,
-      //     {
-      //       y: 0,
-      //       opacity: 1,
-      //       startAt: { y: "-100vh", opacity: 0 },
-      //       duration: 3.2,
-      //       ease: "expo.inOut",
-      //       onStart: () =>
-      //         setTimeout(
-      //           () =>
-      //             this.$store.commit("playSound", {
-      //               soundName: "platformCrowd",
-      //             }),
-      //           1200
-      //         ),
-      //     },
-      //     "start"
-      //   )
-      //   .to(
-      //     this.DOM.turnstiles,
-      //     {
-      //       y: 0,
-      //       opacity: 1,
-      //       duration: 3.2,
-      //       startAt: { y: "100vh", opacity: 1 },
-      //       ease: "expo.inOut",
-      //       delay: 0.6,
-      //       onStart: () =>
-      //         setTimeout(
-      //           () =>
-      //             this.$store.commit("playSound", {
-      //               soundName: `attentionPlease${this.$i18n.locale}`,
-      //             }),
-      //           3200
-      //         ),
-      //     },
-      //     "start"
-      //   )
-      //   .to(
-      //     this.DOM.hpTicket,
-      //     {
-      //       opacity: 0.64,
-      //       scale: 1.8,
-      //       x: "19vw",
-      //       y: "-33vh",
-      //       bottom: 0,
-      //       duration: 0.8,
-      //       ease: "expo",
-      //     },
-      //     "start+=4.8"
-      //   )
-      //   .play();
+      gsap.set(this.DOM.counter, {
+        skewX: 0,
+        skewY: 32,
+        rotate: 0,
+        scale: 0,
+        opacity: 0,
+      });
+
+      gsap
+        .timeline()
+        .addLabel("start", 0)
+        .to(
+          [this.DOM.announcement, this.DOM.platform],
+          {
+            y: 0,
+            opacity: 1,
+            startAt: { y: "50vh", opacity: 0 },
+            duration: 4,
+            stagger: 0.6,
+            ease: "circ.out",
+            onStart: () => {
+              this.$store.commit("playSound", {
+                soundName: "quiet",
+              });
+              this.$store.commit("playSound", {
+                soundName: "tick",
+              });
+            },
+          },
+          "start"
+        )
+        .to(
+          this.DOM.counter,
+          {
+            opacity: 1,
+
+            duration: 3.2,
+            scale: 0.88,
+            ease: "circ.out",
+            delay: 0.6,
+          },
+          "start"
+        )
+
+        .play();
+    },
+    counter() {
+      const now = new Date().getTime();
+      const countdownDate = new Date(this.$store.state.release);
+      const timeLeft = countdownDate - now;
+
+      this.d = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      this.h = Math.floor(
+        (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      this.m = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
     },
     showScenePlatform() {
       setTimeout(() => {
@@ -108,343 +155,31 @@ export default {
   justify-content: center;
   align-items: center;
 
-  .img-tursntiles {
+  .img-platform {
     display: block;
     position: absolute;
     bottom: 0;
-    left: -28vw;
-    height: 56vh;
+    width: auto;
+    height: 100%;
   }
 
-  .text-announcement {
-    animation: blink-animation 1s steps(5, start) infinite;
-  }
-
-  svg {
+  .img-announcement {
     display: block;
-    width: 160vw;
-    height: auto;
-    left: -20vw;
-    top: 0;
     position: absolute;
-  }
+    top: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0;
 
-  .bo {
-    fill: url(#be);
-  }
-  .bp {
-    fill: url(#bg);
-  }
-  .bq {
-    fill: url(#bf);
-  }
-  .br {
-    fill: url(#bm);
-  }
-  .bs {
-    fill: url(#bd);
-  }
-  .bt {
-    fill: url(#bn);
-  }
-  .bu {
-    fill: url(#ba);
-  }
-  .bv {
-    fill: url(#bh);
-  }
-  .bw {
-    fill: url(#bc);
-  }
-  .bx {
-    fill: url(#bb);
-  }
-  .by {
-    fill: url(#bl);
-  }
-  .c {
-    fill: url(#bi);
-  }
-  .ca {
-    fill: url(#bk);
-  }
-  .cb {
-    fill: url(#bj);
-  }
-  .cc,
-  .cd,
-  .ce,
-  .cf,
-  .cg,
-  .ch,
-  .ci,
-  .cj,
-  .ck,
-  .cl,
-  .cm,
-  .cn,
-  .co,
-  .cp,
-  .cq,
-  .cr,
-  .cs,
-  .ct,
-  .cu,
-  .cv,
-  .cw,
-  .cx,
-  .cy,
-  .d,
-  .da,
-  .db,
-  .dc,
-  .dd,
-  .de,
-  .df,
-  .dg,
-  .dh,
-  .di,
-  .dj,
-  .dk,
-  .dl,
-  .dm,
-  .dn,
-  .do,
-  .dp,
-  .dq,
-  .dr,
-  .ds,
-  .dt,
-  .du,
-  .dv,
-  .dw,
-  .dx,
-  .dy,
-  .e,
-  .ea,
-  .eb {
-    fill-rule: evenodd;
-  }
-  .cc,
-  .dq,
-  .ec,
-  .eb {
-    mix-blend-mode: soft-light;
-  }
-  .cc,
-  .dt,
-  .dv,
-  .dw {
-    opacity: 0.5;
-  }
-  .cc,
-  .eb {
-    fill: #fff;
-  }
-  .cd {
-    fill: url(#u);
-  }
-  .ce {
-    fill: url(#t);
-  }
-  .cf {
-    fill: url(#e);
-  }
-  .cg {
-    fill: url(#g);
-  }
-  .ch {
-    fill: url(#f);
-  }
-  .ci {
-    fill: url(#l);
-  }
-  .cj {
-    fill: url(#n);
-  }
-  .ck {
-    fill: url(#m);
-  }
-  .cl {
-    fill: url(#h);
-  }
-  .cm {
-    fill: url(#i);
-  }
-  .cn {
-    fill: url(#j);
-  }
-  .co {
-    fill: url(#q);
-  }
-  .cp {
-    fill: url(#s);
-  }
-  .cq {
-    fill: url(#r);
-  }
-  .cr {
-    fill: url(#y);
-  }
-  .cs {
-    fill: url(#x);
-  }
-  .ct {
-    fill: url(#w);
-  }
-  .cu {
-    fill: url(#b`);
-  }
-  .cv {
-    fill: url(#a`);
-  }
-  .cw {
-    fill: url(#ay);
-  }
-  .cx {
-    fill: url(#aq);
-  }
-  .cy {
-    fill: url(#al);
-  }
-  .d {
-    fill: url(#ar);
-  }
-  .da {
-    fill: url(#am);
-  }
-  .db {
-    fill: url(#aw);
-  }
-  .dc {
-    fill: url(#ax);
-  }
-  .dd {
-    fill: url(#as);
-  }
-  .de {
-    fill: url(#af);
-  }
-  .df {
-    fill: url(#ai);
-  }
-  .dg {
-    fill: url(#ad);
-  }
-  .dh {
-    fill: url(#ao);
-  }
-  .di {
-    fill: url(#aj);
-  }
-  .dj {
-    fill: url(#ae);
-  }
-  .dk {
-    fill: url(#ap);
-  }
-  .dl {
-    fill: url(#aa);
-  }
-  .dm {
-    fill: url(#ab);
-  }
-  .dn {
-    fill: url(#au);
-  }
-  .do {
-    fill: url(#ak);
-  }
-  .dp {
-    fill: url(#av);
-  }
-  .dq {
-    fill: url(#at);
-  }
-  .ed {
-    fill: #ee4887;
-    font-family: Silkscreen-Regular, Silkscreen;
-  }
-  .vn {
-    fill: #ee4887;
-    font-family: $font-vt;
-    text-transform: uppercase;
-
-    .middle * {
-      font-size: 56px;
+    .text {
+      fill: #7b4595;
+      font-family: VT323-Regular, VT323;
+      font-size: 57px;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      animation: hue-animation 3.2s linear both infinite,
+        blink-animation 1.2s steps(5, start) both infinite;
     }
-  }
-  .dr {
-    fill: url(#ac);
-  }
-  .dr,
-  .ds,
-  .du,
-  .dx,
-  .ee,
-  .ef {
-    mix-blend-mode: screen;
-  }
-  .ds {
-    fill: url(#k);
-  }
-  .dt {
-    fill: url(#ag);
-  }
-  .dt,
-  .dv,
-  .dw {
-    mix-blend-mode: multiply;
-  }
-  .eg {
-    fill: #ff0051;
-  }
-  .eh,
-  .dy {
-    fill: #0e0012;
-  }
-  .ei {
-    fill: #6dff36;
-  }
-  .du {
-    fill: url(#ah);
-  }
-  .du,
-  .dx {
-    opacity: 0.2;
-  }
-  .dv {
-    fill: url(#o);
-  }
-  .dw {
-    fill: url(#d);
-  }
-  .ej {
-    font-size: 37px;
-  }
-  .dx {
-    fill: url(#p);
-  }
-  .e {
-    fill: #130617;
-  }
-  .ea {
-    fill: #180b1c;
-  }
-  .ee {
-    fill: url(#v);
-  }
-  .ef {
-    fill: url(#an);
-  }
-  .ek {
-    isolation: isolate;
-  }
-  .el {
-    font-size: 45px;
-  }
-  .eb {
-    opacity: 0.3;
   }
 }
 </style>

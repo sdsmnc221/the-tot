@@ -32,8 +32,7 @@
         "p1": "Xin quý khách vui lòng lưu ý!",
         "p2": "Đoàn tàu Tâm Tưởng",
         "p3": "sẽ tiến vào ga trong vòng..."
-      },
-      "counter": "{d} day.s, {m} minute.s, {s} second.s"
+      }
     },
     "prompts": {
       "instruction": "Click vào <span class=\"blink\">một điểm nhấp nháy</span> để nhận <span>vé miễn phí</span>!",
@@ -44,6 +43,9 @@
       "confirm": "Có",
       "refuse": "Không"
     },
-    "ticket-download": "Tải vé về!"
+    "ticket-download": "Tải vé về!",
+    "platform": {
+      "counter": "{d} ngày, {h} giờ, {m} phút."
+    }
   }
 }
