@@ -912,11 +912,11 @@ export default {
           this.DOM.hpTicket,
           {
             opacity: 0.64,
-            scale: 2,
+            scale: 2.8,
             width: width + "px",
             height: height + "px",
-            x: left + "px",
-            y: top + "px",
+            x: left - width / 2 + "px",
+            y: top - height / 2 + "px",
             left: 0,
             top: 0,
             duration: 0.8,
@@ -927,12 +927,60 @@ export default {
         .play();
     },
     showScenePlatform() {
-      setTimeout(() => {
-        this.$store.commit("stopSound", {
-          soundName: `platformCrowd`,
-        });
-        this.$store.commit("showPrompt", { path: "scenes-platform" });
-      }, 3600);
+      gsap
+        .timeline({
+          onComplete: () => {
+            this.$store.commit("stopSound", {
+              soundName: `platformCrowd`,
+            });
+            this.$store.commit("showPrompt", { path: "scenes-platform" });
+          },
+        })
+        .addLabel("start", 0)
+        .to(
+          this.DOM.hpTicket,
+
+          {
+            opacity: 0,
+            scale: 0,
+            duration: 1.6,
+            ease: "expo.inOut",
+          },
+          "start"
+        )
+        .to(
+          this.DOM.turnstiles,
+          {
+            y: "100vh",
+            opacity: 0,
+            duration: 3.2,
+            ease: "expo.inOut",
+            delay: 0.6,
+          },
+          "start"
+        )
+        .to(
+          this.DOM.crowd,
+          {
+            yPercent: -200,
+            opacity: 0,
+            duration: 2.8,
+            ease: "expo.inOut",
+            delay: 0.6,
+          },
+          "start"
+        )
+        .to(
+          this.DOM.announcement,
+          {
+            opacity: 0,
+            y: "-100vh",
+            duration: 4.8,
+            ease: "expo",
+          },
+          "start"
+        )
+        .play();
     },
   },
 };
@@ -989,8 +1037,8 @@ export default {
     display: block;
     width: 100%;
     height: 100%;
-    left: -6px;
-    top: 50px;
+    top: 0;
+    left: 0;
     position: absolute;
     opacity: 0;
     pointer-events: none;
@@ -1230,7 +1278,7 @@ export default {
   }
   .ed {
     fill: #ee4887;
-    font-family: Silkscreen-Regular, Silkscreen;
+    font-family: $font-silkscreen;
   }
   .vn {
     fill: #ee4887;
