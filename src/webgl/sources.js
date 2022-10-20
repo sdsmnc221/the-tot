@@ -107,4 +107,9 @@ export default [
       loop: true,
     },
   },
+  {
+    name: "cough",
+    type: "audio",
+    path: "sounds/cough.mp3",
+  },
 ];

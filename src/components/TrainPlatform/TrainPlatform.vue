@@ -34,15 +34,31 @@
         </text>
       </g>
     </svg>
+    <img
+      class="img-controller"
+      ref="controller"
+      alt=""
+      :src="`${$store.state.publicPath}images/controller.png`"
+      rel="preload"
+    />
+    <img
+      class="img-bubble"
+      ref="bubble"
+      alt=""
+      :src="`${$store.state.publicPath}images/bubble.png`"
+      rel="preload"
+    />
+    <hot-spot ref="hotspotBubble" />
   </div>
 </template>
 
 <script>
 import { gsap } from "gsap";
+import HotSpot from "../HotSpot/HotSpot.vue";
 
 export default {
   name: "TrainPlatform",
-
+  components: { HotSpot },
   data() {
     return {
       DOM: {},
@@ -68,13 +84,23 @@ export default {
         platform: this.$refs.platform,
         counter: this.$refs.counter,
         announcement: this.$refs.announcement,
+        controller: this.$refs.controller,
+        bubble: this.$refs.bubble,
+        hpBubble: this.$refs.hotspotBubble.$el,
       };
-
-      gsap.set([this.DOM.platform, this.DOM.counter], {
-        transformOrigin: "50% 50%",
-        opacity: 0,
-      });
-
+      gsap.set(
+        [
+          this.DOM.platform,
+          this.DOM.counter,
+          this.DOM.controller,
+          this.DOM.bubble,
+          this.DOM.hpBubble,
+        ],
+        {
+          transformOrigin: "50% 50%",
+          opacity: 0,
+        }
+      );
       gsap.set(this.DOM.counter, {
         skewX: 0,
         skewY: 32,
@@ -82,7 +108,6 @@ export default {
         scale: 0,
         opacity: 0,
       });
-
       gsap
         .timeline()
         .addLabel("start", 0)
@@ -110,7 +135,6 @@ export default {
           this.DOM.counter,
           {
             opacity: 1,
-
             duration: 3.2,
             scale: 0.88,
             ease: "circ.out",
@@ -118,14 +142,69 @@ export default {
           },
           "start"
         )
-
+        .to(
+          this.DOM.controller,
+          {
+            opacity: 1,
+            left: "16vw",
+            top: "22vh",
+            startAt: {
+              opacity: 0,
+              left: "-150vw",
+              top: "-12vh",
+            },
+            duration: 2.4,
+            ease: "circ.out",
+            onStart: () =>
+              setTimeout(
+                () => this.$store.commit("playSound", { soundName: "cough" }),
+                1200
+              ),
+            onComplete: () => {
+              const { right, top } =
+                this.DOM.controller.getBoundingClientRect();
+              gsap.to(this.DOM.bubble, {
+                opacity: 1,
+                top: top - 64 + "px",
+                left: right - 64 + "px",
+                startAt: {
+                  top: top - 96 + "px",
+                  left: right - 96 + "px",
+                  opacity: 0,
+                },
+                duration: 0.8,
+                ease: "circ.out",
+                onComplete: () => {
+                  const { width, height, top, left } =
+                    this.DOM.bubble.getBoundingClientRect();
+                  gsap.to(this.DOM.hpBubble, {
+                    width: width + "px",
+                    height: height + "px",
+                    x: left + "px",
+                    y: top + "px",
+                    scale: 0.64,
+                    startAt: {
+                      x: left + "px",
+                      y: top + "px",
+                      opacity: 0,
+                      scale: 1,
+                    },
+                    opacity: 1,
+                    duration: 0.8,
+                    ease: "circ.out",
+                  });
+                },
+              });
+            },
+          },
+          "start+=6.4"
+        )
         .play();
     },
     counter() {
       const now = new Date().getTime();
       const countdownDate = new Date(this.$store.state.release);
       const timeLeft = countdownDate - now;
-
       this.d = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
       this.h = Math.floor(
         (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
@@ -155,6 +234,24 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  .img-controller {
+    position: absolute;
+    height: auto;
+    width: 24vw;
+  }
+
+  .img-bubble {
+    position: absolute;
+    width: 16vw;
+    height: auto;
+  }
+
+  .hotspot {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 
   .img-platform {
     display: block;
