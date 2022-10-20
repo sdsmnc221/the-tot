@@ -755,7 +755,10 @@
                   </tspan>
                 </tspan>
                 <tspan class="ej middle">
-                  <tspan :x="$i18n.locale === 'en' ? 2.56 : 72" y="48">
+                  <tspan
+                    :x="$i18n.locale === 'en' ? 2.56 : 72"
+                    :y="$i18n.locale === 'en' ? 48 : 54"
+                  >
                     {{ $t("scenes.turnstiles.announcement.p2") }}
                   </tspan>
                 </tspan>
@@ -836,7 +839,7 @@ export default {
                   this.$store.commit("playSound", {
                     soundName: `attentionPlease${this.$i18n.locale}`,
                   }),
-                1600
+                2000
               ),
           },
           "start"
