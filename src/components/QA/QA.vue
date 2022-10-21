@@ -58,8 +58,11 @@
 
 <script>
 import Typewriter from "typewriter-effect/dist/core";
+import counterMx from "@/mixins/counter";
+
 export default {
   name: "QA",
+  mixins: [counterMx],
   data() {
     return {
       showNextButton: false,
@@ -156,10 +159,13 @@ export default {
       // this.$store.commit("playSound", {
       //   soundName: this.audios[this.index],
       // });
+      if (this.qIndex === 3 && this.aIndex === 1) this.counter();
+
       this.typewriter
         .typeString(
           this.$t(
-            `scenes.prompts.talk.qa.q${this.qIndex}.answer.a${this.aIndex}`
+            `scenes.prompts.talk.qa.q${this.qIndex}.answer.a${this.aIndex}`,
+            { d: this.d, h: this.h, m: this.m }
           )
         )
         .callFunction(this._toggleNextBtn.bind(this))

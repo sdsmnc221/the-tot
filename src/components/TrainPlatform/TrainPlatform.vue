@@ -62,16 +62,15 @@
 <script>
 import { gsap } from "gsap";
 import HotSpot from "../HotSpot/HotSpot.vue";
+import counterMx from "@/mixins/counter";
 
 export default {
   name: "TrainPlatform",
   components: { HotSpot },
+  mixins: [counterMx],
   data() {
     return {
       DOM: {},
-      d: 0,
-      h: 0,
-      m: 0,
       interval: null,
     };
   },
@@ -207,16 +206,6 @@ export default {
           "start+=6.4"
         )
         .play();
-    },
-    counter() {
-      const now = new Date().getTime();
-      const countdownDate = new Date(this.$store.state.release);
-      const timeLeft = countdownDate - now;
-      this.d = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-      this.h = Math.floor(
-        (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      this.m = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
     },
     showScenePlatform() {
       setTimeout(() => {
