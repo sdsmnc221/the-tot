@@ -61,11 +61,7 @@
       class="exit"
       display-text
       :text-to-display="$t('scenes.platform.exit')"
-      @click="
-        $store.commit('showPrompt', {
-          path: 'scenes-wayOut',
-        })
-      "
+      @click="showWayOut"
     />
   </div>
 </template>
@@ -215,7 +211,7 @@ export default {
               });
               gsap.to(this.DOM.exit, {
                 opacity: 1,
-                duration: 0.8,
+                duration: 3.2,
                 ease: "circ.out",
                 startAt: { opacity: 0 },
               });
@@ -229,6 +225,12 @@ export default {
       setTimeout(() => {
         this.$store.commit("showPrompt", { path: "scenes-platform" });
       }, 1200);
+    },
+    showWayOut() {
+      this.$store.commit("playSound", { soundName: "click" });
+      this.$store.commit("showPrompt", {
+        path: "scenes-wayOut",
+      });
     },
   },
 };
@@ -310,8 +312,7 @@ export default {
     @include pixel-borders(
       $corner-size: 2,
       $border-size: 4px,
-      $border-color: $majestic-magenta,
-      $border-inset-color: $medium-pink
+      $border-color: transparentize($peach-cloud, 0.48)
     );
 
     position: absolute;

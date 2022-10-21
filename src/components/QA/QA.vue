@@ -295,6 +295,7 @@ export default {
     flex-direction: column;
     justify-content: center;
     min-height: 48vh;
+    transition: all ease 0.4s;
   }
 
   .button {
