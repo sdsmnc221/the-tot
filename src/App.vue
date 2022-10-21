@@ -13,15 +13,15 @@
   <!-- <router-view /> -->
   <!-- <WebGl /> -->
   <main>
-    <Transition name="fade">
+    <transition name="fade">
       <lang-selector v-if="!$store.state.langSelected" />
-    </Transition>
-    <Transition name="fade">
+    </transition>
+    <transition name="fade">
       <block-desktop
         v-if="$store.state.langSelected && !$store.state.isMobile"
       />
-    </Transition>
-    <Transition name="fade">
+    </transition>
+    <transition name="fade">
       <pre-release
         v-if="
           $store.state.langSelected &&
@@ -29,8 +29,8 @@
           !$store.state.isLandscape
         "
       />
-    </Transition>
-    <Transition name="fade">
+    </transition>
+    <transition name="fade">
       <pre-release-scenes
         v-if="
           $store.state.langSelected &&
@@ -39,8 +39,8 @@
           $store.state.enterXP
         "
       />
-    </Transition>
-    <Transition name="fade">
+    </transition>
+    <transition name="fade">
       <block-landscape
         v-if="
           $store.state.langSelected &&
@@ -48,10 +48,10 @@
           $store.state.isLandscape
         "
       />
-    </Transition>
-    <Transition name="fade">
+    </transition>
+    <transition name="fade">
       <pre-load v-if="$store.state.loading" />
-    </Transition>
+    </transition>
   </main>
 </template>
 

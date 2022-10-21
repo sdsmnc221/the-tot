@@ -1,7 +1,7 @@
 <template>
   <div class="pre-release-scenes">
     <ticket-machine ref="tm" />
-    <Transition name="fade">
+    <transition name="fade">
       <pop-up
         v-if="$store.state['scenes-ticketMachine-instruction']"
         :prompt="$t('scenes.prompts.instruction')"
@@ -12,8 +12,8 @@
             })
         "
       />
-    </Transition>
-    <Transition name="fade">
+    </transition>
+    <transition name="fade">
       <pop-up
         v-if="$store.state['scenes-ticketMachine-love']"
         :prompt="$t('scenes.prompts.love')"
@@ -32,8 +32,8 @@
             })
         "
       />
-    </Transition>
-    <Transition name="fade">
+    </transition>
+    <transition name="fade">
       <pop-up
         v-if="$store.state['scenes-ticketMachine-trust']"
         :prompt="$t('scenes.prompts.trust')"
@@ -52,8 +52,8 @@
             })
         "
       />
-    </Transition>
-    <Transition name="fade">
+    </transition>
+    <transition name="fade">
       <pop-up
         v-if="$store.state['scenes-ticketMachine-specialCode']"
         :prompt="$t('scenes.prompts.specialCode')"
@@ -71,22 +71,22 @@
             })
         "
       />
-    </Transition>
-    <Transition name="fade">
+    </transition>
+    <transition name="fade">
       <ticket-download v-if="$store.state['scenes-ticketDownload']" />
-    </Transition>
-    <Transition name="fade">
+    </transition>
+    <transition name="fade">
       <turnstiles-announcement v-if="$store.state['scenes-turnstiles']" />
-    </Transition>
-    <Transition name="fade">
+    </transition>
+    <transition name="fade">
       <train-platform v-if="$store.state['scenes-platform']" />
-    </Transition>
-    <Transition name="fade">
+    </transition>
+    <transition name="fade">
       <q-a v-if="$store.state['scenes-qa']" />
-    </Transition>
-    <Transition name="fade">
+    </transition>
+    <transition name="fade">
       <way-out v-if="$store.state['scenes-wayOut']" />
-    </Transition>
+    </transition>
   </div>
 </template>
 

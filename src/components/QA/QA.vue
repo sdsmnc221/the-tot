@@ -15,7 +15,7 @@
     />
     <div class="bubble-chat">
       <p ref="text"></p>
-      <Transition name="fade">
+      <transition name="fade">
         <button
           v-if="
             showNextButton && (!hasReachedEndPrompts || !hasReachedEndAnswer)
@@ -29,7 +29,7 @@
             rel="preload"
           />
         </button>
-      </Transition>
+      </transition>
     </div>
 
     <!-- <transition name="fade"> -->
