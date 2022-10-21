@@ -14,6 +14,7 @@ const globalStore = createStore({
         ),
       isFullscreen: false,
       isLandscape: false,
+      prepURIfont: false,
       loading: true,
       percentLoaded: 0,
       lang: navigator.language,
@@ -49,6 +50,9 @@ const globalStore = createStore({
     resize(state, payload) {
       state.isMobile = payload.isMobile;
       state.isLandscape = payload.isLandscape;
+    },
+    prepFont(state) {
+      state.prepURIfont = true;
     },
     enterExperience(state) {
       state.enterXP = true;

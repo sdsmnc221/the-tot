@@ -253,7 +253,9 @@
         :src="`${$store.state.publicPath}images/left-arrow.svg`"
         rel="preload"
       />
-      <button @click="save">{{ $t("scenes.ticket-download") }}</button>
+      <button v-if="$store.state.prepURIfont" @click="save">
+        {{ $t("scenes.ticket-download") }}
+      </button>
       <img
         alt=""
         :src="`${$store.state.publicPath}images/right-arrow.svg`"
@@ -266,6 +268,7 @@
 
 <script>
 import { gsap } from "gsap";
+import { GFontToDataURI } from "@/utils";
 
 export default {
   name: "TicketDownload",
@@ -291,9 +294,12 @@ export default {
       return result;
     },
     prepareSVG() {
-      const defs = document.createElement("defs");
-      const styles = document.createElement("style");
-      styles.innerHTML = `
+      GFontToDataURI(
+        "https://fonts.googleapis.com/css2?family=Silkscreen&family=VT323&display=swap"
+      ).then((cssRules) => {
+        const defs = document.createElement("defs");
+        let styles = document.createElement("style");
+        styles.innerHTML = `
       /* latin-ext */
       @font-face {
         font-family: "Silkscreen";
@@ -367,8 +373,8 @@ export default {
         fill: #7b4595;
       }
       .g {
-        font-family: VT323-Regular, VT323, Arial, sans-serif;
-        font-size: 44px;
+        font-family: VT323, Arial, sans-serif;
+        font-size: 65px;
         letter-spacing: 0.08em;
       }
       .h,
@@ -378,8 +384,12 @@ export default {
         stroke-miterlimit: 10;
       }
       `;
-      defs.appendChild(styles);
-      this.DOM.ticket.appendChild(defs);
+        styles.innerHTML += cssRules.join("\n");
+        defs.appendChild(styles);
+        this.DOM.ticket.appendChild(defs);
+        console.log(styles.innerHTML, cssRules);
+        this.$store.commit("prepFont");
+      });
     },
     setup() {
       this.DOM = {
