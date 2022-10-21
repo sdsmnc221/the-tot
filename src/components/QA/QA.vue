@@ -71,6 +71,7 @@ export default {
   mixins: [counterMx],
   data() {
     return {
+      lang: this.$i18n.locale,
       showNextButton: false,
       index: 0,
       questions: [],
@@ -79,7 +80,7 @@ export default {
         "scenes.prompts.talk.counter",
         "scenes.prompts.talk.ask-away",
       ],
-      audios: ["promptIntroductionen", "promptCounteren", "promptAskAwayen"],
+      audios: ["promptIntroduction", "promptCounter", "promptAskAway"],
       qa: {
         1: 3,
         2: 4,
@@ -152,7 +153,7 @@ export default {
     },
     _type() {
       this.$store.commit("playSound", {
-        soundName: this.audios[this.index],
+        soundName: this.audios[this.index] + this.lang,
       });
       this.typewriter
         .typeString(this.$t(this.prompts[this.index]))
@@ -177,7 +178,7 @@ export default {
     },
     _typeAnswer() {
       this.$store.commit("playSound", {
-        soundName: `qaQ${this.qIndex}A${this.aIndex}en`,
+        soundName: `qaQ${this.qIndex}A${this.aIndex}${this.lang}`,
       });
       if (this.qIndex === 3 && this.aIndex === 1) this.counter();
 

@@ -44,33 +44,33 @@
       "confirm": "Có",
       "refuse": "Không",
       "talk": {
-        "introduction": "Hello, this old man here is the one and only Ticket Controller for the Train of Thoughts!",
-        "counter": "The Train will arrive soon enough, just patiently wait on the platform for a while.",
-        "ask-away": "If you have any question, ask away! This old man will help ease your thoughts!",
+        "introduction": "Xin chào, lão già đây là người soát vé duy nhất của Đoàn tàu Tâm tưởng!",
+        "counter": "Tàu sẽ đến sớm thôi, chỉ cần con kiên nhẫn đợi trên sân ga một lát.",
+        "ask-away": "Nếu con có bất kỳ câu hỏi nào, hãy hỏi thoải mái nhé! Ông già này sẽ giúp con giải quyết những nỗi vướng bận trong lòng!",
         "qa": {
           "q1": {
-            "question": "The <span>Train of Thoughts</span>?",
+            "question": "Đoàn tàu <span>Tâm tưởng</span>?",
             "answer": {
-              "a1": "The Train of Thoughts is a 3D experience on the Web that will take its future passenger, which means YOU, into a little immersive and interactive journey.",
-              "a2": "It is still not yet ready for ride. You might have to wait for a little longer",
-              "a3": "But trust me, it will worth your patience."
+              "a1": "Đoàn tàu Tâm tưởng là một trải nghiệm 3D trên Web sẽ đưa hành khách tương lai của nó, nghĩa là CON đó, vào một hành trình tương tác và nhập vai nhỏ đầy thú vị.",
+              "a2": "Tàu vẫn chưa vào ga. Con có thể phải đợi thêm một chút nữa.",
+              "a3": "Nhưng hãy tin ta, chuyến tàu rất đáng để con kiên nhẫn chờ đợi 😉."
             }
           },
           "q2": {
-            "question": "<span>Riding</span> the Train?",
+            "question": "<span>Lên</span> tàu?",
             "answer": {
-              "a1": "By riding the train, you will be free to explore its interior and interact with your other co-passengers, and discover their inside stories.",
-              "a2": "The train will also take you into new destinations, each with their own story to, again, discover.",
-              "a3": "Did I use too much of the word \"discover\"? Apologies, but that's intentional.",
-              "a4": "You will unravel many new things on this journey that you may chose to embark, and along with it, may you discover the meaning of the Train of Thoughts that you longed for."
+              "a1": "Một khi đặt chân lên tàu, con sẽ được tự do khám phá toàn bộ nội thất phía trong tàu, đồng thời tương tác với những người bạn đồng hành khác của mình, và có thể còn có dịp khám phá những câu chuyện, tâm tư của họ nữa.",
+              "a2": "Chuyến tàu cũng sẽ đưa con đến những điểm đến mới, mỗi nơi sẽ lại có một câu chuyện riêng để khám phá.",
+              "a3": "Ta đã sử dụng quá nhiều từ \"khám phá \" quá phải không? Xin lỗi, nhưng đó là ta cố ý đấy 😉.",
+              "a4": "Con sẽ khám phá ra nhiều điều mới mẻ trong chuyến du hành nhỏ mà con tự nguyện tham gia này, đồng thời cùng với đó, ta mong con có thể tự vỡ ra ý nghĩa của Đoàn tàu Tâm tưởng mà con đang băn khoăn hỏi ta."
             }
           },
           "q3": {
-            "question": "<span>When</span> will the Train <span>arrive</span>?",
+            "question": "<span>Khi nào</span> thì Đoàn tàu <span> sẽ đến </span>",
             "answer": {
-              "a1": "It will arrive in, approximately, {d} day.s, {h} hour.s, {m} min.s.",
-              "a2": "On which day will it be, I wonder?",
-              "a3": "Dear future passenger, please do me the favor of mental calculations yourself 😉."
+              "a1": "Nó sẽ đến sớm thôi.",
+              "a2": "Đó sẽ rơi vào ngày bao nhiêu nhỉ?",
+              "a3": "Hành khách tương lai thân mến, con tự tính giúp ta nhé 😉."
             }
           }
         }

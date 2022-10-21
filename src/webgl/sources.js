@@ -221,4 +221,108 @@ export default [
       volume: 0.8,
     },
   },
+  {
+    name: "promptIntroductionvn",
+    type: "audio",
+    path: "sounds/prompt-introduction-vn.mp3",
+    options: {
+      volume: 0.8,
+    },
+  },
+  {
+    name: "promptCountervn",
+    type: "audio",
+    path: "sounds/prompt-counter-vn.mp3",
+    options: {
+      volume: 0.8,
+    },
+  },
+  {
+    name: "promptAskAwayvn",
+    type: "audio",
+    path: "sounds/prompt-ask-away-vn.mp3",
+    options: {
+      volume: 0.8,
+    },
+  },
+  {
+    name: "qaQ1A1vn",
+    type: "audio",
+    path: "sounds/qa-q1-a1-vn.mp3",
+    options: {
+      volume: 0.8,
+    },
+  },
+  {
+    name: "qaQ1A2vn",
+    type: "audio",
+    path: "sounds/qa-q1-a2-vn.mp3",
+    options: {
+      volume: 0.8,
+    },
+  },
+  {
+    name: "qaQ1A3vn",
+    type: "audio",
+    path: "sounds/qa-q1-a3-vn.mp3",
+    options: {
+      volume: 0.8,
+    },
+  },
+  {
+    name: "qaQ2A1vn",
+    type: "audio",
+    path: "sounds/qa-q2-a1-vn.mp3",
+    options: {
+      volume: 0.8,
+    },
+  },
+  {
+    name: "qaQ2A2vn",
+    type: "audio",
+    path: "sounds/qa-q2-a2-vn.mp3",
+    options: {
+      volume: 0.8,
+    },
+  },
+  {
+    name: "qaQ2A3vn",
+    type: "audio",
+    path: "sounds/qa-q2-a3-vn.mp3",
+    options: {
+      volume: 0.8,
+    },
+  },
+  {
+    name: "qaQ2A4vn",
+    type: "audio",
+    path: "sounds/qa-q2-a4-vn.mp3",
+    options: {
+      volume: 0.8,
+    },
+  },
+  {
+    name: "qaQ3A1vn",
+    type: "audio",
+    path: "sounds/qa-q3-a1-vn.mp3",
+    options: {
+      volume: 0.8,
+    },
+  },
+  {
+    name: "qaQ3A2vn",
+    type: "audio",
+    path: "sounds/qa-q3-a2-vn.mp3",
+    options: {
+      volume: 0.8,
+    },
+  },
+  {
+    name: "qaQ3A3vn",
+    type: "audio",
+    path: "sounds/qa-q3-a3-vn.mp3",
+    options: {
+      volume: 0.8,
+    },
+  },
 ];
