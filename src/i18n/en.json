@@ -78,7 +78,21 @@
     },
     "ticket-download": "Save the ticket!",
     "platform": {
-      "counter": "{d} day.s, {h} hour.s, {m} min.s."
+      "counter": "{d} day.s, {h} hour.s, {m} min.s.",
+      "exit": "Exit"
+    },
+    "way-out": {
+      "credits": "Credits",
+      "author": {
+        "name": "Thi Van An TRUONG",
+        "link": "https://github.com/sdsmnc221/"
+      },
+      "sources": {
+        "name": "macrovector_official, brgfx, macrovector, upklyak, freepik at freepik",
+        "link": "https://www.freepik.com/"
+      },
+      "back": "Back",
+      "restart": "Restart"
     }
   }
 }

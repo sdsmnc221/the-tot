@@ -84,6 +84,9 @@
     <Transition name="fade">
       <q-a v-if="$store.state['scenes-qa']" />
     </Transition>
+    <Transition name="fade">
+      <way-out v-if="$store.state['scenes-wayOut']" />
+    </Transition>
   </div>
 </template>
 
@@ -94,6 +97,7 @@ import TurnstilesAnnouncement from "@/components/TurnstilesAnnouncement/Turnstil
 import PopUp from "@/components/PopUp/PopUp.vue";
 import TrainPlatform from "@/components/TrainPlatform/TrainPlatform.vue";
 import QA from "@/components/QA/QA.vue";
+import WayOut from "@/components/WayOut/WayOut.vue";
 export default {
   name: "PreReleaseScenes",
   components: {
@@ -103,6 +107,7 @@ export default {
     TrainPlatform,
     PopUp,
     QA,
+    WayOut,
   },
 };
 </script>

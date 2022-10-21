@@ -28,6 +28,7 @@ const globalStore = createStore({
       "scenes-turnstiles": false,
       "scenes-platform": false,
       "scenes-qa": false,
+      "scenes-wayOut": false,
       sounds: {},
     };
   },

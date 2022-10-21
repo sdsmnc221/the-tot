@@ -4,7 +4,7 @@
     :class="{ '--with-bg': withBackground }"
     @click="$store.commit('playSound', { soundName: 'click' })"
   >
-    <p v-if="displayText">{{ $t("hotspot") }}</p>
+    <p v-if="displayText">{{ text }}</p>
   </div>
 </template>
 
@@ -16,9 +16,18 @@ export default {
       type: Boolean,
       default: false,
     },
+    textToDisplay: {
+      type: String,
+      default: null,
+    },
     withBackground: {
       type: Boolean,
       default: false,
+    },
+  },
+  computed: {
+    text() {
+      return this.textToDisplay || this.$t("hotspot");
     },
   },
 };

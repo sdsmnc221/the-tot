@@ -56,6 +56,17 @@
         })
       "
     />
+    <hot-spot
+      ref="exit"
+      class="exit"
+      display-text
+      :text-to-display="$t('scenes.platform.exit')"
+      @click="
+        $store.commit('showPrompt', {
+          path: 'scenes-wayOut',
+        })
+      "
+    />
   </div>
 </template>
 
@@ -93,6 +104,7 @@ export default {
         controller: this.$refs.controller,
         bubble: this.$refs.bubble,
         hpBubble: this.$refs.hotspotBubble.$el,
+        exit: this.$refs.exit.$el,
       };
       gsap.set(
         [
@@ -201,6 +213,12 @@ export default {
                   });
                 },
               });
+              gsap.to(this.DOM.exit, {
+                opacity: 1,
+                duration: 0.8,
+                ease: "circ.out",
+                startAt: { opacity: 0 },
+              });
             },
           },
           "start+=6.4"
@@ -274,6 +292,30 @@ export default {
       animation: hue-animation 3.2s linear both infinite,
         blink-animation 1.2s steps(5, start) both infinite;
     }
+  }
+
+  .exit {
+    font-family: $font-silkscreen;
+    font-size: $font-size-l;
+    color: $peach-cloud;
+    background-color: $majestic-magenta;
+    bottom: 4.8rem;
+    top: auto;
+    left: 50%;
+    width: 12rem;
+    height: 4.8rem;
+    mix-blend-mode: normal;
+    transform: translate(-50%, 0);
+
+    @include pixel-borders(
+      $corner-size: 2,
+      $border-size: 4px,
+      $border-color: $majestic-magenta,
+      $border-inset-color: $medium-pink
+    );
+
+    position: absolute;
+    border-radius: 2px !important;
   }
 }
 </style>

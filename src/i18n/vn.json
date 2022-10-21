@@ -78,7 +78,21 @@
     },
     "ticket-download": "Tải vé về!",
     "platform": {
-      "counter": "{d} ngày, {h} giờ, {m} phút."
+      "counter": "{d} ngày, {h} giờ, {m} phút.",
+      "exit": "Thoát"
+    },
+    "way-out": {
+      "credits": "Credits",
+      "author": {
+        "name": "Thi Van An TRUONG",
+        "link": "https://github.com/sdsmnc221/"
+      },
+      "sources": {
+        "name": "macrovector_official, brgfx, macrovector, upklyak, freepik at freepik",
+        "link": "https://www.freepik.com/"
+      },
+      "back": "Quay lại",
+      "restart": "Khởi động lại"
     }
   }
 }
