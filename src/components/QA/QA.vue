@@ -17,7 +17,9 @@
       <p ref="text"></p>
       <Transition name="fade">
         <button
-          v-if="showNextButton && !hasReachedEndPrompts"
+          v-if="
+            showNextButton && (!hasReachedEndPrompts || !hasReachedEndAnswer)
+          "
           @click="_next"
           class="prevnext"
         >
@@ -40,7 +42,7 @@
           />
           <button
             class="select"
-            @click="_confirm(i + 1)"
+            @click="_confirmQuestion(i)"
             v-html="$t(`scenes.prompts.talk.qa.q${i + 1}.question`)"
           />
           <img
@@ -68,7 +70,15 @@ export default {
         "scenes.prompts.talk.ask-away",
       ],
       audios: ["promptIntroductionen", "promptCounteren", "promptAskAwayen"],
+      qa: {
+        1: 3,
+        2: 4,
+        3: 3,
+      },
       qIndexMax: 3,
+      qIndex: 0,
+      aIndex: 3,
+      aIndexMax: 3,
       typewriter: null,
       speed: 0.16,
     };
@@ -76,6 +86,9 @@ export default {
   computed: {
     hasReachedEndPrompts() {
       return this.index === this.prompts.length - 1;
+    },
+    hasReachedEndAnswer() {
+      return this.aIndex === this.aIndexMax;
     },
     arr() {
       return Array(this.qIndexMax);
@@ -89,8 +102,9 @@ export default {
   },
   methods: {
     _next() {
+      this.$store.commit("playSound", { soundName: "click" });
+
       if (this.index !== this.prompts.length - 1) {
-        this.$store.commit("playSound", { soundName: "click" });
         this.index += 1;
         if (this.$refs.text.textContent.length)
           this.typewriter
@@ -98,6 +112,20 @@ export default {
             .deleteAll(this.speed / 2)
             .start();
         setTimeout(() => this._type(), 3200);
+      }
+
+      if (
+        this.hasReachedEndPrompts &&
+        !!this.qIndex &&
+        this.aIndex <= this.aIndexMax
+      ) {
+        this.aIndex += 1;
+        if (this.$refs.text.textContent.length)
+          this.typewriter
+            .callFunction(this._toggleNextBtn.bind(this))
+            .deleteAll(this.speed / 2)
+            .start();
+        setTimeout(() => this._typeAnswer(), 3200);
       }
     },
     _toggleNextBtn() {
@@ -109,15 +137,32 @@ export default {
       });
       this.typewriter
         .typeString(this.$t(this.prompts[this.index]))
-        .pauseFor(1000)
         .callFunction(this._toggleNextBtn.bind(this))
         .start();
     },
-    _confirm(index) {
+    _confirmQuestion(index) {
       this.$store.commit("playSound", { soundName: "click" });
+      this.qIndex = index + 1;
+      this.aIndexMax = this.qa[this.qIndex];
+      this.aIndex = 1;
+      if (this.$refs.text.textContent.length)
+        this.typewriter
+          .callFunction(this._toggleNextBtn.bind(this))
+          .deleteAll(this.speed / 2)
+          .start();
+      setTimeout(() => this._typeAnswer(), 3200);
+    },
+    _typeAnswer() {
+      // this.$store.commit("playSound", {
+      //   soundName: this.audios[this.index],
+      // });
       this.typewriter
-        .deleteAll(this.speed / 2)
-        .typeString(this.$t(`scenes.prompts.talk.qa.q${index}.answer`))
+        .typeString(
+          this.$t(
+            `scenes.prompts.talk.qa.q${this.qIndex}.answer.a${this.aIndex}`
+          )
+        )
+        .callFunction(this._toggleNextBtn.bind(this))
         .start();
     },
     _back() {

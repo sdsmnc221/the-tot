@@ -49,15 +49,28 @@
         "qa": {
           "q1": {
             "question": "The <span>Train of Thoughts</span>?",
-            "answer": "___"
+            "answer": {
+              "a1": "The Train of Thoughts is a 3D experience on the Web that will take its future passenger, which means YOU, into a little immersive and interactive journey.",
+              "a2": "It is still not yet ready for ride. You might have to wait for a little longer",
+              "a3": "But trust me, it will worth your patience."
+            }
           },
           "q2": {
             "question": "<span>Riding</span> the Train?",
-            "answer": "___"
+            "answer": {
+              "a1": "By riding the train, you will be free to explore its interior and interact with your other co-passengers, and discover their inside stories.",
+              "a2": "The train will also take you into new destinations, each with their own story to, again, discover.",
+              "a3": "Did I use too much of the word \"discover\"? Apologies, but that's intentional.",
+              "a4": "You will unravel many new things on this journey that you may chose to embark, and along with it, may you discover the meaning of the Train of Thoughts that you longed for."
+            }
           },
           "q3": {
             "question": "<span>When</span> will the Train <span>arrive</span>?",
-            "answer": "___"
+            "answer": {
+              "a1": "It will arrive in, approximately, {d} day.s, {h} hour.s, {m} min.s.",
+              "a2": "On which day will it be, I wonder?",
+              "a3": "Dear future passenger, please do me the favor of mental calculations yourself 😉."
+            }
           }
         }
       }
