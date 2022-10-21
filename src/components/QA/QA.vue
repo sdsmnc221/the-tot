@@ -32,27 +32,33 @@
       </Transition>
     </div>
 
-    <Transition name="longFade">
-      <div class="questions" v-if="hasReachedEndPrompts">
-        <p class="button" v-for="(a, i) in arr" :key="`button-question-${i}`">
-          <img
-            alt=""
-            :src="`${$store.state.publicPath}images/left-arrow.svg`"
-            rel="preload"
-          />
-          <button
-            class="select"
-            @click="_confirmQuestion(i)"
-            v-html="$t(`scenes.prompts.talk.qa.q${i + 1}.question`)"
-          />
-          <img
-            alt=""
-            :src="`${$store.state.publicPath}images/right-arrow.svg`"
-            rel="preload"
-          />
-        </p>
-      </div>
-    </Transition>
+    <!-- <transition name="fade"> -->
+    <transition-group
+      tag="div"
+      name="slide-in"
+      :style="{ '--total': questions.length }"
+      class="questions"
+    >
+      <p
+        class="button"
+        v-for="(a, i) in questions"
+        :key="`button-question-${i}`"
+        :style="{ '--i': i }"
+      >
+        <img
+          alt=""
+          :src="`${$store.state.publicPath}images/left-arrow.svg`"
+          rel="preload"
+        />
+        <button class="select" @click="_confirmQuestion(i)" v-html="$t(a)" />
+        <img
+          alt=""
+          :src="`${$store.state.publicPath}images/right-arrow.svg`"
+          rel="preload"
+        />
+      </p>
+    </transition-group>
+    <!-- </transition> -->
   </div>
 </template>
 
@@ -67,6 +73,7 @@ export default {
     return {
       showNextButton: false,
       index: 0,
+      questions: [],
       prompts: [
         "scenes.prompts.talk.introduction",
         "scenes.prompts.talk.counter",
@@ -92,9 +99,6 @@ export default {
     },
     hasReachedEndAnswer() {
       return this.aIndex === this.aIndexMax;
-    },
-    arr() {
-      return Array(this.qIndexMax);
     },
   },
   mounted() {
@@ -134,6 +138,15 @@ export default {
     _toggleNextBtn() {
       this.showNextButton = !this.showNextButton;
     },
+    _updateQuestions() {
+      ["", "", ""].forEach((a, i) =>
+        setTimeout(
+          () =>
+            this.questions.push(`scenes.prompts.talk.qa.q${i + 1}.question`),
+          1600 * i
+        )
+      );
+    },
     _type() {
       this.$store.commit("playSound", {
         soundName: this.audios[this.index],
@@ -142,6 +155,10 @@ export default {
         .typeString(this.$t(this.prompts[this.index]))
         .callFunction(this._toggleNextBtn.bind(this))
         .start();
+
+      if (this.hasReachedEndPrompts) {
+        this._updateQuestions();
+      }
     },
     _confirmQuestion(index) {
       this.$store.commit("playSound", { soundName: "click" });
@@ -274,6 +291,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    min-height: 48vh;
   }
 
   .button {
