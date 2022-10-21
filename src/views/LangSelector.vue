@@ -1,6 +1,6 @@
 <template>
   <div class="lang-selector">
-    <p class="warning">{{ $t("preload") }}</p>
+    <p v-if="!$store.state.loading" class="warning">{{ $t("preload") }}</p>
     <button @click="selectLang('en')">
       <img
         :class="{ '--invisible': lang === 'en' }"
@@ -92,7 +92,7 @@ export default {
       top: 0;
       margin: 0;
       animation: slide-in-animation 0.8s ease-in 1;
-      animation-delay: 3.2s;
+      animation-delay: 1.2s;
       transform-origin: top center;
 
       @include pixel-borders(

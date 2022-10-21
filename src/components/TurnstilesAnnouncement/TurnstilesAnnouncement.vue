@@ -781,7 +781,7 @@
                 transform="translate(222.46 180.34)"
               >
                 <tspan class="el">
-                  <tspan :x="$i18n.locale === 'en' ? 0 : 12" y="0">
+                  <tspan :x="$i18n.locale === 'en' ? 24 : 12" y="0">
                     {{ $t("scenes.turnstiles.announcement.p1") }}
                   </tspan>
                 </tspan>
