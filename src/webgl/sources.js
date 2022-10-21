@@ -141,4 +141,84 @@ export default [
       volume: 0.8,
     },
   },
+  {
+    name: "qaQ1A1en",
+    type: "audio",
+    path: "sounds/qa-q1-a1-en.mp3",
+    options: {
+      volume: 0.8,
+    },
+  },
+  {
+    name: "qaQ1A2en",
+    type: "audio",
+    path: "sounds/qa-q1-a2-en.mp3",
+    options: {
+      volume: 0.8,
+    },
+  },
+  {
+    name: "qaQ1A3en",
+    type: "audio",
+    path: "sounds/qa-q1-a3-en.mp3",
+    options: {
+      volume: 0.8,
+    },
+  },
+  {
+    name: "qaQ2A1en",
+    type: "audio",
+    path: "sounds/qa-q2-a1-en.mp3",
+    options: {
+      volume: 0.8,
+    },
+  },
+  {
+    name: "qaQ2A2en",
+    type: "audio",
+    path: "sounds/qa-q2-a2-en.mp3",
+    options: {
+      volume: 0.8,
+    },
+  },
+  {
+    name: "qaQ2A3en",
+    type: "audio",
+    path: "sounds/qa-q2-a3-en.mp3",
+    options: {
+      volume: 0.8,
+    },
+  },
+  {
+    name: "qaQ2A4en",
+    type: "audio",
+    path: "sounds/qa-q2-a4-en.mp3",
+    options: {
+      volume: 0.8,
+    },
+  },
+  {
+    name: "qaQ3A1en",
+    type: "audio",
+    path: "sounds/qa-q3-a1-en.mp3",
+    options: {
+      volume: 0.8,
+    },
+  },
+  {
+    name: "qaQ3A2en",
+    type: "audio",
+    path: "sounds/qa-q3-a2-en.mp3",
+    options: {
+      volume: 0.8,
+    },
+  },
+  {
+    name: "qaQ3A3en",
+    type: "audio",
+    path: "sounds/qa-q3-a3-en.mp3",
+    options: {
+      volume: 0.8,
+    },
+  },
 ];

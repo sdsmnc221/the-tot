@@ -87,6 +87,7 @@
     <transition name="fade">
       <way-out v-if="$store.state['scenes-wayOut']" />
     </transition>
+    <q-a />
   </div>
 </template>
 

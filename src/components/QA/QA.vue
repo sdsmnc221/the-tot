@@ -176,9 +176,9 @@ export default {
       setTimeout(() => this._typeAnswer(), 3200);
     },
     _typeAnswer() {
-      // this.$store.commit("playSound", {
-      //   soundName: this.audios[this.index],
-      // });
+      this.$store.commit("playSound", {
+        soundName: `qaQ${this.qIndex}A${this.aIndex}en`,
+      });
       if (this.qIndex === 3 && this.aIndex === 1) this.counter();
 
       this.typewriter
