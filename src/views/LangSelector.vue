@@ -1,6 +1,8 @@
 <template>
   <div class="lang-selector">
-    <p v-if="!$store.state.loading" class="warning">{{ $t("preload") }}</p>
+    <p v-if="$store.state.isMobile && !$store.state.loading" class="warning">
+      {{ $t("preload") }}
+    </p>
     <button @click="selectLang('en')">
       <img
         :class="{ '--invisible': lang === 'en' }"
