@@ -87,17 +87,22 @@ export default {
       font-size: clamp(0.9rem, 6vw, 1.2rem);
       line-height: 1.25;
       max-width: 900px;
-      margin: 3.2rem;
-      margin-bottom: 1rem;
       padding: 0.5rem;
       text-align: center;
+      top: 0;
+      margin: 0;
+      animation: slide-in-animation 0.8s ease-in 1;
+      animation-delay: 3.2s;
+      transform-origin: top center;
 
       @include pixel-borders(
-        $corner-size: 2,
+        $corner-size: 0,
         $border-size: 4px,
         $border-color: $majestic-magenta,
         $border-inset-color: $peach-cloud
       );
+
+      position: absolute;
     }
   }
 

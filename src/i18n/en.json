@@ -6,7 +6,7 @@
   },
   "noDesktop": "Scan the <span>QR Code</span> below with your mobile devices to embark this special journey of the <span>Train of Thoughts</span>.",
   "noLandscape": "Please <span>rotate your device</span> <br /> to continue the experience.",
-  "preload": "Turn your sound on, else oh what a shame! This progress bar back then was for loading all of the audio.",
+  "preload": "Turn your sound on, else oh what a shame! The progress bar back then was for loading all of the audio.",
   "lang": {
     "en": "Use English.",
     "vn": "Dùng Tiếng Việt.",
@@ -15,7 +15,7 @@
   "hotspot": "Click here!",
   "intro": {
     "enter": "Embark",
-    "circleText": "The Train of Thoughts is coming ",
+    "circleText": "The Train of Thoughts is coming-",
     "content": {
       "p1": "<span>The Train of Thoughts</span> is welcoming all passengers, especially <span>that special person</span>.",
       "p2": "Feel free to take <span>one ticket</span>, and please patiently wait on the platform until the train comes.",
