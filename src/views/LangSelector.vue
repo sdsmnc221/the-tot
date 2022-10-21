@@ -1,5 +1,6 @@
 <template>
   <div class="lang-selector">
+    <p class="warning">{{ $t("preload") }}</p>
     <button @click="selectLang('en')">
       <img
         :class="{ '--invisible': lang === 'en' }"
@@ -79,6 +80,25 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &.warning {
+      color: $dark-purple;
+      background-color: $medium-pink;
+      font-size: clamp(0.9rem, 6vw, 1.2rem);
+      line-height: 1.25;
+      max-width: 900px;
+      margin: 3.2rem;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      text-align: center;
+
+      @include pixel-borders(
+        $corner-size: 2,
+        $border-size: 4px,
+        $border-color: $majestic-magenta,
+        $border-inset-color: $peach-cloud
+      );
+    }
   }
 
   button {
