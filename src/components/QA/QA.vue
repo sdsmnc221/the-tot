@@ -121,6 +121,7 @@ export default {
         .start();
     },
     _back() {
+      this.$store.commit("playSound", { soundName: "click" });
       this.$store.commit("hidePrompt", {
         path: "scenes-qa",
       });
