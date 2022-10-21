@@ -27,6 +27,11 @@ export default [
   //   path: "models/Character/untitled.glb",
   // },
   {
+    name: "notification",
+    type: "audio",
+    path: "sounds/notification.mp3",
+  },
+  {
     name: "click",
     type: "audio",
     path: "sounds/global-click.mp3",

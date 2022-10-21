@@ -140,11 +140,14 @@ export default {
     },
     _updateQuestions() {
       ["", "", ""].forEach((a, i) =>
-        setTimeout(
-          () =>
-            this.questions.push(`scenes.prompts.talk.qa.q${i + 1}.question`),
-          1600 * i
-        )
+        setTimeout(() => {
+          this.questions.push(`scenes.prompts.talk.qa.q${i + 1}.question`);
+          setTimeout(
+            () =>
+              this.$store.commit("playSound", { soundName: "notification" }),
+            160 * i
+          );
+        }, 1600 * i)
       );
     },
     _type() {
