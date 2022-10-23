@@ -461,7 +461,7 @@ export default {
         ctx.font = "65px VT323";
         ctx.drawImage(image, 0, 0, width, height);
 
-        this.triggerDownload(canvas, `the-tot-ticket-[${this.ticketID}].png`); // download the image when the image has been loaded onto the canvas
+        this.triggerDownload(canvas, `the-tot-ticket-[${this.ticketId}].png`); // download the image when the image has been loaded onto the canvas
       };
       image.src = b64Start + svg64;
 
