@@ -5,3 +5,4 @@ export { sample, sampleSize } from "./sample";
 export { stringToBoolean } from "./stringToBoolean";
 export { clamp } from "./clamp";
 export { default as GFontToDataURI } from "./GFontToDataURI";
+export { default as makeID } from "./makeID";

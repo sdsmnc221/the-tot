@@ -1,4 +1,4 @@
-import { stringToBoolean } from "@/utils";
+import { makeID, stringToBoolean } from "@/utils";
 import { createStore } from "vuex";
 import { i18n } from "../main";
 
@@ -21,6 +21,7 @@ const globalStore = createStore({
       langSelected: false,
       publicPath: process.env.BASE_URL,
       enterXP: false,
+      ticketId: makeID(process.env.VUE_APP_CODE),
       "scenes-ticketMachine-instruction": false,
       "scenes-ticketMachine-love": false,
       "scenes-ticketMachine-trust": false,
