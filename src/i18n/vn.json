@@ -66,9 +66,9 @@
             }
           },
           "q3": {
-            "question": "<span>Khi nào</span> thì Đoàn tàu <span> sẽ đến </span>",
+            "question": "<span>Khi nào</span> thì Đoàn tàu <span> sẽ đến </span>?",
             "answer": {
-              "a1": "Nó sẽ đến sớm thôi.",
+              "a1": "Tàu sẽ vào ga trong {d} ngày, {h} giờ, {m} phút nữa.",
               "a2": "Đó sẽ rơi vào ngày bao nhiêu nhỉ?",
               "a3": "Hành khách tương lai thân mến, con tự tính giúp ta nhé 😉."
             }
