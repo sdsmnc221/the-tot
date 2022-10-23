@@ -74,6 +74,12 @@ const globalStore = createStore({
       state.sounds[payload.soundName].stop();
     },
   },
+  actions: {
+    saveTicketId(context) {
+      if (!window.localStorage.getItem("ticketId"))
+        window.localStorage.setItem("ticketId", context.state.ticketId);
+    },
+  },
 });
 
 export default globalStore;

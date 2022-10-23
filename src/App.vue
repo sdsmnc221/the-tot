@@ -93,6 +93,7 @@ export default {
     };
   },
   mounted() {
+    this.$store.dispatch("saveTicketId");
     this.resize();
     window.addEventListener("resize", this.resize.bind(this));
     window.addEventListener("resourcesIsReady", () => {

@@ -7,5 +7,6 @@ export default function makeid(testCode, length = 8) {
       result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
   } while (result === testCode);
+
   return result;
 }

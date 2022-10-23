@@ -26,10 +26,10 @@
             d="M208.15 76.44h9.81v391.49h-9.81zM655.6 76.44h9.81v391.49h-9.81z"
           />
           <text class="g" transform="matrix(0 1.25 -1 0 154.77 118.37)">
-            <tspan x="0" y="0">{{ $store.state.ticketId }}</tspan>
+            <tspan x="0" y="0">{{ ticketId }}</tspan>
           </text>
           <text class="g" transform="matrix(0 -1.25 1 0 715.79 425.99)">
-            <tspan x="0" y="0">{{ $store.state.ticketId }}</tspan>
+            <tspan x="0" y="0">{{ ticketId }}</tspan>
           </text>
           <path
             class="f"
@@ -155,10 +155,10 @@
             d="M208.15 76.44h9.81v391.49h-9.81zM655.6 76.44h9.81v391.49h-9.81z"
           />
           <text class="g" transform="matrix(0 1.25 -1 0 154.77 118.37)">
-            <tspan x="0" y="0">{{ $store.state.ticketId }}</tspan>
+            <tspan x="0" y="0">{{ ticketId }}</tspan>
           </text>
           <text class="g" transform="matrix(0 -1.25 1 0 715.79 425.99)">
-            <tspan x="0" y="0">{{ $store.state.ticketId }}</tspan>
+            <tspan x="0" y="0">{{ ticketId }}</tspan>
           </text>
           <path
             class="f"
@@ -276,6 +276,11 @@ export default {
     return {
       DOM: {},
     };
+  },
+  computed: {
+    ticketId() {
+      return window.localStorage.getItem("ticketId") || this.ticketId;
+    },
   },
   mounted() {
     this.setup();
