@@ -57,12 +57,14 @@
       <pop-up
         v-if="$store.state['scenes-ticketMachine-specialCode']"
         :prompt="$t('scenes.prompts.specialCode')"
-        with-code-input
+        with-input
         :confirm="
-          () =>
+          () => {
             $store.commit('hidePrompt', {
               path: 'scenes-ticketMachine-specialCode',
-            })
+            });
+            $refs.tm.zoomIn();
+          }
         "
         :refuse="
           () =>

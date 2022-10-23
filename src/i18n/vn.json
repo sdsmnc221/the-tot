@@ -15,7 +15,7 @@
   "hotspot": "Click vô đây!",
   "intro": {
     "enter": "Khởi Hành",
-    "circleText": "Đoàn tàu Tâm Tưởng đang tiến vào ga ",
+    "circleText": "Đoàn tàu Tâm Tưởng đang tiến vào ga--",
     "content": {
       "p1": "<span>Đoàn tàu Tâm tưởng</span> chào mừng các vị hành khách, xin đặc biệt chào mừng <span>người khách đặc biệt</span>.",
       "p2": "Xin mời các vị lấy <span>một vé</span> và vui lòng kiên nhẫn đợi trên sân ga cho tới khi tàu đến.",
@@ -43,6 +43,8 @@
       "ok": "OK",
       "confirm": "Có",
       "refuse": "Không",
+      "placeholder": "Hãy nhập mã OTP đặc biệt...",
+      "error": "Rất tiếc, bạn không phải là người đặc biệt đó rồi. Bạn vẫn có thể lấy vé miễn phí bằng cách cho đi tình yêu hoặc niềm tin, bạn nhé",
       "talk": {
         "introduction": "Xin chào, lão già đây là người soát vé duy nhất của Đoàn tàu Tâm tưởng!",
         "counter": "Tàu sẽ đến sớm thôi, chỉ cần con kiên nhẫn đợi trên sân ga một lát.",

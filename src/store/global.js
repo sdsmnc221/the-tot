@@ -22,6 +22,8 @@ const globalStore = createStore({
       publicPath: process.env.BASE_URL,
       enterXP: false,
       ticketId: makeID(process.env.VUE_APP_CODE),
+      specialCode: process.env.VUE_APP_CODE,
+      isSpecial: false,
       "scenes-ticketMachine-instruction": false,
       "scenes-ticketMachine-love": false,
       "scenes-ticketMachine-trust": false,
@@ -72,6 +74,9 @@ const globalStore = createStore({
     },
     stopSound(state, payload) {
       state.sounds[payload.soundName].stop();
+    },
+    thisIsSpecial(state) {
+      state.isSpecial = true;
     },
   },
   actions: {

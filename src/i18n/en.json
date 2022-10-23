@@ -43,6 +43,8 @@
       "ok": "OK",
       "confirm": "Yes",
       "refuse": "No",
+      "placeholder": "Please enter the special code...",
+      "error": "We are so sorry, you are not that special person. But feel free to take one ticket by giving away your love or trust!",
       "talk": {
         "introduction": "Hello, this old man here is the one and only Ticket Controller for the Train of Thoughts!",
         "counter": "The Train will arrive soon enough, just patiently wait on the platform for a while.",
