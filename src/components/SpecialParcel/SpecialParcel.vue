@@ -88,7 +88,14 @@ export default {
       aIndexMax: 6,
     };
   },
-
+  mounted() {
+    this.$store.commit("stopSound", { soundName: "quiet" });
+    this.$store.commit("stopSound", { soundName: "tick" });
+  },
+  unmounted() {
+    this.$store.commit("playSound", { soundName: "quiet" });
+    this.$store.commit("playSound", { soundName: "tick" });
+  },
   methods: {
     _toggleNextBtn() {
       this.showNextButton = !this.showNextButton;
@@ -107,6 +114,10 @@ export default {
     },
     _confirmCta() {
       this.$store.commit("playSound", { soundName: "click" });
+      setTimeout(
+        () => this.$store.commit("playSound", { soundName: "letter" }),
+        1200
+      );
       this.letterMode = true;
       this.aIndex = 0;
       if (this.$refs.text.textContent.length)
@@ -128,6 +139,7 @@ export default {
     },
     _back() {
       this.$store.commit("playSound", { soundName: "click" });
+      this.$store.commit("stopSound", { soundName: "letter" });
       this.$store.commit("hidePrompt", {
         path: "scenes-special",
       });

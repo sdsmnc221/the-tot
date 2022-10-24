@@ -89,6 +89,14 @@ export default {
       aIndexMax: 3,
     };
   },
+  mounted() {
+    this.$store.commit("stopSound", { soundName: "quiet" });
+    this.$store.commit("stopSound", { soundName: "tick" });
+  },
+  unmounted() {
+    this.$store.commit("playSound", { soundName: "quiet" });
+    this.$store.commit("playSound", { soundName: "tick" });
+  },
   methods: {
     _updateQuestions() {
       ["", "", ""].forEach((a, i) =>

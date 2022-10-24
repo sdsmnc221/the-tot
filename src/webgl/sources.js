@@ -338,4 +338,13 @@ export default [
       volume: 0.8,
     },
   },
+  {
+    name: "letter",
+    type: "audio",
+    path: "sounds/letter.mp3",
+    options: {
+      loop: true,
+      volume: 0.8,
+    },
+  },
 ];

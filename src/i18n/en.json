@@ -81,7 +81,7 @@
           "is-special": {
             "s1": "Oh, this is a special parcel for the special passenger. For YOU, I mean.",
             "s2": "Handle it with care, and deliver it to the Train Driver for me when you finally get into the Train.",
-            "cta": "There's  <br /> a <span>mysterious letter</span> <br /> attached to the parcel.",
+            "cta": "There's  <br /> a <span>mysterious draft</span> <br /> attached to the parcel.",
             "letter": [
               "Dear ___,",
               "Written and rewritten so many times, and then left unfinished at the end, this letter should not reach its destination. Because I don't want it to.",
