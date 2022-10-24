@@ -92,7 +92,6 @@
     <transition name="fade">
       <special-parcel v-if="$store.state['scenes-special']" />
     </transition>
-    <q-a />
   </div>
 </template>
 
