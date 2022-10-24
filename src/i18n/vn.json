@@ -79,17 +79,17 @@
         "special": {
           "not-special": "Hừm, đây là một bưu kiện đặc biệt dành dành cho vị hành khách đặc biệt. Con không phải là người đó, nên ta không thể đưa nó cho con được.",
           "is-special": {
-            "s1": "Oh, this is a special parcel for the special passenger. For YOU, I mean.",
-            "s2": "Handle it with care, and deliver it to the Train Driver for me when you finally get into the Train.",
-            "cta": "There's  <br /> a <span>mysterious letter</span> <br /> attached to the parcel.",
+            "s1": "Hừm, đây là một bưu kiện đặc biệt dành dành cho vị hành khách đặc biệt. Nói cách khác, nó dành cho CON đó.",
+            "s2": "Hãy giữ nó thật cẩn thận và giao nó cho Người Lái Tàu giúp ta, một khi con đặt chân lên Tàu nhé.",
+            "cta": "Có <br /> một <span>bản nháp bí ẩn</span> <br /> được đính kèm với bưu kiện.",
             "letter": [
-              "Dear ___,",
-              "Written and rewritten so many times, and then left unfinished at the end, this letter should not reach its destination. Because I don't want it to.",
-              "That special person won't understand anyway, the messages, the feelings, and all of the thoughts that I want to deliver to them. It just, simply, won't reach. Even if I oh so want it to.",
-              "All of these sceneries that passed through my eyes again and again, all of these passengers that come and go, each of them carry something special. To me, to this Train. Because it's directly attached to that special person, because somehow it belongs to them all.",
-              "But the person won't know, won't understand, ever.",
-              "Still, I hope it reaches them, somehow, some day.",
-              "the T.D."
+              "___ thân mến,",
+              "Dù được viết đi viết lại rất nhiều lần, nhưng cuối cùng bị bỏ lại dang dở, bức thư này có lẽ sẽ không đến được với người nó cần đến. Bởi vì mình cũng có muốn thế đâu.",
+              "Dù sao thì người đặc biệt đó cũng sẽ không hiểu được những thông điệp, cảm xúc và tất cả những suy nghĩ mà mình muốn gửi đến họ. Nó chỉ đơn giản là sẽ không thể chạm tới được thôi. Ngay kể cả khi mình rất muốn.",
+              "Tất cả những khung cảnh lướt qua trước mắt mình một lần, rồi hai lần này, rồi còn tất cả những hành khách cứ đến và đi nữa, mỗi người, mỗi điều đều vô cùng đặc biệt. Đối với mình, đối với chuyến Tàu này. Bởi vì nó trực tiếp gắn liền với con người đặc biệt đó, bởi vì bằng cách nào đó tất cả những điều đó đều thuộc về họ.",
+              "Nhưng người đó sẽ không biết, sẽ không bao giờ hiểu được.",
+              "Tuy nhiên, mình vẫn nuôi hi vọng rằng, bằng một cách nào đó, vào một ngày nào đó, tất cả những điều đó sẽ chạm được tới họ.",
+              "N.L.T."
             ]
           }
         }
