@@ -4,7 +4,7 @@
     "description": "An experimental, immersive story for a special person.",
     "author": "Thi Van An TRUONG"
   },
-  "noDesktop": "Scan the <span>QR Code</span> below with your mobile devices to embark this special journey of the <span>Train of Thoughts</span>.",
+  "noDesktop": "Scan the <span>QR Code</span> with your mobile devices to embark this special journey of the <span>Train of Thoughts</span>.",
   "noLandscape": "Please <span>rotate your device</span> <br /> to continue the experience.",
   "preload": "Turn your sound on, else oh what a shame! The progress bar back then was for loading all of the audio.",
   "lang": {

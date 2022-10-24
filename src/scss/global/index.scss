@@ -36,7 +36,13 @@ html {
       z-index: -1; // hide images
       content: url("../../assets/images/pre-release-scenes-bg.png")
         url("../../assets/images/grain.jpeg")
-        url("../../assets/images/ticket-machine-en.svg"); // load images
+        url("../../../public/images/ticket-machine.svg")
+        url("../../../public/images/crowd.png")
+        url("../../../public/images/turnstiles-en.png")
+        url("../../../public/images/turnstiles-vn.png")
+        url("../../../public/images/train-platform.png")
+        url("../../../public/images/controller.png")
+        url("../../../public/images/bubble.png"); // load images
     }
   }
 }

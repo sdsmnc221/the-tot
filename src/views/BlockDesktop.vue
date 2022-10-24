@@ -1,6 +1,13 @@
 <template>
   <div class="block-desktop">
     <p v-html="$t('noDesktop')" />
+    <a :href="$store.state.site">
+      <img
+        alt="QR Code The Trains of Thoughts"
+        :src="`${$store.state.publicPath}images/qr-code.svg`"
+        rel="preload"
+      />
+    </a>
   </div>
 </template>
 
@@ -13,7 +20,6 @@ export default {
 <style lang="scss">
 .block-desktop {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: $dark-purple;
@@ -26,6 +32,19 @@ export default {
 
     span {
       color: $majestic-magenta;
+    }
+  }
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height: 50vh;
+
+    img {
+      display: inline-block;
+      width: 100%;
     }
   }
 }
