@@ -170,12 +170,12 @@ export default {
         #f58308 80%,
         black
       );
-      background-size: cover;
+      background-size: 120% 120%;
       background-repeat: no-repeat;
-      background-position: center;
       z-index: 9999;
       pointer-events: none;
       opacity: 0.64;
+      animation: gradient-animation 3.2s ease infinite both;
     }
   }
 }

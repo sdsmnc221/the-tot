@@ -56,3 +56,18 @@
     transform: translateY(0);
   }
 }
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 32%;
+    background-size: 120% 120%;
+  }
+  50% {
+    background-position: 64% 64%;
+    background-size: 160% 160%;
+  }
+  100% {
+    background-position: 0% 32%;
+    background-size: 120% 120%;
+  }
+}
