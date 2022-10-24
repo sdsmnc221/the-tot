@@ -152,6 +152,31 @@ export default {
         mix-blend-mode: multiply;
       }
     }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      mix-blend-mode: soft-light;
+      background-attachment: fixed;
+      background-image: linear-gradient(
+        180deg,
+        #3c5e6d 0%,
+        #f4310e,
+        #f58308 80%,
+        black
+      );
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 0.64;
+    }
   }
 }
 </style>

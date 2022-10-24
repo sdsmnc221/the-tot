@@ -170,6 +170,7 @@ export default {
       color: $majestic-magenta;
       width: 72vw;
       font-size: $font-size-m * 0.75;
+      text-align: center;
 
       @include pixel-borders(
         $corner-size: 2,
