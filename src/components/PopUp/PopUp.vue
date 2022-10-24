@@ -114,9 +114,13 @@ export default {
     _submit() {
       this.$store.commit("playSound", { soundName: "click" });
       if (this.code.toUpperCase() === this.$store.state.specialCode) {
+        this.$store.commit("playSound", { soundName: "correct" });
         this.$store.commit("thisIsSpecial");
         this.confirm();
-      } else this.error = true;
+      } else {
+        this.$store.commit("playSound", { soundName: "incorrect" });
+        this.error = true;
+      }
     },
   },
 };

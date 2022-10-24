@@ -37,6 +37,19 @@ export default [
     path: "sounds/global-click.mp3",
   },
   {
+    name: "correct",
+    type: "audio",
+    path: "sounds/correct.mp3",
+  },
+  {
+    name: "incorrect",
+    type: "audio",
+    path: "sounds/incorrect.mp3",
+    options: {
+      volume: 0.7,
+    },
+  },
+  {
     name: "train",
     type: "audio",
     path: "sounds/intro-train.mp3",
