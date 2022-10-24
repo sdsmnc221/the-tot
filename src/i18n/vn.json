@@ -77,11 +77,11 @@
           }
         },
         "special": {
-          "not-special": "Hừm, đây là một bưu kiện đặc biệt dành dành cho vị hành khách đặc biệt. Con không phải là người đó, nên ta không thể đưa nó cho con được.",
+          "not-special": "Hừm, đây là một bưu kiện đặc biệt dành cho vị hành khách đặc biệt. Con không phải là người đó, nên ta không thể đưa nó cho con được.",
           "is-special": {
-            "s1": "Hừm, đây là một bưu kiện đặc biệt dành dành cho vị hành khách đặc biệt. Nói cách khác, nó dành cho CON đó.",
+            "s1": "Hừm, đây là một bưu kiện đặc biệt dành cho vị hành khách đặc biệt. Nói cách khác, nó dành cho CON đó.",
             "s2": "Hãy giữ nó thật cẩn thận và giao nó cho Người Lái Tàu giúp ta, một khi con đặt chân lên Tàu nhé.",
-            "cta": "Có <br /> một <span>bản nháp bí ẩn</span> <br /> được đính kèm với bưu kiện.",
+            "cta": "Có một <br /> <span>bản nháp bí ẩn</span> <br /> được đính kèm với bưu kiện.",
             "letter": [
               "___ thân mến,",
               "Dù được viết đi viết lại rất nhiều lần, nhưng cuối cùng bị bỏ lại dang dở, bức thư này có lẽ sẽ không đến được với người nó cần đến. Bởi vì mình cũng có muốn thế đâu.",

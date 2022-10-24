@@ -37,7 +37,7 @@
 
     <!-- <transition name="fade"> -->
     <transition-group
-      v-if="!letterMode"
+      v-if="!letterMode && $store.state.isSpecial"
       tag="div"
       name="slide-in"
       :style="{ '--total': ctas.length }"
