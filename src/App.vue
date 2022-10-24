@@ -172,9 +172,8 @@ export default {
       );
       background-size: 120% 120%;
       background-repeat: no-repeat;
-      z-index: 9999;
+      z-index: 999;
       pointer-events: none;
-      opacity: 0.64;
       animation: gradient-animation 3.2s ease infinite both;
     }
   }
