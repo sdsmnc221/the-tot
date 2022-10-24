@@ -42,6 +42,13 @@
       rel="preload"
     />
     <img
+      class="img-gift"
+      ref="gift"
+      alt=""
+      :src="`${$store.state.publicPath}images/gift.png`"
+      rel="preload"
+    />
+    <img
       class="img-bubble"
       ref="bubble"
       alt=""
@@ -53,6 +60,14 @@
       @click="
         $store.commit('showPrompt', {
           path: 'scenes-qa',
+        })
+      "
+    />
+    <hot-spot
+      ref="hotspotGift"
+      @click="
+        $store.commit('showPrompt', {
+          path: 'scenes-special',
         })
       "
     />
@@ -100,6 +115,8 @@ export default {
         controller: this.$refs.controller,
         bubble: this.$refs.bubble,
         hpBubble: this.$refs.hotspotBubble.$el,
+        gift: this.$refs.gift,
+        hpGift: this.$refs.hotspotGift.$el,
         exit: this.$refs.exit.$el,
       };
       gsap.set(
@@ -109,6 +126,7 @@ export default {
           this.DOM.controller,
           this.DOM.bubble,
           this.DOM.hpBubble,
+          this.DOM.gift,
         ],
         {
           transformOrigin: "50% 50%",
@@ -175,7 +193,7 @@ export default {
                 1200
               ),
             onComplete: () => {
-              const { right, top } =
+              const { right, top, width, height } =
                 this.DOM.controller.getBoundingClientRect();
               gsap.to(this.DOM.bubble, {
                 opacity: 1,
@@ -192,6 +210,42 @@ export default {
                   const { width, height, top, left } =
                     this.DOM.bubble.getBoundingClientRect();
                   gsap.to(this.DOM.hpBubble, {
+                    width: width + "px",
+                    height: height + "px",
+                    x: left + "px",
+                    y: top + "px",
+                    scale: 0.64,
+                    startAt: {
+                      x: left + "px",
+                      y: top + "px",
+                      opacity: 0,
+                      scale: 1,
+                    },
+                    opacity: 1,
+                    duration: 0.8,
+                    ease: "circ.out",
+                  });
+                },
+              });
+              gsap.to(this.DOM.gift, {
+                opacity: 1,
+                top: top + height / 2 - 32 + "px",
+                left: right - width / 2 + 32 + "px",
+                width: width / 2 + "px",
+                height: width / 2 + "px",
+                startAt: {
+                  top: top + height / 2 - 32 + "px",
+                  left: right - width / 2 + 32 + "px",
+                  opacity: 0,
+                  width: 0,
+                  height: 0,
+                },
+                duration: 0.8,
+                ease: "circ.out",
+                onComplete: () => {
+                  const { width, height, top, left } =
+                    this.DOM.gift.getBoundingClientRect();
+                  gsap.to(this.DOM.hpGift, {
                     width: width + "px",
                     height: height + "px",
                     x: left + "px",
@@ -261,6 +315,10 @@ export default {
     position: absolute;
     width: 16vw;
     height: auto;
+  }
+
+  .img-gift {
+    position: absolute;
   }
 
   .hotspot {

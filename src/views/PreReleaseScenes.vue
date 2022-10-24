@@ -89,6 +89,10 @@
     <transition name="fade">
       <way-out v-if="$store.state['scenes-wayOut']" />
     </transition>
+    <transition name="fade">
+      <special-parcel v-if="$store.state['scenes-special']" />
+    </transition>
+    <q-a />
   </div>
 </template>
 
@@ -100,6 +104,7 @@ import PopUp from "@/components/PopUp/PopUp.vue";
 import TrainPlatform from "@/components/TrainPlatform/TrainPlatform.vue";
 import QA from "@/components/QA/QA.vue";
 import WayOut from "@/components/WayOut/WayOut.vue";
+import SpecialParcel from "@/components/SpecialParcel/SpecialParcel.vue";
 export default {
   name: "PreReleaseScenes",
   components: {
@@ -110,6 +115,7 @@ export default {
     PopUp,
     QA,
     WayOut,
+    SpecialParcel,
   },
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="q-a">
+  <div class="special-parcel">
     <button class="prevnext" @click="_back">
       <img
         alt=""
@@ -7,13 +7,16 @@
         rel="preload"
       />
     </button>
-    <img
-      class="img-controller"
-      alt=""
-      :src="`${$store.state.publicPath}images/controller.png`"
-      rel="preload"
-    />
-    <div class="bubble-chat">
+    <transition name="fade">
+      <img
+        v-if="!letterMode"
+        class="img-controller"
+        alt=""
+        :src="`${$store.state.publicPath}images/controller.png`"
+        rel="preload"
+      />
+    </transition>
+    <div class="bubble-chat" :class="{ '--letter-mode': letterMode }">
       <p ref="text"></p>
       <transition name="fade">
         <button
@@ -34,14 +37,15 @@
 
     <!-- <transition name="fade"> -->
     <transition-group
+      v-if="!letterMode"
       tag="div"
       name="slide-in"
-      :style="{ '--total': questions.length }"
+      :style="{ '--total': ctas.length }"
       class="questions"
     >
       <p
         class="button"
-        v-for="(a, i) in questions"
+        v-for="(a, i) in ctas"
         :key="`button-question-${i}`"
         :style="{ '--i': i }"
       >
@@ -50,7 +54,7 @@
           :src="`${$store.state.publicPath}images/left-arrow.svg`"
           rel="preload"
         />
-        <button class="select" @click="_confirmQuestion(i)" v-html="$t(a)" />
+        <button class="select" @click="_confirmCta(i)" v-html="$t(a)" />
         <img
           alt=""
           :src="`${$store.state.publicPath}images/right-arrow.svg`"
@@ -67,29 +71,26 @@ import Typewriter from "typewriter-effect/dist/core";
 import counterMx from "@/mixins/counter";
 
 export default {
-  name: "QA",
+  name: "SpeciaParcel",
   mixins: [counterMx],
   data() {
     return {
       lang: this.$i18n.locale,
       showNextButton: false,
       index: 0,
-      questions: [],
-      prompts: [
-        "scenes.prompts.talk.introduction",
-        "scenes.prompts.talk.counter",
-        "scenes.prompts.talk.ask-away",
-      ],
+      ctas: [],
+      prompts: this.$store.state.isSpecial
+        ? [
+            "scenes.prompts.talk.special.is-special.s1",
+            "scenes.prompts.talk.special.is-special.s2",
+          ]
+        : ["scenes.prompts.talk.special.not-special"],
       audios: ["promptIntroduction", "promptCounter", "promptAskAway"],
-      qa: {
-        1: 3,
-        2: 4,
-        3: 3,
-      },
+      letterMode: false,
       qIndexMax: 3,
       qIndex: 0,
-      aIndex: 3,
-      aIndexMax: 3,
+      aIndex: 6,
+      aIndexMax: 6,
       typewriter: null,
       speed: 0.16,
     };
@@ -122,11 +123,7 @@ export default {
         setTimeout(() => this._type(), 3200);
       }
 
-      if (
-        this.hasReachedEndPrompts &&
-        !!this.qIndex &&
-        !this.hasReachedEndAnswer
-      ) {
+      if (this.hasReachedEndPrompts && !this.hasReachedEndAnswer) {
         this.aIndex += 1;
         if (this.$refs.text.textContent.length)
           this.typewriter
@@ -139,10 +136,10 @@ export default {
     _toggleNextBtn() {
       this.showNextButton = !this.showNextButton;
     },
-    _updateQuestions() {
-      ["", "", ""].forEach((a, i) =>
+    _updateCTAs() {
+      [""].forEach((a, i) =>
         setTimeout(() => {
-          this.questions.push(`scenes.prompts.talk.qa.q${i + 1}.question`);
+          this.ctas.push(`scenes.prompts.talk.special.is-special.cta`);
           setTimeout(
             () =>
               this.$store.commit("playSound", { soundName: "notification" }),
@@ -160,33 +157,27 @@ export default {
         .callFunction(this._toggleNextBtn.bind(this))
         .start();
 
-      if (this.hasReachedEndPrompts) {
-        this._updateQuestions();
+      if (this.hasReachedEndPrompts && this.$store.state.isSpecial) {
+        this._updateCTAs();
       }
     },
-    _confirmQuestion(index) {
+    _confirmCta(index) {
       this.$store.commit("playSound", { soundName: "click" });
+      this.letterMode = true;
       this.qIndex = index + 1;
-      this.aIndexMax = this.qa[this.qIndex];
-      this.aIndex = 1;
+      this.aIndex = 0;
       if (this.$refs.text.textContent.length)
         this.typewriter
           .callFunction(this._toggleNextBtn.bind(this))
-          .deleteAll(this.speed / 2)
+          .deleteAll(this.speed)
           .start();
       setTimeout(() => this._typeAnswer(), 3200);
     },
     _typeAnswer() {
-      this.$store.commit("playSound", {
-        soundName: `qaQ${this.qIndex}A${this.aIndex}${this.lang}`,
-      });
-      if (this.qIndex === 3 && this.aIndex === 1) this.counter();
-
       this.typewriter
         .typeString(
           this.$t(
-            `scenes.prompts.talk.qa.q${this.qIndex}.answer.a${this.aIndex}`,
-            { d: this.d, h: this.h, m: this.m }
+            `scenes.prompts.talk.special.is-special.letter[${this.aIndex}]`
           )
         )
         .callFunction(this._toggleNextBtn.bind(this))
@@ -195,7 +186,7 @@ export default {
     _back() {
       this.$store.commit("playSound", { soundName: "click" });
       this.$store.commit("hidePrompt", {
-        path: "scenes-qa",
+        path: "scenes-special",
       });
     },
   },
@@ -203,7 +194,7 @@ export default {
 </script>
 
 <style lang="scss">
-.q-a {
+.special-parcel {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -238,6 +229,7 @@ export default {
     margin-bottom: 2rem;
     padding: 2rem;
     font-size: $font-size-m;
+    transition: transform ease-in 0.6s, top ease-in 0.6s, left;
 
     @include pixel-borders(
       $corner-size: 2,
@@ -252,6 +244,12 @@ export default {
       .Typewriter__cursor {
         color: $majestic-magenta;
       }
+    }
+
+    &.--letter-mode {
+      bottom: 0;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
     }
   }
 

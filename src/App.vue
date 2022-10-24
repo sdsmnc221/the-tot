@@ -173,6 +173,7 @@ export default {
       background-size: 120% 120%;
       background-repeat: no-repeat;
       z-index: 999;
+      opacity: 0.72;
       pointer-events: none;
       animation: gradient-animation 3.2s ease infinite both;
     }

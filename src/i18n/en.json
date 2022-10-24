@@ -75,6 +75,23 @@
               "a3": "Dear future passenger, please do me the favor of mental calculations yourself 😉."
             }
           }
+        },
+        "special": {
+          "not-special": "Oh, this is a special parcel for the special passenger. It looks like you are not that person, so I can't handle this to you.",
+          "is-special": {
+            "s1": "Oh, this is a special parcel for the special passenger. For YOU, I mean.",
+            "s2": "Handle it with care, and deliver it to the Train Driver for me when you finally get into the Train.",
+            "cta": "There's  <br /> a <span>mysterious letter</span> <br /> attached to the parcel.",
+            "letter": [
+              "Dear ___,",
+              "Written and rewritten so many times, and then left unfinished at the end, this letter should not reach its destination. Because I don't want it to.",
+              "That special person won't understand anyway, the messages, the feelings, and all of the thoughts that I want to deliver to them. It just, simply, won't reach. Even if I oh so want it to.",
+              "All of these sceneries that passed through my eyes again and again, all of these passengers that come and go, each of them carry something special. To me, to this Train. Because it's directly attached to that special person, because somehow it belongs to them all.",
+              "But the person won't know, won't understand, ever.",
+              "Still, I hope it reaches them, somehow, some day.",
+              "the T.D."
+            ]
+          }
         }
       }
     },

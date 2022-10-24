@@ -24,7 +24,7 @@ const globalStore = createStore({
       enterXP: false,
       ticketId: makeID(process.env.VUE_APP_CODE),
       specialCode: process.env.VUE_APP_CODE,
-      isSpecial: false,
+      isSpecial: true,
       "scenes-ticketMachine-instruction": false,
       "scenes-ticketMachine-love": false,
       "scenes-ticketMachine-trust": false,
@@ -34,6 +34,7 @@ const globalStore = createStore({
       "scenes-platform": false,
       "scenes-qa": false,
       "scenes-wayOut": false,
+      "scene-special": false,
       sounds: {},
     };
   },
