@@ -339,6 +339,54 @@ export default [
     },
   },
   {
+    name: "sNsvn",
+    type: "audio",
+    path: "sounds/s-ns-vn.mp3",
+    options: {
+      volume: 0.8,
+    },
+  },
+  {
+    name: "sNsen",
+    type: "audio",
+    path: "sounds/s-ns-en.mp3",
+    options: {
+      volume: 0.8,
+    },
+  },
+  {
+    name: "sIsS1vn",
+    type: "audio",
+    path: "sounds/s-is-s1-vn.mp3",
+    options: {
+      volume: 0.8,
+    },
+  },
+  {
+    name: "sIsS2vn",
+    type: "audio",
+    path: "sounds/s-is-s2-vn.mp3",
+    options: {
+      volume: 0.8,
+    },
+  },
+  {
+    name: "sIsS1en",
+    type: "audio",
+    path: "sounds/s-is-s1-en.mp3",
+    options: {
+      volume: 0.8,
+    },
+  },
+  {
+    name: "sIsS2en",
+    type: "audio",
+    path: "sounds/s-is-s2-en.mp3",
+    options: {
+      volume: 0.8,
+    },
+  },
+  {
     name: "letter",
     type: "audio",
     path: "sounds/letter.mp3",

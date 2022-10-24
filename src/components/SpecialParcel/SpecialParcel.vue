@@ -82,7 +82,9 @@ export default {
             "scenes.prompts.talk.special.is-special.s2",
           ]
         : ["scenes.prompts.talk.special.not-special"],
-      audios: ["promptIntroduction", "promptCounter", "promptAskAway"],
+      audios: this.$store.state.isSpecial
+        ? [`sIsS1${this.$i18n.locale}`, `sIsS2${this.$i18n.locale}`]
+        : [`sNs${this.$i18n.locale}`],
       letterMode: false,
       aIndex: 6,
       aIndexMax: 6,
