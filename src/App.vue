@@ -12,7 +12,7 @@
   </metainfo>
   <!-- <router-view /> -->
   <!-- <WebGl /> -->
-  <main>
+  <main :class="{ '--grainy': $store.state.isMobile }">
     <transition name="fade">
       <lang-selector v-if="!$store.state.langSelected" />
     </transition>
@@ -134,21 +134,23 @@ export default {
       height: 100%;
     }
 
-    &::after {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url(('./assets/images/grain.jpeg'));
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      z-index: 99;
-      pointer-events: none;
-      mix-blend-mode: multiply;
+    &.--grainy {
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(('./assets/images/grain.jpeg'));
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 99;
+        pointer-events: none;
+        mix-blend-mode: multiply;
+      }
     }
   }
 }
