@@ -874,26 +874,27 @@ export default {
           bottom: 0,
           position: "absolute",
           pointerEvents: "none",
-        });
-
-        const { width, height, left, top } =
-          this.DOM.ticketSlot.getBoundingClientRect();
-        this.w = width;
-        this.h = height;
-        this.x = left;
-        this.y = top;
-        gsap.to(this.DOM.hpTicket, {
-          opacity: 0.64,
-          scale: 2,
-          width: this.w + "px",
-          height: this.h + "px",
-          x: this.x + "px",
-          y: this.y + "px",
-          left: 0,
-          top: 0,
-          duration: 0.8,
-          delay: 4.8,
-          ease: "expo",
+          onComplete: () => {
+            const { width, height, left, top } =
+              this.DOM.ticketSlot.getBoundingClientRect();
+            this.w = width;
+            this.h = height;
+            this.x = left;
+            this.y = top;
+            gsap.to(this.DOM.hpTicket, {
+              opacity: 0.64,
+              scale: 2,
+              width: this.w + "px",
+              height: this.h + "px",
+              x: this.x + "px",
+              y: this.y + "px",
+              left: 0,
+              top: 0,
+              duration: 0.8,
+              delay: 4.8,
+              ease: "expo",
+            });
+          },
         });
       };
 
