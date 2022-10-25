@@ -79,7 +79,7 @@
     "rules": {}
   },
   "browserslist": [
-    "> 1%",
+    "> 0.2%",
     "last 2 versions",
     "not dead",
     "not ie 11"
