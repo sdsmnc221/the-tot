@@ -777,7 +777,7 @@
               <text
                 :class="`${
                   $i18n.locale === 'en'
-                    ? $store.state.isIphone
+                    ? $store.state.isSafari
                       ? 'ed edfs'
                       : 'ed'
                     : 'vn'

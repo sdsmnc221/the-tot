@@ -14,6 +14,7 @@ const globalStore = createStore({
           navigator.userAgent
         ),
       isIphone: /webOS|iPhone|iPod/i.test(navigator.userAgent),
+      isSafari: /^((?!chrome|android).)*safari/i.test(navigator.userAgent),
       isFullscreen: false,
       isLandscape: false,
       prepURIfont: false,
