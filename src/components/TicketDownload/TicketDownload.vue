@@ -523,7 +523,9 @@ export default {
   },
   computed: {
     ticketId() {
-      return window.localStorage.getItem("ticketId") || this.ticketId;
+      return (
+        window.localStorage.getItem("ticketId") || this.$store.state.ticketId
+      );
     },
   },
   mounted() {
