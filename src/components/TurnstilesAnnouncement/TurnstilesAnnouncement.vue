@@ -776,12 +776,25 @@
               </g>
               <text
                 :class="`${
-                  $i18n.locale === 'en' ? 'ed' : 'vn'
+                  $i18n.locale === 'en'
+                    ? $store.state.isIphone
+                      ? 'ed edfs'
+                      : 'ed'
+                    : 'vn'
                 } text-announcement`"
                 transform="translate(222.46 180.34)"
               >
                 <tspan class="el">
-                  <tspan :x="$i18n.locale === 'en' ? 24 : 12" y="0">
+                  <tspan
+                    :x="
+                      $store.state.isIphone
+                        ? 48
+                        : $i18n.locale === 'en'
+                        ? 24
+                        : 12
+                    "
+                    y="0"
+                  >
                     {{ $t("scenes.turnstiles.announcement.p1") }}
                   </tspan>
                 </tspan>
@@ -1304,6 +1317,15 @@ export default {
   .ed {
     fill: #ee4887;
     font-family: $font-silkscreen;
+    text-transform: uppercase;
+  }
+  .edfs {
+    .el {
+      font-size: 64px;
+    }
+    .ej {
+      font-size: 60px;
+    }
   }
   .vn {
     fill: #ee4887;
