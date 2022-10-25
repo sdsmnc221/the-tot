@@ -787,8 +787,8 @@
                 <tspan class="el">
                   <tspan
                     :x="
-                      $store.state.isIphone
-                        ? 48
+                      $store.state.isSafari
+                        ? 36
                         : $i18n.locale === 'en'
                         ? 24
                         : 12

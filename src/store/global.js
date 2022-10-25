@@ -14,7 +14,14 @@ const globalStore = createStore({
           navigator.userAgent
         ),
       isIphone: /webOS|iPhone|iPod/i.test(navigator.userAgent),
-      isSafari: /apple/i.test(navigator.vendor),
+      isSafari:
+        /constructor/i.test(window.HTMLElement) ||
+        (function (p) {
+          return p.toString() === "[object SafariRemoteNotification]";
+        })(
+          !window["safari"] ||
+            (typeof safari !== "undefined" && window["safari"].pushNotification)
+        ),
       isFullscreen: false,
       isLandscape: false,
       prepURIfont: false,
