@@ -151,31 +151,31 @@ export default {
         pointer-events: none;
         mix-blend-mode: multiply;
       }
-    }
 
-    &::before {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      mix-blend-mode: soft-light;
-      background-attachment: fixed;
-      background-image: linear-gradient(
-        180deg,
-        #3c5e6d 0%,
-        #f4310e,
-        #f58308 80%,
-        black
-      );
-      background-size: 120% 120%;
-      background-repeat: no-repeat;
-      z-index: 999;
-      opacity: 0.72;
-      pointer-events: none;
-      animation: gradient-animation 3.2s ease infinite both;
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        mix-blend-mode: soft-light;
+        background-attachment: fixed;
+        background-image: linear-gradient(
+          180deg,
+          #3c5e6d 0%,
+          #f4310e,
+          #f58308 80%,
+          black
+        );
+        background-size: 120% 120%;
+        background-repeat: no-repeat;
+        z-index: 999;
+        opacity: 0.72;
+        pointer-events: none;
+        animation: gradient-animation 3.2s ease infinite both;
+      }
     }
   }
 }

@@ -24,7 +24,7 @@ export default {
   align-items: center;
   background-color: $dark-purple;
   padding: 16rem;
-  z-index: 999;
+  z-index: 99;
 
   p {
     text-align: center;
