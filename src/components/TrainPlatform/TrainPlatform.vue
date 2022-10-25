@@ -366,6 +366,7 @@ export default {
     height: 4.8rem;
     mix-blend-mode: normal;
     transform: translate(-50%, 0);
+    text-transform: uppercase;
 
     @include pixel-borders(
       $corner-size: 2,
