@@ -250,6 +250,7 @@
         </g>
       </g>
     </svg>
+
     <svg
       class="ticket"
       ref="ticket"
@@ -373,7 +374,6 @@
         </g>
       </g>
     </svg>
-
     <svg
       class="ticket"
       ref="ticket"
@@ -707,7 +707,8 @@ export default {
         stroke-miterlimit: 10;
       }
       `;
-        styles.innerHTML += cssRules.join("\n");
+        if (!this.$store.state.isIphone)
+          styles.innerHTML += cssRules.join("\n");
         defs.appendChild(styles);
         this.DOM.ticket.appendChild(defs);
         this.$store.commit("prepFont");
@@ -809,8 +810,10 @@ export default {
     triggerDownload(canvas, imageName) {
       canvas.toBlob((blob) => {
         const anchor = document.createElement("a");
+
         anchor.download = imageName;
         anchor.href = URL.createObjectURL(blob);
+        anchor.target = "_blank";
 
         anchor.click();
 
