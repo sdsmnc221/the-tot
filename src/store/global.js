@@ -13,6 +13,7 @@ const globalStore = createStore({
         /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
           navigator.userAgent
         ),
+      isIphone: /webOS|iPhone|iPod/i.test(navigator.userAgent),
       isFullscreen: false,
       isLandscape: false,
       prepURIfont: false,

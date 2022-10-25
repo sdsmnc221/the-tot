@@ -697,7 +697,7 @@ export default {
       }
       .g {
         font-family: VT323, Arial, sans-serif;
-        font-size: 65px;
+        font-size: ${this.$store.state.isIphone ? 44 : 65}px;
         letter-spacing: 0.08em;
       }
       .h,
