@@ -813,7 +813,7 @@ export default {
 
         anchor.download = imageName;
         anchor.href = URL.createObjectURL(blob);
-        anchor.target = "_blank";
+        // anchor.target = "_blank";
 
         anchor.click();
 
