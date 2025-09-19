@@ -66,6 +66,8 @@ import PreReleaseScenes from "@/views/PreReleaseScenes.vue";
 import Resources from "./webgl/Utils/Resources";
 import sources from "@/webgl/sources";
 
+import { inject } from "@vercel/analytics"
+
 export default {
   name: "App",
   components: {
@@ -93,6 +95,8 @@ export default {
     };
   },
   mounted() {
+    inject();
+    
     this.$store.dispatch("saveTicketId");
     this.resize();
     window.addEventListener("resize", this.resize.bind(this));
