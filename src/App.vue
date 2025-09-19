@@ -86,7 +86,7 @@ export default {
       htmlAttrs: {
         lang: this.$i18n.locale,
       },
-      link: [{ rel: "icon", href: "/favicon.ico" }],
+      link: [{ rel: "icon", href: "/train.png" }],
     };
   },
   data() {
