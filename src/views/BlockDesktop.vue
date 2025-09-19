@@ -4,7 +4,7 @@
     <a :href="$store.state.site">
       <img
         alt="QR Code The Trains of Thoughts"
-        :src="`${$store.state.publicPath}images/qr-code.svg`"
+        :src="`${$store.state.publicPath}images/qr-code.png`"
         rel="preload"
       />
     </a>
